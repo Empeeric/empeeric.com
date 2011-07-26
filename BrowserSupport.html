@@ -1,0 +1,26 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Outdated browser</title>
+   <style type="text/css">
+       img  {
+            margin: 0 0 0 10px;
+            vertical-align: -15%;
+            width: 100px;
+        }
+   </style>
+</head>
+<body>
+    <p>Your browser doesn't support our site.</p>
+    <p id="bla">Please wait while we're searching for a solution<img src="images/throbber.gif"></p>
+</html>
+
+
+<script type="text/javascript">
+    document.onload = setTimeout(function(){
+        p = document.getElementById("bla");
+        p.innerHTML = "Solution Found...";
+        window.location.href = "http://www.google.com/chrome/intl/en/make/download.html";
+    }, 5000)
+</script>

@@ -1,0 +1,159 @@
+.story-video_active {
+	color: rgb(80, 175, 222) !important;
+}
+.section-shows_active {
+	color: rgb(255, 246, 0) !important;
+}
+.section-community_active {
+	color: rgb(167, 97, 161) !important;
+}
+.section-gallery_active {
+	color: rgb(224, 76, 62) !important;
+}
+.story-video-clips_active {
+	color: rgb(80, 175, 222) !important;
+}
+.story-downloads_active {
+	color: rgb(255, 100, 0) !important;
+}
+.story-store_active {
+	color: rgb(32, 121, 0) !important;
+}
+.story-biography_active {
+	color: rgb(159, 208, 248) !important;
+}
+#story-video {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat; margin: 0px; width: 100%; height: 1200px; overflow: hidden;
+}
+#story-video .img {
+	left: 0px; top: 0px; position: absolute;
+}
+#story-video .main {
+	left: 5%; top: 40%; height: 500px; position: absolute;
+}
+#story-video header {
+	top: 55%; width: 100%; height: 200px;
+}
+#story-video .placeholder {
+	height: 200px; margin-right: auto; margin-left: auto;
+}
+#story-video h1 {
+	left: 0px; top: 400px; width: 100%; text-align: center; color: rgb(255, 255, 255) !important; text-transform: none !important; line-height: 60px; font-family: Morpheus-Medium; font-size: 80px !important; display: block; position: absolute; z-index: 100;
+}
+.video .vid {
+	background: url("/images/play_icon.png") no-repeat 50% 50%; left: 50%; top: 55%; width: 100px; height: 100px; text-indent: -9000px; overflow: hidden; margin-top: -100px; margin-left: -50px; display: block; position: absolute; z-index: 999999; opacity: 0.95;
+}
+div.darkslide {
+	background: rgb(0, 0, 0); left: 0px; top: 0px; width: 1920px; height: 0px; overflow: hidden; position: absolute; z-index: 998; opacity: 0;
+}
+#video-container {
+	left: 50%; top: 50%; width: 810px; margin-top: -270px; margin-left: -405px; position: absolute; z-index: 99999;
+}
+a#close-video {
+	background: url("/images/video_close.png") no-repeat 100% 0px; left: 50%; top: 50%; width: 25px; height: 25px; text-indent: -9000px; margin-top: -310px; margin-left: 380px; display: none; position: absolute; z-index: 999999;
+}
+a#close-video:hover {
+	background-position: 100% 100%;
+}
+._playing a#close-video {
+	display: block;
+}
+#section-shows {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 0px 0px; margin: 0px; width: 100%; height: 1600px; overflow: hidden;
+}
+#section-shows header {
+	top: 10%; height: 750px; right: 5%;
+}
+#section-shows .bg {
+	top: 0px; width: 100%; height: 100%; right: 0px; position: absolute;
+}
+#section-shows .placeholder {
+	top: 5%; position: relative;
+}
+#section-community {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 0px 0px; margin: 0px; height: 1600px;
+}
+#section-community header {
+	left: 0%; top: 15%; height: 500px; position: absolute; z-index: 99999;
+}
+#section-community .bg {
+	left: 0%; top: 0px; width: 1600px; height: 1600px; position: absolute;
+}
+#section-gallery {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 50% 0px; width: 100%; height: 1600px; overflow: hidden;
+}
+#section-gallery header {
+	top: 5%; height: 850px; right: 10%;
+}
+#section-gallery .bg {
+	
+}
+#story-video-clips {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 50% 0px; height: 1600px;
+}
+#story-video-clips header {
+	top: 300px; width: 100%; height: 500px; right: 0%;
+}
+#story-video-clips .placeholder {
+	width: 100%; margin-right: auto; margin-left: auto; vertical-align: bottom;
+}
+#story-video-clips .bg {
+	left: 50%; top: 0px; width: 1600px; height: 800px; margin-left: -600px; position: absolute;
+}
+#story-downloads {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 50% 0px; height: 1200px;
+}
+#story-downloads header {
+	top: 240px; width: 100%; height: 600px; right: 0%;
+}
+#story-downloads .placeholder {
+	padding-right: 85px; margin-right: auto; margin-left: auto; vertical-align: bottom;
+}
+#story-downloads .bg {
+	left: 0px; top: 0px; width: 1600px; height: 1600px; display: none; position: absolute;
+}
+#story-publications {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 0px 0px; height: 1200px;
+}
+#story-publications header {
+	top: 200px; width: 100%; height: 800px; right: 0%;
+}
+#story-publications .placeholder {
+	margin-right: auto; margin-left: auto;
+}
+#section-music {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 0px 0px; height: 1200px;
+}
+#section-music header {
+	top: 5%; width: 100%; height: 750px;
+}
+#section-music .placeholder {
+	width: 100% !important; right: 0%; position: absolute;
+}
+#story-biography {
+	background: url("/images/bg/bg_video.jpg") fixed no-repeat 50% 0px; height: 1200px;
+}
+#story-biography header {
+	top: 300px; width: 100%; height: 500px; right: 0%;
+}
+#story-biography .placeholder {
+	width: 920px !important; margin-right: auto; margin-left: auto;
+}
+.counter {
+	padding: 50px 0px 0px; position: relative;
+}
+.counter p {
+	font-size: 16px;
+}
+.counter p a {
+	padding: 0px 0px 0px 5px; color: rgb(79, 148, 38) !important;
+}
+.counter p span {
+	padding: 0px; float: left; display: block;
+}
+.counter mark {
+	padding: 0px 10px; width: 210px; text-align: left; color: rgb(34, 34, 34); text-indent: 10px; font-family: "Morpheus-Medium"; font-size: 56px; float: left; display: block; font-size-adjust: none;
+}
+#counter-scrolled {
+	
+}

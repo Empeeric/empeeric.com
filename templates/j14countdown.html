@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<title>Israeli Alpine Club</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/countdown.css"/>
+	<style>
+		* {margin:0;padding:0;}
+		body {text-align:center;font:13px/1.231 sans-serif;background-color:black;color:#fff;}
+		#main {position:relative;width:640px;margin:0 auto;text-align:center;}
+		#countdown {position:absolute;top:0;margin-left:50px;}
+		#logo {width:297px;height:783px;background: url('/static/images/israel_outline.png') left 0 no-repeat;}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script src="/static/js/jqcountdown.js"></script>
+	<script>
+		jQuery(document).ready(function() {
+			$('#countdown').countDown({
+				targetDate:	{
+					'day':      3,
+					'month':    8,
+					'year':     2011,
+					'hour':     11,
+					'min':      0,
+					'sec':      0
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div id="main">
+		<!-- Countdown dashboard start -->
+		<div id="countdown">
+				<div class="dash hours_dash">
+
+					<span class="dash_title">שעות</span>
+					<div class="digit">1</div>
+					<div class="digit">3</div>
+				</div>
+
+				<div class="dash minutes_dash">
+					<span class="dash_title">דקות</span>
+
+					<div class="digit">4</div>
+					<div class="digit">0</div>
+				</div>
+
+				<div class="dash seconds_dash">
+					<span class="dash_title">שניות</span>
+					<div class="digit">4</div>
+
+					<div class="digit">9</div>
+				</div>
+		</div>
+		<!-- Countdown dashboard end -->
+		<div id="logo"></div>
+	</div>
+</body>
+</html>

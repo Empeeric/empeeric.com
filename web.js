@@ -26,6 +26,11 @@ app.get('/BrowserSupport.html', function(request, response){
     response.sendfile('templates/BrowserSupport.html');
 });
 
+app.get('/j14countdown.html', function(request, response){
+    response.contentType('text/html');
+    response.sendfile('templates/j14countdown.html');
+});
+
 app.get('/', function(request, response){
     response.contentType('text/html');
     response.sendfile('templates/home.html');

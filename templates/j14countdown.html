@@ -1,15 +1,18 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="copyright" content="Empeeric 2011">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-	<title>Israeli Alpine Club</title>
+	<title>ספירה לאחור</title>
 	<link rel="stylesheet" type="text/css" href="/static/css/countdown.css"/>
 	<style>
 		* {margin:0;padding:0;}
 		body {text-align:center;font:13px/1.231 sans-serif;background-color:black;color:#fff;}
-		#main {position:relative;width:640px;margin:0 auto;text-align:center;}
-		#countdown {position:absolute;top:0;margin-left:50px;}
-		#logo {width:297px;height:783px;background: url('/static/images/israel_outline.png') left 0 no-repeat;}
+		#main {position:relative;width:100%;margin:0 auto;text-align:center;}
+		#countdown {position:absolute;top:100px;margin-left:50px;}
+		#logo {position:absolute;right:20px;width:297px;height:783px;background: url('/static/images/israel_outline.png') left 0 no-repeat;}
+		#fill {position:absolute;bottom:0;width:297px;height:283px;background-color: red; z-index: -1}
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script src="/static/js/jqcountdown.js"></script>
@@ -54,7 +57,7 @@
 				</div>
 		</div>
 		<!-- Countdown dashboard end -->
-		<div id="logo"></div>
+		<div id="logo"><div id="fill">&nbsp;</div></div>
 	</div>
 </body>
 </html>

@@ -30,7 +30,7 @@ h2.subtitle {
 }
 
 .dash {
-	width: 110px;
+	width: 170px;
 	height: 114px;
 	background: transparent url('../images/dash.png') 0 0 no-repeat;
 	float: left;
@@ -38,14 +38,13 @@ h2.subtitle {
 	position: relative;
 }
 
-.dash .digit {
-	font-size: 55pt;
+.digit {
+	font-size: 90pt;
 	font-weight: bold;
 	float: left;
-	width: 55px;
+	width: 70px;
 	text-align: center;
 	font-family: Times;
-	color: #fff;
 	position: relative;
 }
 

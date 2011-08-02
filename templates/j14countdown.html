@@ -8,15 +8,25 @@
 	<link rel="stylesheet" type="text/css" href="/static/css/countdown.css"/>
 	<style>
 		* {margin:0;padding:0;}
-		body {text-align:center;font:13px/1.231 sans-serif;background-color:black;color:#fff;}
-		#main {position:relative;width:100%;margin:0 auto;text-align:center;}
-		#countdown {position:absolute;top:100px;margin-left:50px;}
-		#logo {position:absolute;right:20px;width:297px;height:783px;background: url('/static/images/israel_outline.png') left 0 no-repeat;}
-		#fill {position:absolute;bottom:0;width:297px;height:283px;background-color: red; z-index: -1}
+		body {text-align:center;font:16px/1.231 sans-serif;background-color:black; color:yellow;}
+		#main {position:relative; width:100%; margin:0 auto; text-align:center; color:yellow;}
+		#countdown {position:absolute;top:200px;margin-left:150px;}
+		#logo {position:absolute;right:50px;top:50px;width:190px;height:500px;background: url('/static/images/israel_outline.png') left 0 no-repeat;}
+		#header {position:absolute;top:30px;width:954px;height:81px;background: url('/static/images/header.png') left 0 no-repeat;}
+		#footer {position:absolute;bottom:30px;width:954px;height:56px;background: url('/static/images/footer.png') left 0 no-repeat;}
+		#fill {position:absolute;bottom:1px;left:1px;width:188px;height:0;background-color: yellow; z-index: -1}
 	</style>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
 	<script src="/static/js/jqcountdown.js"></script>
 	<script>
+        var target_date = new Date(2011, 7, 3, 11, 0 ,0);
+        var fill_time = 15 * 3600 * 1000;
+        function set_hourglass()
+        {
+            var fill_ratio = (target_date - new Date()) / fill_time;
+            var fill_height = fill_ratio * 350;
+            $('#fill').height(fill_height);
+        }
 		jQuery(document).ready(function() {
 			$('#countdown').countDown({
 				targetDate:	{
@@ -28,6 +38,7 @@
 					'sec':      0
 				}
 			});
+            setInterval(set_hourglass, 1000)
 		});
 	</script>
 </head>
@@ -59,5 +70,7 @@
 		<!-- Countdown dashboard end -->
 		<div id="logo"><div id="fill">&nbsp;</div></div>
 	</div>
+    <div id="header"></div>
+    <div id="footer"></div>
 </body>
 </html>

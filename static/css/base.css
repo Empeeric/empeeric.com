@@ -198,7 +198,7 @@ div#wrapper {
 	margin: 0px auto; padding: 20px 0; width: 100%; position: relative; min-width: 100px; max-width: 1920px;
 }
 nav#main {
-	width: 100%; height: 90px; right: -154px;
+	width: 100%; height: 90px; right: -42%;
     position: fixed; z-index: 999999; margin: -45px 170px 0 0 !important;
     top: 8%;
 }

@@ -50,7 +50,8 @@ body, nav#main li a,  p  {
     background: linear-gradient(top, #f1f8ff 0%,#c9e4ff 4%,#80bfff 10%,#6db5ff 24%,#6cb5ff 25%,#70b7ff 25%,#73b6f9 26%,#80b5e6 28%,#8cb5df 30%,#92bae2 33%,#9dc3e9 35%,#a9d0f7 38%,#aad4ff 40%,#a6d3ff 41%,#9dceff 42%,#68b3ff 46%,#54a9ff 49%,#57a9fc 49%,#58a9fb 49%,#61abef 52%,#75afd8 56%,#8fb5be 59%,#9cb9b7 61%,#9bbcbb 63%,#99c0cd 66%,#98c2d6 67%,#96c8f1 69%,#96caff 71%,#94c9ff 75%,#94bbff 77%,#94a9ff 78%,#9463ff 82%,#9439ff 83%,#9407ff 84%,#4805a3 88%,#2c117f 90%,#111e5c 92%,#012448 96%,#012448 100%); /* W3C */
 }
 nav#main ul {
-    float:  right;
+            position: relative;
+            left: 45px;
 }
 nav#main ul li {
     text-indent: 0;
@@ -74,7 +75,7 @@ nav#main #mn_home{
 /*}*/
 nav#main #mn_portfolio{
     background: url(/static/images/menu_sprites.png) -100px 0 no-repeat;
-    width: 100px;
+            width: 100%;
 }
 /*nav#main li.active[data-id=portfolio]  a {*/
     /*background: url(/static/images/menu_sprites.png) -100px -15px no-repeat;*/
@@ -120,7 +121,7 @@ nav#main #mn_contactus {
 #alchemists_tag {
     position: relative;
     top: -306px;
-    left: 35px;
+            left: 0px;
 }
 #home ul{
     position: relative;
@@ -170,12 +171,12 @@ p {
 }
 .text-block h2{
     position: relative;
-    top: 76px;
-    left: 74px;
-     width: 390px;
-    line-height: 122%;
-    text-shadow: 1px 2px 100px;
-    font-size: 1.5em;
+            top: 0px;
+            left: 0px;
+             width: 170px;
+            line-height: 150%;
+            text-shadow: 1px 2px 100px;
+            font-size: 14px;
 }
 .text-block p{
     position: absolute;
@@ -304,10 +305,54 @@ hr{
 .animated-clouds {
     position: absolute;
 }
+        .site_link{
+            position:relative;
+            left:-3px;
+            bottom:0px;
+            display:block;
+            background-image:url('images/www.png');
+            background-repeat:no-repeat;
+            width:400px;
+            height:15px
+        }
+        #top_hp{
+            position: relative;
+            top: -290px;
+            width: 460px;
+            font-size:20px;
+            letter-spacing: 1px;
+        }
+        #footer_hp{
+            position: relative;
+            top: -93px;
+            font-size: 16px;
+            left: -44px;
+        }
+    
+        #middle_hp{
+            position: relative;
+            top: -100px;;
+            left: -190px;
+            font-size:16px;
+        }
+
+        #contact_img{
+            position: relative;
+            top: -175px;
+            left: 22px;
+        }
+
+        #seemore_img{
+            position:fixed;
+            left:700px;
+            top:2px;
+        }
 </style>
     </head>
     <body data-controller="SiteScroll">
         <div id="wrapper">
+    <!-- Nav -->
+    <img src="images/Seemore.png" id="seemore_img" />
             <nav id="main" data-controller="MainNav" style="margin: -45px 20px 0 0;"></nav>
             <div class="darkslide"></div>
             <section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" content-action="Events" hd-image="bg_shows">

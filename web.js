@@ -31,6 +31,10 @@ app.get('/j14countdown.html', function(request, response){
     response.sendfile('templates/j14countdown.html');
 });
 
+app.get('/dirometer', function(request, response){
+    response.render('dirometer.jade');
+});
+
 app.get('/', function(request, response){
     response.contentType('text/html');
     response.sendfile('templates/home.html');

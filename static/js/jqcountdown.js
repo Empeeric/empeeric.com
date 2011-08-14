@@ -30,7 +30,7 @@
 
 		$.extend(config, options);
 
-		diffSecs = this.setCountDown(config);
+		var diffSecs = this.setCountDown(config);
 	
 		if (config.onComplete)
 		{
@@ -75,7 +75,7 @@
 
 		var nowTime = new Date();
 
-		diffSecs = Math.floor((targetTime.valueOf()-nowTime.valueOf())/1000);
+		var diffSecs = Math.floor((targetTime.valueOf()-nowTime.valueOf())/1000);
 
 		$.data(this[0], 'diffSecs', diffSecs);
 
@@ -117,7 +117,7 @@
 		if (diffSecs > 0)
 		{
 			e = $this;
-			t = setTimeout(function() { e.doCountDown(id, diffSecs-1) } , 1000);
+			t = setTimeout(function() { e.doCountDown(id, diffSecs-1); } , 1000);
 			$.data(e[0], 'timer', t);
 		} 
 		else if (cb = $.data($this[0], 'callback')) 

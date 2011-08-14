@@ -1,0 +1,297 @@
+style(type='text/css')
+      #map{
+          width:600px;
+          height:450px;
+          padding-bottom:50px;
+          padding-top:20px;
+      }
+      .good{
+          background-color: #009933;
+          border:black;
+          border-style:solid;
+      }
+      .bad{
+          background-color: #cc3300;
+          border:black;
+           border-style:solid;
+      }
+      span
+      {
+          padding-left:20px;
+      }
+      #action_bar{
+          padding-bottom:30px;
+      }
+      .pointer{
+          cursor:pointer
+      }
+  #info
+    h1 בעל הבית השתגע?
+    p
+      | בעל או בעלת הבית שלכם מנסים להעלות לכם את שכר הדירה בכדי שתעמדו מול הברירה הבלתי
+      | אפשרית, לשלם או לעבור?
+      br
+      | הוסיפו את כתובת הדירה ואת השינוי בשכר הדירה לאתר זה.
+      br
+      | מחפשים דירה?
+      br
+      | הפגינו סולידריות חברתית, ולפני שאתם הולכים לראות דירה, בדקו האם היא מופיעה באתר.
+      | אם בעל או בעלת הבית אכן העלו
+      br
+      | את שכר הדירה משנה שעברה, אל תלכו לראות הדירה! הם יעשו לכם ולכן את אותו הדבר שנה
+      | הבאה.
+      br
+      | לחצו לייק כדי להודיע שגם אתם לא שוכרים דירה מבעל בית שהעלה את שכר הדירה!
+    iframe(src='http://www.facebook.com/plugins/like.php?app_id=239648889391600&href=dirometer.empeeric.com&send=true&layout=standard&width=320&show_faces=true&action=like&colorscheme=light&font&height=80', scrolling='no', frameborder='0', style='border:none; overflow:hidden; width:320px; height:80px;', allowtransparency='true')
+    div(style='position:relative;bottom:80px; left:-300px;')
+      g:plusone
+      a.twitter-share-button(href='http://twitter.com/share', data-count='horizontal') Tweet
+      script(type='text/javascript', src='http://platform.twitter.com/widgets.js')
+  #action_bar
+    span
+      img(src='img/up.png')
+      a(href='javascript:showDialog(\'rent_up_dialog\')') דווח על עליה בשכ"ד
+    span
+      img(src='img/down.png')
+      a(href='javascript:showDialog(\'rent_down_dialog\')') דווח על ירידה בשכ"ד
+    span
+      img(src='img/check.png')
+      a(href='javascript:showDialog(\'check_dialog\')') בדוק עליה/ירידה בשכ"ד
+  #map_view
+    #map
+  #rent_up_dialog
+    img.pointer(src='img/close.png', style='position: relative; left: -408px;z-index:100;', onclick='closeAll()')
+    table(style='width:450')
+      thead
+        img(src='img/rent_up.png', style='position: relative; bottom: 34px;')
+      tr
+        td
+          | עיר
+        td
+          input#up_city_in(type='text')
+      tr
+        td
+          | רחוב
+        td
+          input#up_street_in(type='text')
+      tr
+        td
+          | מספר בית:
+        td
+          input#up_house_in(type='text')
+      tr
+        td
+          | מספר דירה:
+        td
+          input#up_apr_in(type='text')
+      tr
+        td
+          | שכ"ד ישן:
+        td
+          input#up_old_in(type='text')
+      tr
+        td
+          | שכ"ד חדש:
+        td
+          input#up_new_in(type='text')
+    br
+    br
+    .error(style='color:RED;')
+    img.pointer(src='img/submit_button.png', onclick='submit_new_rent()')
+  #rent_down_dialog
+    img.pointer(src='img/close.png', style='position: relative; left: -408px;z-index:100;', onclick='closeAll()')
+    table(style='width:450')
+      thead
+        img(src='img/down_rent.png', style='position: relative; bottom: 34px;')
+      tr
+        td
+          | עיר
+        td
+          input#down_city_in(type='text')
+      tr
+        td
+          | רחוב
+        td
+          input#down_street_in(type='text')
+      tr
+        td
+          | מספר בית:
+        td
+          input#down_house_in(type='text')
+      tr
+        td
+          | מספר דירה:
+        td
+          input#down_apr_in(type='text')
+      tr
+        td
+          | שכ"ד ישן:
+        td
+          input#down_old_in(type='text')
+      tr
+        td
+          | שכ"ד חדש:
+        td
+          input#down_new_in(type='text')
+    br
+    br
+    .error(style='color:RED; width:120px')
+    img.pointer(src='img/submit_button.png', onclick='submit_new_rent()')
+  #check_dialog
+    img.pointer(src='img/close.png', style='position: relative; left: -408px;z-index:100;', onclick='closeAll()')
+    table(style='width:450')
+      thead
+        img(src='img/rent_up.png', style='position: relative; bottom: 34px;')
+      tr
+        td
+          | עיר
+        td
+          input#up_city_out(type='text')
+      tr
+        td
+          | רחוב
+        td
+          input#up_street_out(type='text')
+      tr
+        td
+          | מספר בית:
+        td
+          input#up_house_out(type='text')
+      tr
+        td
+          | מספר דירה:
+        td
+          input#up_apr_out(type='text')
+    br
+    br
+    #results
+    .error(style='color:RED;')
+    img.pointer(src='img/bdotBT.png', onclick='check_adrs()')
+
+  script(type='text/javascript')
+    function submit_new_rent(id){
+      var city=$('#up_city_in').val();
+      var street=$('#up_street_in').val();
+      var apr=$('#up_apr_in').val();
+      var house=$('#up_house_in').val();
+      var old=$('#up_old_in').val();
+      var newP=$('#up_new_in').val();
+      if (city==""||street==""||house==""||old==""||newP==""){
+        $('.error').html("בכדי לדווח על דירה יש צורך בשם העיר, הרחוב והבניין")
+      }else{
+        $.ajax({
+          type: "POST",
+          url: 'api/addReport',
+          data:"city="+city+
+            "&street="+street+
+            "&address="+house+
+            "&apartment="+apr+
+            "&oldPrice="+old+
+            "&newPrice="+newP,
+          success: function(data) {
+            closeAll();
+              window.location.reload();
+          }
+        });
+      }
+    }
+        function submit_new_low_rent(id){
+            var city=$('#down_city_in').val();
+            var street=$('#down_street_in').val();
+            var apr=$('#down_apr_in').val();
+            var house=$('#down_house_in').val();
+            var old=$('#down_old_in').val();
+            var newP=$('#down_new_in').val();
+            if (city==""||street==""||house==""||old==""||newP==""){
+                $('.error').html("בכדי לדווח על דירה יש צורך בשם העיר, הרחוב והבניין")
+            }else{
+                $.ajax({
+                        type: "POST",
+                      url: 'api/addReport',
+                      data:"city="+city+
+                                "&street="+street+
+                                "&address="+house+
+                                "&apartment="+apr+
+                                "&oldPrice="+old+
+                                "&newPrice="+newP,
+                      success: function(data) {
+                        closeAll();
+                          window.location.reload();
+                      }
+                    });
+            }
+        }
+        function check_adrs(){
+            var city=$('#up_city_out').val();
+            var street=$('#up_street_out').val();
+            var apr=$('#up_apr_out').val();
+            var house=$('#up_house_out').val();
+            var old=$('#up_old_out').val();
+            var newP=$('#up_new_out').val();
+            if (city==""||street==""||house==""){
+                $('.error').html("בכדי לבדוק דירה יש להכניס שם עיר, רחוב, ובניין. ניתן לראות מידע כללי במפה.")
+            }else{
+                $.ajax({
+                        type: "POST",
+                      url: 'api/check',
+                      data:"city="+city+
+                                "&street="+street+
+                                "&address="+house+
+                                "&apartment="+apr,
+                      success: function(data) {
+                        var results=data.split(' ');
+                        var str="";
+                          //alert(data);
+                        if (results.length==1){
+                            str=    "  לא אותרה העלאת שכר דירה בכתובת זו.";
+                            var ih='<p class="good">'+str+'</p>';
+                            $('#results').html(ih);
+                        }
+                          else{
+                            str=  " אותרה העלאת שכר דירה בבניין "  ;
+                            str+="<br>";
+                            for (var i=0;i<results.length-1;i++){
+                                str+= " -בדירה: ";
+                                if (results[i]>=0)
+                                    str+=results[i];
+                                else str+="שמספרה לא צויין";
+                                str+="<br>";
+                            }
+                             var ih='<p class="bad">'+str+'</p>';
+                            $('#results').html(ih);
+                        }
+                      }
+                    });
+              }
+        }
+        function showDialog(id){
+            $('#'+id).dialog('open');
+        }
+        function closeAll(){
+            $('#check_dialog').dialog('close');
+            $('#rent_up_dialog').dialog('close');
+            $('#rent_down_dialog').dialog('close');
+            $('.error').html('');
+        }
+        $(document).ready(function(){
+           init_map('map');
+           $('#rent_up_dialog').dialog({
+                        autoOpen: false,
+                        dialogClass: 'alert',
+                        width:500
+                   });
+             $('#rent_down_dialog').dialog({
+                        autoOpen: false,
+                        dialogClass: 'alert',
+                        width:520
+                   });
+            $('#check_dialog').dialog({
+                        autoOpen: false,
+                        dialogClass: 'alert',
+                        width:500
+                   });
+            {% for r in BAD_LIST%}
+                addMarker( {{r.lng}} , {{r.lat}} ,'{{r.street}}','{{r.address}}', '{{r.old_price}}' ,'{{r.new_price}}');
+             {%endfor%}
+            redrawMarkers();
+        });

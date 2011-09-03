@@ -1,0 +1,109 @@
+﻿<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS: implied media="all"
+  <link rel="stylesheet" href="css/style.css?v=2">
+  -->
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects
+  <script src="js/libs/modernizr-1.7.min.js"></script>
+  -->
+</head>
+
+<body>
+
+  <div id="container">
+    <header>
+
+    </header>
+    <div id="main" role="main">
+        <input type="file" id="selected_file" name="selected_file" />
+        <button onclick="draw_raw()">Draw Raw</button>
+        <button onclick="draw_avg()">Draw Avg</button>
+        <button onclick="clear_canvas()">Clear</button>
+        <br />
+        <canvas id="e" width="1200" height="800"></canvas>
+    </div>
+    <footer>
+
+    </footer>
+  </div> <!--! end of #container -->
+<script>
+function handleFileSelect(evt) {
+    var file = evt.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e){
+        window.read_data(e.target.result);
+    }
+    reader.readAsText(file)
+}
+document.getElementById('selected_file').addEventListener('change', handleFileSelect, false);
+</script>
+
+  <script src="/static/js/coffee-script.js"></script>
+<script type="text/coffeescript">
+canvas = document.getElementById("e");
+data_area = document.getElementById("data_area");
+context = canvas.getContext("2d");
+colony_gap = 40;
+
+window.read_data = (raw_string) =>
+    window.avgs = []
+    window.data = []
+    raw_data_lines = raw_string.split('<Begin Data>')[1].split('\n')
+    for line in raw_data_lines
+        if not line? or '\t' not in line then continue
+        window.data.push(line.split('\t'))
+
+    for sample in data
+        [row, col, area] = sample
+        avg_row = window.avgs[Math.floor((row-1)/2)] = window.avgs[Math.floor((row-1)/2)] || []
+        avg_row[Math.floor((col-1)/2)] = (avg_row[Math.floor((col-1)/2)] || 0) + Number(area)
+
+
+window.draw_raw = () =>
+    context.fillStyle = "#000";
+    for sample in data
+        [row, col, area] = sample
+        context.beginPath();
+        rad = Math.sqrt(area/Math.PI)
+        x = col * colony_gap;
+        y = row * colony_gap;
+        context.arc(x, y, rad, 0, Math.PI * 2, false);
+        context.closePath();
+        context.fill();
+
+
+
+window.clear_canvas = () =>
+    canvas.width = canvas.width
+
+
+
+window.draw_avg = () =>
+    context.fillStyle = "#00f";
+    for i in [0...(window.avgs.length)]
+        for j in [0...(window.avgs[i].length)]
+            sample = window.avgs[i][j];
+            rad = Math.sqrt(sample/Math.PI)
+            context.beginPath();
+            x = (j+0.75) * colony_gap * 2;
+            y = (i+0.75) * colony_gap * 2;
+            context.arc(x, y, rad, 0, Math.PI * 2, false);
+            context.closePath();
+            context.fill();
+</script>
+</body>
+</html>

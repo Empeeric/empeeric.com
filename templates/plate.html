@@ -33,6 +33,7 @@
         <button onclick="draw_raw()">Draw Raw</button>
         <button onclick="draw_avg()">Draw Avg</button>
         <button onclick="clear_canvas()">Clear</button>
+        <input type="text" id="place_for_stats" size="100" />
         <br />
         <canvas id="e" width="1200" height="800"></canvas>
     </div>
@@ -53,6 +54,7 @@ document.getElementById('selected_file').addEventListener('change', handleFileSe
 </script>
 
   <script src="/static/js/coffee-script.js"></script>
+<script type="text/coffeescript" src="/static/js/stats.coffee"></script>
 <script type="text/coffeescript">
 canvas = document.getElementById("e");
 data_area = document.getElementById("data_area");
@@ -67,10 +69,23 @@ window.read_data = (raw_string) =>
         if not line? or '\t' not in line then continue
         window.data.push(line.split('\t'))
 
+    window.general_stats = new Stats
+    window.standard_stats = new Stats
     for sample in data
         [row, col, area] = sample
-        avg_row = window.avgs[Math.floor((row-1)/2)] = window.avgs[Math.floor((row-1)/2)] || []
-        avg_row[Math.floor((col-1)/2)] = (avg_row[Math.floor((col-1)/2)] || 0) + Number(area)
+        rad = Number(area)
+        if (col == "5" or col == "6" or col == "23" or col == "24") and (col != "1" or col != "2") then window.standard_stats.sample(rad)
+    for sample in data
+        [row, col, area] = sample
+        avg_row = window.avgs[Math.floor((row-1)/2)] ?= []
+        stats = avg_row[Math.floor((col-1)/2)] ?= new Stats
+        rad = Number(area) / window.standard_stats.mean
+        rad and stats.sample(rad)
+        if (col == "5" or col == "6" or col == "23" or col == "24") and (col != "1" or col != "2") then window.general_stats.sample(rad)
+    main_mean = window.general_stats.mean.toFixed(5)
+    main_sd = window.general_stats.sd.toFixed(5)
+    standard_main = window.standard_stats.mean.toFixed(5)
+    document.getElementById("place_for_stats").value = "Mean #{main_mean} - SD #{main_sd} - WT - #{standard_main}"
 
 
 window.draw_raw = () =>
@@ -93,17 +108,38 @@ window.clear_canvas = () =>
 
 
 window.draw_avg = () =>
-    context.fillStyle = "#00f";
+    top = window.general_stats.mean + window.general_stats.sd
+    bottom = window.general_stats.mean - window.general_stats.sd
     for i in [0...(window.avgs.length)]
         for j in [0...(window.avgs[i].length)]
-            sample = window.avgs[i][j];
-            rad = Math.sqrt(sample/Math.PI)
+            stats = window.avgs[i][j];
+            context.fillStyle = "#00bfff"
+            context.fillStyle = "#FA8CA7" if bottom > stats.mean
+            context.fillStyle = "#8CFABA" if stats.mean > top
+            context.fillStyle = "#000" if (j == 2 or j == 11) and (i != 0)
             context.beginPath();
             x = (j+0.75) * colony_gap * 2;
             y = (i+0.75) * colony_gap * 2;
-            context.arc(x, y, rad, 0, Math.PI * 2, false);
+            context.arc(x, y, (stats.mean * 20), 0, Math.PI * 2, false);
             context.closePath();
             context.fill();
+
+            context.strokeStyle = "#f00";
+            x = (j+0.75) * colony_gap * 2;
+            y = (i+0.75) * colony_gap * 2;
+            wings = 4
+            gap = (2 * Math.PI) / wings
+            for w in [0...4]
+                context.beginPath();
+                context.arc(x, y, (stats.mean + stats.sd) * 20, (w*gap) - Math.PI / 32, (w*gap) + Math.PI / 32, false);
+                context.stroke();
+
+            context.fillStyle = "#00f";
+            context.font = "bold 12px sans-serif";
+            context.fillText(stats.mean.toFixed(4), x, y);
+
+
+
 </script>
 </body>
 </html>

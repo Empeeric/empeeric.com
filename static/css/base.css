@@ -215,7 +215,7 @@ nav#main li.active a {
 	opacity: 1;
 }
 nav#main h1 {
-	background: url("/static/images/arrow_right.png") no-repeat 100% 50%; display: none; white-space: nowrap; position: absolute; opacity: 0;
+	display: none; white-space: nowrap; position: absolute; opacity: 0;
 }
 nav#main span {
 	background: rgb(79, 148, 38); color: rgb(255, 255, 255); display: block; white-space: nowrap;

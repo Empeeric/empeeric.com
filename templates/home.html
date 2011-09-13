@@ -393,7 +393,6 @@ hr {
 
 #city_view
 {
-    background-image: url('citybg.ong');
     float: right;
     display: inline;
     margin-top: -500px;
@@ -439,8 +438,7 @@ hr {
 <nav id="main" data-controller="MainNav" style="margin: -45px 20px 0 0;"></nav>
 <div class="darkslide"></div>
 <section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-         data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" content-action="Events"
-         hd-image="bg_shows">
+         data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" >
     <article>
         <header>
             <div id="sky">
@@ -482,8 +480,7 @@ hr {
     <!--Content Section-->
 </section>
 <section id="portfolio" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-         data-nav="Portfolio" data-scrolloffset="100" view-controller="ShowsController" content-action="Events"
-         hd-image="bg_shows">
+         data-nav="Portfolio" data-scrolloffset="100" view-controller="ShowsController">
     <article>
         <header>
             <div id="slide-container" style="color:#0075c4;">
@@ -581,8 +578,7 @@ hr {
     <!--story-->
 </section>
 <section id="why_us" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-         data-nav="Why us?" data-scrolloffset="100" view-controller="ShowsController" content-action="Events"
-         hd-image="bg_shows">
+         data-nav="Why us?" data-scrolloffset="100" view-controller="ShowsController">
     <div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
         <article>
             <header>
@@ -626,8 +622,7 @@ hr {
 </section>
 
 <section id="comming_events" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-         data-nav="Up & Comming Events" data-scrolloffset="-100" view-controller="ShowsController"
-         content-action="Events" hd-image="bg_shows">
+         data-nav="Up & Comming Events" data-scrolloffset="-100" view-controller="ShowsController">
     <article>
         <header class="shows">
             <div>
@@ -662,7 +657,7 @@ hr {
     <div class="bg"></div>
     <!--Content Section-->
 </section>
-<!--<section id="ourblog" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Our Blog" data-scrolloffset="100"  view-controller="ShowsController" content-action="Events"  hd-image="bg_shows">-->
+<!--<section id="ourblog" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Our Blog" data-scrolloffset="100"  view-controller="ShowsController" content-action="Events">-->
 <!--<article>-->
 <!--<header class="shows">-->
 <!--</header>-->
@@ -673,18 +668,18 @@ hr {
 <!--</section>-->
 <section name="contactus" id="contactus" style="min-height: 100px;" class="story" data-controller="SectionShows"
          data-align="left" mainnav-color="#fff600" data-nav="Contact Us" data-scrolloffset="100"
-         view-controller="ShowsController" content-action="Events" hd-image="bg_shows">
+         view-controller="ShowsController">
     <article>
         <header class="white">
             <div id="cotact_us_form">
-                <form>
+                <form id="contact_us_form" action="http://sobo.empeeric.com/contact_us" method="POST">
                     <table>
                         <tr>
                             <td class="text_top">
                                 Subject:
                             </td>
                             <td>
-                                <input type="text"  class="round" />
+                                <input type="text" name="message_subject" class="round" required />
                             </td>
                         </tr>
                         <tr>
@@ -692,7 +687,7 @@ hr {
                                 Message:
                             </td>
                             <td>
-                                <textarea rows="4" cols="30 "  class="round" ></textarea>
+                                <textarea rows="4" cols="30" name="message_content" class="round" required ></textarea>
                             </td>
                         </tr>
                         <tr>
@@ -700,7 +695,7 @@ hr {
                                 Name:
                             </td>
                             <td>
-                                <input type="text"  class="round"  />
+                                <input type="text" name="senders_name" class="round" required />
                             </td>
                         </tr>
                         <tr>
@@ -708,7 +703,7 @@ hr {
                                 Email:
                             </td>
                             <td>
-                                <input type="text" class="round" />
+                                <input type="email" name="senders_email" class="round" />
                             </td>
                         </tr>
                     </table>
@@ -737,7 +732,7 @@ hr {
     <!--article-->
     <!--Content Section-->
 </section>
- <img id="city_view" src="static/images/citybg.png" />
+<img id="city_view" src="static/images/citybg.png" width="1342" height="931"/>
 </div>
 <!--wrapper-->
 <script type="text/javascript">
@@ -754,6 +749,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 <script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
 <script type="text/javascript">
+document.domain = 'empeeric.com';
+
     var seemoreLoaded = true;
     function scroll_func() {
         var inView = window.pageYOffset < 300;
@@ -765,23 +762,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
             $('#seemore_img').fadeOut(350);
         }
     }
+    $(window).bind('scroll', scroll_func);
 
-    window.onscroll = scroll_func;
-    $(document).ready(function() {
-        $('#slide-container').cycle({
-            autostop: 1,
-            timeout: 0,
-            speed: 900,
-            next: 'a[rel=right-arrow]',
-            prev: 'a[rel=left-arrow]',
-            nowrap: false // whether to loop through the items or not
-        });
-        setTimeout(function(){cloudsMove("cloud1", 140000, 170000);},5000);
-        cloudsMove("cloud2", 120000, 140000);
-        setTimeout(function(){cloudsMove("cloud3", 140000, 120000)},10000);
-        cloudsMove("cloud4", 140000, 100000);
-        cloudsMove("cloud5", 130000, 120000);
-    });
 
     function cloudsMove(cloud_id, low_speed, high_speed) {
         var cloud_selector = "#" + cloud_id;
@@ -807,6 +789,28 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
                 }
         )
     }
+
+$(document).ready(function() {
+    $('#slide-container').cycle({
+        autostop: 1,
+        timeout: 0,
+        speed: 900,
+        next: 'a[rel=right-arrow]',
+        prev: 'a[rel=left-arrow]',
+        nowrap: false // whether to loop through the items or not
+    });
+    setTimeout(function(){cloudsMove("cloud1", 140000, 170000);},5000);
+    cloudsMove("cloud2", 120000, 140000);
+    setTimeout(function(){cloudsMove("cloud3", 140000, 120000)},10000);
+    cloudsMove("cloud4", 140000, 100000);
+    cloudsMove("cloud5", 130000, 120000);
+
+    $("#contact_us_form").submit(function(evt) {
+        evt.preventDefault();
+        var form_params = $(this).serialize();
+        $.post("http://sobo.empeeric.com/contact_us", form_params, function() {alert("Thanks");});
+    });
+});
 
 </script>
 </body>

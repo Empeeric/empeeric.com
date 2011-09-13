@@ -131,15 +131,6 @@ jQuery(
             var $self = $(this),
             $controller = $self.attr('data-controller');
             $contentAction = $self.attr('content-action');
-            if($self.attr('hd-image'))
-            {
-                $('<img src="/images/bg/' + $self.attr('hd-image')  + '.jpg"/>').load(
-                   function()
-                    {
-                        $('#' + $self.attr('id')).css("background","url(/images/bg/" + $self.attr('hd-image')  + ".jpg) 0 0 no-repeat fixed");
-                });
-            }
-              //Harel
               if($contentAction){
                 $self.bind($.Events.SCROLL_ENTER,
                     function (e) {
@@ -1137,15 +1128,9 @@ jQuery(
             function (e, id) {
                 
                 if (id == $id){
-                   // alert(1);
-                    //$self.addClass('active');
                     $a.addClass($id + '_active');
-                   // alert($id + '_active')
-                    $self.RenderAction();
                 }
                 else{
-                   // alert(1);
-                    //$self.removeClass('active');
                     $a.removeClass($id + '_active');
                     $("#" + $id).stop();
                 }

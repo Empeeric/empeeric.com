@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head><title>Empeeric - Alchemists if excellent software</title>
@@ -6,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="copyright" content="Empeeric 2011">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
 <script src="/static/js/com.default.js?r=2" type="text/javascript"></script>
 <link rel="stylesheet" href="/static/css/base.css" media="all">
 <style type="text/css">
@@ -393,15 +395,16 @@ hr {
 
 #contactus_details{
     float: right;
-    text-shadow: #011b4c 20px -12px 2px;
 }
 
 #city_view
 {
     float: right;
     display: inline;
-    margin-top: -500px;
+    margin-top: -1150px;
     z-index: -1;
+    width:1665px;
+    height: 1775px;
 }
 #cotact_us_form
 {
@@ -432,6 +435,11 @@ hr {
     color: transparent;
     background-color: transparent;
     margin-top: 10px;
+}
+#heros
+{
+    position: relative;
+    margin: 55px 0 0 145px;
 }
 </style>
 
@@ -598,6 +606,41 @@ hr {
                     Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
                     save you those unplanned after-delivery expenses.
                 </p>
+                <div id="heros">
+                    <!-- <div id="heros_titles">
+                        <img src="/static/images/theenmpeerics3.png" id="hero_title1"/>
+                        <img src="/static/images/savetheday3.png" id="hero_title2"/>
+                    </div>-->
+                    <div id="heros_cycle">
+                        <img src="/static/images/theenmpeerics.png" />
+                        <img src="/static/images/savetheday.png" />
+                    </div>
+                     <!--<div id="right_heros">
+                        <img src="/static/images/theenmpeerics1.png" />
+                        <img src="/static/images/savetheday1.png" />
+                    </div>-->
+                    <div id="heros_nav">
+                        <img src="/static/images/seemore2.png" id="seemore" />
+                        <img src="/static/images/back.png"  id="back"/>
+                    </div>
+                </div>
+                </header>
+        </article>
+    </div>
+    <!--<div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
+        <article>
+            <header>
+                <h2 class="white">Why us?</h2>
+
+                <p class="bold_white">
+                    Make your software project a onetime investment. Remember, lingering on a project can be a financial
+                    disaster. Do it once, and do it well.
+                    Avoid fixing those money and time-wasting issues that appear after delivery.
+                    How do you do that? Use a professional and superior project manager working with an excellent
+                    developer team.
+                    Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
+                    save you those unplanned after-delivery expenses.
+                </p>
 
                 <h2 class="white" id="expert_cloud">The Expert Cloud</h2>
 
@@ -621,8 +664,8 @@ hr {
             </header>
         </article>
     </div>
-    <!--article-->
-    <div class="bg"></div>
+    &lt;!&ndash;article&ndash;&gt;
+    <div class="bg"></div>-->
     <!--Content Section-->
 </section>
 
@@ -642,8 +685,12 @@ hr {
                     startup development, which not only helps us give back to the community but
                     strengthens our <a href="#expert_cloud">Expert Cloud</a> ...
                 </p>
-                <img src="/static/images/event1.png" style="float:right;margin: 40px 0 0;">
-
+                <div id="event_pics" style="float:right;margin: 40px 0 0; width: 494;height: 296;">
+                    <img src="/static/images/event1.png" >
+                    <img src="/static/images/event2.png" >
+                    <img src="/static/images/event3.png" >
+                    <img src="/static/images/event4.png" >
+                </div>
                 <div class="white" style="float:left;width:400px;">
                     <a target="_blank" href="http://alphageeksil.wordpress.com/">Alpha Geeks</a>:
                     <p>A group which strives to bring talks about the newest technology advances in a open non-formal
@@ -676,7 +723,7 @@ hr {
          view-controller="ShowsController">
     <article>
         <header class="white">
-            <div id="cotact_us_form">
+            <div id="cotact_us_form" style="font-family: tahoma;  letter-spacing: 1px">
                 <form id="contact_us_form" action="http://sobo.empeeric.com/contact_us" method="POST">
                     <table>
                         <tr>
@@ -715,7 +762,7 @@ hr {
                     <input type="submit" id="submit_contact">
                 </form>
             </div>
-            <div id="contactus_details">
+            <div id="contactus_details" style="font-family: tahoma; letter-spacing: 1px">
                 <div style="padding: 0 70px 0 0;">
                     Empeeric Ltd.<br/>
                     10 HaArba’a St.<br/>
@@ -752,19 +799,28 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
-<script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
 <script type="text/javascript">
- document.domain = 'dev.empeeric.com';
+document.domain = 'localhost';
 
     var seemoreLoaded = true;
+    var barWhite=false;
     function scroll_func() {
         var inView = window.pageYOffset < 300;
+        var inWhite= window.pageYOffset >1600;
         if (inView && !seemoreLoaded) {
             $('#seemore_img').fadeIn(350);
             seemoreLoaded = true;
         } else if (!inView && seemoreLoaded) {
             seemoreLoaded = false;
             $('#seemore_img').fadeOut(350);
+        }
+        else if (inWhite && !barWhite){
+            $("nav#main li a").animate({ color: "#fff !important" }, 50);
+            barWhite=true;
+        }
+        else if (!inWhite && barWhite) {
+            $("nav#main li a").animate({ color: "#025287 !important" }, 50);
+            barWhite=false;
         }
     }
     $(window).bind('scroll', scroll_func);
@@ -794,6 +850,18 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
                 }
         )
     }
+var show1=false;
+function swapHeroTitle(){
+        if (show1){
+            $("#hero_title1").fadeIn(350);
+            $("#hero_title2").fadeOut(350);
+        }else{
+            $("#hero_title2").fadeIn(350);
+            $("#hero_title1").fadeOut(350);
+        }
+        if (show1) show1=false;
+        else show1=true;
+}
 
 $(document).ready(function() {
     $('#slide-container').cycle({
@@ -803,6 +871,27 @@ $(document).ready(function() {
         next: 'a[rel=right-arrow]',
         prev: 'a[rel=left-arrow]',
         nowrap: false // whether to loop through the items or not
+    });
+    $('#heros_cycle').cycle({
+        fx:     'fadeZoom',
+        speedIn:1400,
+        speedOut:  600,
+        timeout: 0,
+        easeIn: "easeInOutCirc",
+        next:   '#seemore',
+        prev:   '#back'
+    });
+    $('#heros_nav').cycle({
+        fx:     'fade',
+        speed:  100,
+        timeout: 0,
+        next:   '#seemore',
+        prev:   '#back',
+        onPrevNextEvent:swapHeroTitle
+    });
+    $('#event_pics').cycle({
+        fx:     'fade',
+        speed:  1000
     });
     setTimeout(function(){cloudsMove("cloud1", 140000, 170000);},5000);
     cloudsMove("cloud2", 120000, 140000);

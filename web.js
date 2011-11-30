@@ -36,6 +36,11 @@ app.get('/platereader', function(request, response){
     response.sendfile('templates/plate.html');
 });
 
+app.get('/ejs_test', function(request, response){
+    response.contentType('text/html');
+    response.sendfile('templates/ejs_test.html');
+});
+
 app.get('/dirometer', function(request, response){
     response.render('dirometer.jade');
 });

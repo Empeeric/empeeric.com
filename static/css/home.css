@@ -196,11 +196,11 @@ hr {
 
 #comming_events header>div {
 	position: relative;
-	top: -205px;
+	stop: -205px;
 }
 
 
-#contactus { margin: 0; }
+#contactus { margin: 300px 0 0 0; }
 #contactus a { color: white; }
 
 
@@ -274,6 +274,10 @@ hr {
 #heros {
 	position: relative;
 	margin: 55px 0 0 145px;
+}
+#heros .more {
+	position: absolute;
+	right: 30px;
 }
 
 .cus_img{
@@ -447,7 +451,6 @@ hr {
 	float: right;
 	margin: 40px 0 0;
 	width: 494px; height: 296px;
-	background: red;
 }
 #event_pics img {
 	display: none;

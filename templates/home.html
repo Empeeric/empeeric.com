@@ -9,7 +9,7 @@
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
-	<script src="/static/js/com.default.js?r=2" type="text/javascript"></script>
+	<script type="text/javascript" src="/static/js/com.default.js?r=2"></script>
 
 	<link rel="stylesheet" type="text/css" href="/static/css/base.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="/static/css/home.css" media="all" />
@@ -20,8 +20,7 @@
 
 <!-- Nav -->
 <nav id="main" data-controller="MainNav"></nav>
-<img src="/static/images/Seemore.png" id="seemore_img" />
-<div class="darkslide"></div>
+<div id="seemore"><div><img src="/static/images/Seemore.png" id="seemore_img" /></div></div>
 
 <section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" >
 <article>
@@ -60,13 +59,13 @@
 			</div>
 			
 			<a href="#contactus" id="">
-				<img src="/static/images/logo.png" id="empeeric_logo">
-				<img src="/static/images/ContactUs.png" id="contact_img">
+                <img src="/static/images/contact_us_right.png" id="contact_img" />
+				<img src="/static/images/logo.png" id="empeeric_logo" />
 			</a>
 
 			<div id="cus_wrapper">
 				<div id="slide-buttons">
-					<img src="/static/images/ourclients.png" id="our_clients" alt="Our Clients" />
+					<img src="/static/images/our_clients_left.png" id="our_clients" alt="Our Clients" />
 				
 					<a href="#" id="cust_prev" class="slide-btn white"> &lt; </a>
 					<a href="#" id="cust_next" class="slide-btn white"> &gt; </a>
@@ -101,7 +100,7 @@
 	<div class="bg"></div>
 	<!--Content Section-->
 </section>
-<div style="dsisplay:none;">
+
 <section id="portfolio" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Portfolio" data-scrolloffset="100" view-controller="ShowsController">
 	<article>
 		<header>
@@ -248,23 +247,11 @@
 					save you those unplanned after-delivery expenses.
 				</p>
 				<div id="heros">
-				
-					<!-- < div id="heros_titles">
-						<img src="/static/images/theenmpeerics3.png" id="hero_title1" />
-						<img src="/static/images/savetheday3.png" id="hero_title2" />
-					</ div>-->
 					<div id="heros_cycle">
 						<img src="/static/images/theenmpeerics.png" />
 						<img src="/static/images/savetheday.png" />
 					</div>
-					 <!--< div id="right_heros">
-						<img src="/static/images/theenmpeerics1.png" />
-						<img src="/static/images/savetheday1.png" />
-					</ div>-->
-					<div id="heros_nav">
-						<img src="/static/images/seemore2.png" id="seemore" />
-						<img src="/static/images/back.png"  id="back" />
-					</div>
+					<a href="#" class="more"><img src="/static/images/more.png" /></a>
 				</div>
 				</header>
 		</article>
@@ -419,7 +406,7 @@
 	<!--Content Section-->
 </section>
 <img id="city_view" src="static/images/citybg.png" />
-</div>
+
 </div> <!--/wrapper-->
 
 <script type="text/javascript">
@@ -521,8 +508,7 @@ $(document).ready(function() {
 		speedOut:  600,
 		timeout: 0,
 		easeIn: "easeInOutCirc",
-		next:   '#seemore',
-		prev:   '#back'
+		next:   '#heros .more'
 	});
 	$('#heros_nav').cycle({
 		fx:	 'fade',

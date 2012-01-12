@@ -10,8 +10,8 @@
 		"text": "yoursite"
 	},
 	"admin": {
-		"id": "admin",
-		"pass": "pass"
+		"id": "empeeric",
+		"pass": "e1m2p3e4e5r6i7c8"
 	},
 	"globalNavi": [
 		{
@@ -19,24 +19,24 @@
 			"text": "Home"
 		},
 		{
-			"href": "/",
+			"href": "",
 			"text": "Blog",
 			"current": true
 		}
 	],
 	"sidebar": {
-		"about": "This is my blog.",
+		"about": "Empeeirc al - אמפיריק על",
 		"author": {
-			"name": "yourname",
-			"img": "/file/author.png",
+			"name": "Empeeric",
+			"img": "/static/images/Logo189x200.jpg",
 			"links": [
 				{
-					"href": "http://twitter.com/#!/yourname",
-					"text": "Twitter(@yourname)"
+					"href": "http://twitter.com/#!/Empeeric",
+					"text": "Twitter(@Empeeric)"
 				},
 				{
-					"href": "http://www.facebook.com/yourname",
-					"text": "Facebook(yourname)"
+					"href": "http://www.facebook.com/EmpeericIL",
+					"text": "Facebook(EmpeericIL)"
 				}
 			]
 		},

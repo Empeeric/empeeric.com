@@ -1,0 +1,23 @@
+{
+  "site" : {
+    "title" : "Empeeric al - אמפיריק על"
+  },
+  "copyright" : {
+    "title" : "Empeeric",
+    "uri" : "http://www.empeeric.com/"
+  },
+  "session" : {
+    "secret" : "Unique string for empeeric for secret reasons"
+  },
+  "process" : {
+    "port" : "80",
+    "logging" : true
+  },
+  "analytics_id" : "UA-15378843-3",
+  "disqus_shortname" : "empeeric",
+  "usersNav": {
+    "enable" : false,
+    "lead" : []
+  }
+}
+

@@ -2,7 +2,8 @@
   "name": "empeeric_home",
   "version": "0.0.2",
   "dependencies": {
-    "express": "2.2.0",
-    "looseleaf": "latest"
+    "ejs": "~0.4.3",
+    "express": "~2.5.0",
+    "async": "~0.1.12"
   }
 }

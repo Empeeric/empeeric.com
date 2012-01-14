@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "username": "refael",
+  "password": "72dfc283bb7bfd2d6fe1d92adc39116fde91e0f54dabd436cd932c7a9340c1a7234ba5a82f1f9b89d82e70a75ae96b08977dc629eea3233503e7669b54bf3591",
+  "fullname": "Refael Ackermann",
+  "intro": "",
+  "icon": "/images/users/default.png",
+  "color": "",
+  "isAdmin": true,
+  "createdAt": "Sun Oct 30 2011 23:49:23 GMT+0900 (JST)",
+  "updatedAt": ""
+}

@@ -25,7 +25,8 @@ module.exports = function(dir, models) {
 
   // Load users
   for (var i = 0; i < jsonFiles.length; i++) {
-    var user = require(usersDir + jsonFiles[i]);
+    var json_string = fs.readFileSync(usersDir + jsonFiles[i]);
+    var user = JSON.parse(json_string);
     users.push(user);
   }
 

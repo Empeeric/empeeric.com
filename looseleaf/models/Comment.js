@@ -23,7 +23,7 @@ module.exports = function(dir, models) {
 
   // Load comments
   for (var i = 0; i < jsonFiles.length; i++) {
-    var comment = require(commentsDir + jsonFiles[i]);
+    var json_string = fs.readFileSync(commentsDir + jsonFiles[i]);
     comments.push(comment);
   }
 

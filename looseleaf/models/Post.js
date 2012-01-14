@@ -24,7 +24,8 @@ module.exports = function(dir, models) {
 
   // Load posts
   for (var i = 0; i < jsonFiles.length; i++) {
-    var post = require(postsDir + jsonFiles[i]);
+    var json_string = fs.readFileSync(postsDir + jsonFiles[i]);
+    var post = JSON.parse(json_string);
     posts.push(post);
   }
 

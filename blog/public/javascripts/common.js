@@ -36,7 +36,7 @@ $(function () {
       isFeedbacks: typeof isFeedbacks != 'undefined' ? true : false
     }));
     edit($('#main').find('.content:eq(0)'));
-    $('#main').find('.content:eq(0) .submit .cancel').attr('disabled', true);
+    //$('#main').find('.content:eq(0) .submit .cancel').attr('disabled', true);
     return false;
   });
 
@@ -65,7 +65,7 @@ $(function () {
 
   // Edit 
   $('.content .action .edit').live('click', function() {
-    edit($(this).parents('.content')); 
+    edit($(this).parents('.content'));
   });
 
   // Cancel 

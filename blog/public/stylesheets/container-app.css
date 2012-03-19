@@ -37,7 +37,7 @@ body {
 
 /* Styles you shouldn't keep as they are for displaying this base example only */
 .content .span14 {
-    min-height: 500px;
+    min-height: 50px;
 }
 
 

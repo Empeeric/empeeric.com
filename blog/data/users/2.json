@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "username": "etai",
+  "password": "d404559f602eab6fd602ac7680dacbfaadd13630335e951f097af3900e9de176b6db28512f2e000b9d04fba5133e8b1c6e8df59db3a8ab9d60be4b97cc9e81db",
+  "fullname": "Etai Perez",
+  "intro": "dfghjkl;",
+  "icon": "/images/users/default.png",
+  "color": "",
+  "isAdmin": true,
+  "createdAt": "Sun Oct 30 2011 23:49:23 GMT+0900 (JST)",
+  "updatedAt": ""
+}

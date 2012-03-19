@@ -1,40 +1,14 @@
-@font-face {
-	font-family: 'Maven Pro';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Maven Pro Regular'), local('MavenProRegular'), url('http://themes.googleusercontent.com/font?kit=MG9KbUZFchDs94Tbv9U-pT8E0i7KZn-EPnyo3HZu7kw') format('woff');
-}
-@font-face {
-	font-family: 'Maven Pro';
-	font-style: normal;
-	font-weight: 500;
-	src: local('Maven Pro Medium'), local('MavenProMedium'), url('http://themes.googleusercontent.com/font?kit=SQVfzoJBbj9t3aVcmbspRnhCUOGz7vYGh680lGh-uXM') format('woff');
-}
-@font-face {
-	font-family: 'Maven Pro';
-	font-style: normal;
-	font-weight: 700;
-	src: local('Maven Pro Bold'), local('MavenProBold'), url('http://themes.googleusercontent.com/font?kit=uDssvmXgp7Nj3i336k_dSnhCUOGz7vYGh680lGh-uXM') format('woff');
-}
+@import url(http://fonts.googleapis.com/css?family=Maven+Pro:400,700);
 
 body, nav#main li a, p {
 	font-family: Maven Pro, cursive;
 }
-
-
 body {
-   /* background: #f1f8ff; *//* Old browsers *//*
-	background: -moz-linear-gradient(top, #f1f8ff 0%, #c9e4ff 4%, #80bfff 10%, #6db5ff 24%, #6cb5ff 25%, #70b7ff 25%, #73b6f9 26%, #80b5e6 28%, #8cb5df 30%, #92bae2 33%, #9dc3e9 35%, #a9d0f7 38%, #aad4ff 40%, #a6d3ff 41%, #9dceff 42%, #68b3ff 46%, #54a9ff 49%, #57a9fc 49%, #58a9fb 49%, #61abef 52%, #75afd8 56%, #8fb5be 59%, #9cb9b7 61%, #9bbcbb 63%, #99c0cd 66%, #98c2d6 67%, #96c8f1 69%, #96caff 71%, #94c9ff 75%, #94bbff 77%, #94a9ff 78%, #9463ff 82%, #9439ff 83%, #9407ff 84%, #4805a3 88%, #2c117f 90%, #111e5c 92%, #012448 96%, #012448 100%); *//* FF3.6+ *//*
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f1f8ff), color-stop(4%, #c9e4ff), color-stop(10%, #80bfff), color-stop(24%, #6db5ff), color-stop(25%, #6cb5ff), color-stop(25%, #70b7ff), color-stop(26%, #73b6f9), color-stop(28%, #80b5e6), color-stop(30%, #8cb5df), color-stop(33%, #92bae2), color-stop(35%, #9dc3e9), color-stop(38%, #a9d0f7), color-stop(40%, #aad4ff), color-stop(41%, #a6d3ff), color-stop(42%, #9dceff), color-stop(46%, #68b3ff), color-stop(49%, #54a9ff), color-stop(49%, #57a9fc), color-stop(49%, #58a9fb), color-stop(52%, #61abef), color-stop(56%, #75afd8), color-stop(59%, #8fb5be), color-stop(61%, #9cb9b7), color-stop(63%, #9bbcbb), color-stop(66%, #99c0cd), color-stop(67%, #98c2d6), color-stop(69%, #96c8f1), color-stop(71%, #96caff), color-stop(75%, #94c9ff), color-stop(77%, #94bbff), color-stop(78%, #94a9ff), color-stop(82%, #9463ff), color-stop(83%, #9439ff), color-stop(84%, #9407ff), color-stop(88%, #4805a3), color-stop(90%, #2c117f), color-stop(92%, #111e5c), color-stop(96%, #012448), color-stop(100%, #012448)); *//* Chrome,Safari4+ *//*
-	background: -webkit-linear-gradient(top, #f1f8ff 0%, #c9e4ff 4%, #80bfff 10%, #6db5ff 24%, #6cb5ff 25%, #70b7ff 25%, #73b6f9 26%, #80b5e6 28%, #8cb5df 30%, #92bae2 33%, #9dc3e9 35%, #a9d0f7 38%, #aad4ff 40%, #a6d3ff 41%, #9dceff 42%, #68b3ff 46%, #54a9ff 49%, #57a9fc 49%, #58a9fb 49%, #61abef 52%, #75afd8 56%, #8fb5be 59%, #9cb9b7 61%, #9bbcbb 63%, #99c0cd 66%, #98c2d6 67%, #96c8f1 69%, #96caff 71%, #94c9ff 75%, #94bbff 77%, #94a9ff 78%, #9463ff 82%, #9439ff 83%, #9407ff 84%, #4805a3 88%, #2c117f 90%, #111e5c 92%, #012448 96%, #012448 100%); *//* Chrome10+,Safari5.1+ *//*
-	background: -o-linear-gradient(top, #f1f8ff 0%, #c9e4ff 4%, #80bfff 10%, #6db5ff 24%, #6cb5ff 25%, #70b7ff 25%, #73b6f9 26%, #80b5e6 28%, #8cb5df 30%, #92bae2 33%, #9dc3e9 35%, #a9d0f7 38%, #aad4ff 40%, #a6d3ff 41%, #9dceff 42%, #68b3ff 46%, #54a9ff 49%, #57a9fc 49%, #58a9fb 49%, #61abef 52%, #75afd8 56%, #8fb5be 59%, #9cb9b7 61%, #9bbcbb 63%, #99c0cd 66%, #98c2d6 67%, #96c8f1 69%, #96caff 71%, #94c9ff 75%, #94bbff 77%, #94a9ff 78%, #9463ff 82%, #9439ff 83%, #9407ff 84%, #4805a3 88%, #2c117f 90%, #111e5c 92%, #012448 96%, #012448 100%); *//* Opera11.10+ *//*
-	background: -ms-linear-gradient(top, #f1f8ff 0%, #c9e4ff 4%, #80bfff 10%, #6db5ff 24%, #6cb5ff 25%, #70b7ff 25%, #73b6f9 26%, #80b5e6 28%, #8cb5df 30%, #92bae2 33%, #9dc3e9 35%, #a9d0f7 38%, #aad4ff 40%, #a6d3ff 41%, #9dceff 42%, #68b3ff 46%, #54a9ff 49%, #57a9fc 49%, #58a9fb 49%, #61abef 52%, #75afd8 56%, #8fb5be 59%, #9cb9b7 61%, #9bbcbb 63%, #99c0cd 66%, #98c2d6 67%, #96c8f1 69%, #96caff 71%, #94c9ff 75%, #94bbff 77%, #94a9ff 78%, #9463ff 82%, #9439ff 83%, #9407ff 84%, #4805a3 88%, #2c117f 90%, #111e5c 92%, #012448 96%, #012448 100%); *//* IE10+ *//*
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#f1f8ff', endColorstr = '#012448', GradientType = 0); *//* IE6-9 *//*
-	background: linear-gradient(top, #f1f8ff 0%, #c9e4ff 4%, #80bfff 10%, #6db5ff 24%, #6cb5ff 25%, #70b7ff 25%, #73b6f9 26%, #80b5e6 28%, #8cb5df 30%, #92bae2 33%, #9dc3e9 35%, #a9d0f7 38%, #aad4ff 40%, #a6d3ff 41%, #9dceff 42%, #68b3ff 46%, #54a9ff 49%, #57a9fc 49%, #58a9fb 49%, #61abef 52%, #75afd8 56%, #8fb5be 59%, #9cb9b7 61%, #9bbcbb 63%, #99c0cd 66%, #98c2d6 67%, #96c8f1 69%, #96caff 71%, #94c9ff 75%, #94bbff 77%, #94a9ff 78%, #9463ff 82%, #9439ff 83%, #9407ff 84%, #4805a3 88%, #2c117f 90%, #111e5c 92%, #012448 96%, #012448 100%); *//* W3C *//*
-}*/
-	background-image: url(/static/images/bg.png);
-	background-repeat: repeat-x;
-	background-color: #02183c;
+	background: #02183c url(/static/images/bg.png) repeat-x;
+}
+
+p {
+	font-size: 1.3em;
 }
 
 /* nav#main */
@@ -84,13 +58,11 @@ nav#main li a {
 	top: -290px;
 	left: 32px;
 }
-
 #home ul li {
 	font-size: 1.4em;
 	color: #0973BA;
 	margin: 8px 0 0;
 }
-
 #home ul li:before {
 	content: "* ";
 	vertical-align: -20%;
@@ -99,7 +71,6 @@ nav#main li a {
 .deep_blue, .story header a:hover, #porfolio h2 a {
 	color: #025287;
 }
-
 .white { color: white; }
 
 .bold_white {
@@ -107,9 +78,7 @@ nav#main li a {
 	font-weight: bold;
 }
 
-p {
-	font-size: 1.3em;
-}
+/* portfolio */
 
 #portfolio header>h2 {
 	font-size: 1.5em;
@@ -128,47 +97,42 @@ p {
 	font-size: 16px;
 }
 
-.slide-item>h2 {
-	direction: rtl;
-	position: relative;
-	right: -406px;
-	font-size: 1.5em;
+.slide-item {
+	width: 100%;
+	margin-left: 15px; padding-top: 5px;
 }
+	.slide-item img {
+		max-height: 440px;
+		float: right;
+	}
 
-.text-block h2 {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	width: 170px;
-	line-height: 150%;
-	text-shadow: 1px 2px 100px;
-	font-size: 14px;
-}
-
-.text-block p {
-	position: absolute;
-	top: 291px;
-	left: 74px;
-	width: 300px;
-	font-size: 1.1em;
-}
-
-.text-block {
-	/*background: url(static/images/testi_cloud.png) no-repeat;*/
-	width: 503px;
-	height: 363px;
-	position: relative;
-	z-index: 10;
-}
-
+	.text-block {
+		/*background: url(static/images/testi_cloud.png) no-repeat;*/
+		width: 503px;
+		height: 363px;
+		position: relative;
+		z-index: 10;
+	}
+	.text-block h2 {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 170px;
+		line-height: 150%;
+		text-shadow: 1px 2px 100px;
+		font-size: 14px;
+	}
+	.text-block p {
+		position: absolute;
+		top: 291px;
+		left: 74px;
+		width: 300px;
+		font-size: 1.1em;
+	}
 #slide-right {
 	float: right;
 }
 
-.slide-item a:not(:first-child) {
-	position: absolute;
-	right: -407px;
-}
 
 hr {
 	background: url("/static/images/hr.png");
@@ -432,12 +396,6 @@ hr {
 	position: absolute;
 	right: -30px;
 }
-
-.slide-item {
-	float: right;
-	padding-top: 5px;
-}
-.slide-item img { max-height: 440px; }
 
 /* events */
 

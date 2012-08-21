@@ -1,5 +1,5 @@
 var SendGrid = require('sendgrid').SendGrid;
-var sendgrid = new SendGrid('app648985@heroku.com', 'l8r0yzpf');
+var sendgrid = new SendGrid(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
 
 module.exports.handle_request = function (request, response) {
 

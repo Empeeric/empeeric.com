@@ -4,6 +4,11 @@
   "dependencies": {
     "ejs": "~0.4.3",
     "express": "~2.5.0",
-    "async": "~0.1.12"
+    "async": "~0.1.12",
+    "sendgrid": "*"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
   }
 }

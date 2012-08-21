@@ -553,10 +553,12 @@ $(function() {
 
 	$("#contact_us_form").submit(function(e) {
 		e.preventDefault();
+
 		var form_params = $(this).serialize();
-		$.post("http://sobo.empeeric.com/contact_us", form_params, function() {
-			alert("Thanks");
-		});
+
+        $.post('/contact_us', form_params, function (text) {
+            alert(text);
+        });
 	});
 });
 

@@ -1,5 +1,7 @@
 var express = require('express'),
-	path = require('path');
+	path = require('path'),
+    contact_us = require('./contact_us');
+
 
 var app = require('./blog/looseleaf').init(path.join(__dirname, 'blog'), '/blog');
 
@@ -46,6 +48,8 @@ app.get('/', function(request, response){
     response.contentType('text/html');
     response.sendfile('templates/home.html');
 });
+
+app.post('/contact_us', contact_us.handle_request);
 
 
 var port = process.env.PORT || 3000;

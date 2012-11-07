@@ -19,13 +19,11 @@
 
 <script type="text/javascript">
     document.body.style.visibility = 'hidden';
-    var _bab = _bab || {};
-    _bab['Account'] = '4f8edc8566994b0100000010';
-    _bab['localeDetection'] = 'subdomain';
-
+    var bablic = bablic || {};
+    bablic['Site'] = '4f8edc8566994b0100000010';
     (function() {
         var bab = document.createElement('script'); bab.type = 'text/javascript'; bab.async = true;
-        bab.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'bablic.herokuapp.com/js/bablic.js';
+        bab.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'api.bablic.com/js/bablic.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(bab, s);
     })();
@@ -39,13 +37,13 @@ var WRInitTime=(new Date()).getTime();
 <div id="wrapper">
 
 <!-- Nav -->
-<nav id="main" data-controller="MainNav"></nav>
+<nav id="main" data-controller="MainNav" data-bablic-bidi="false"></nav>
 <div id="seemore"><div><img src="/static/images/Seemore.png" id="seemore_img" /></div></div>
 
 <section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" >
 <article>
 	<header>
-		<div id="sky">
+		<div id="sky" data-bablic-bidi="false">
 			<div class="animated-clouds" id="cloud1"></div>
 			<div class="animated-clouds" id="cloud2"></div>
 			<div class="animated-clouds" id="cloud3"></div>

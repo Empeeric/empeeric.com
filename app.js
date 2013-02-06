@@ -2,7 +2,6 @@ var express = require('express'),
 	path = require('path'),
     contact_us = require('./contact_us');
 
-
 var app = express();
 app.use(express.bodyParser());
 app.use(express.errorHandler());

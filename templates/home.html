@@ -17,6 +17,17 @@
 
 <body data-controller="SiteScroll">
 
+<script type="text/javascript">
+    document.body.style.visibility = 'hidden';
+    var bablic = bablic || {};
+    bablic['Site'] = '4f8edc8566994b0100000010';
+    (function() {
+        var bab = document.createElement('script'); bab.type = 'text/javascript'; bab.async = true;
+        bab.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'api.bablic.com/js/bablic.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(bab, s);
+    })();
+</script>
 <!-- ClickTale Top part -->
 <script type="text/javascript">
 var WRInitTime=(new Date()).getTime();
@@ -32,7 +43,7 @@ var WRInitTime=(new Date()).getTime();
 <section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" >
 <article>
 	<header>
-		<div id="sky">
+		<div id="sky" data-bablic-bidi="false">
 			<div class="animated-clouds" id="cloud1"></div>
 			<div class="animated-clouds" id="cloud2"></div>
 			<div class="animated-clouds" id="cloud3"></div>
@@ -540,10 +551,12 @@ $(function() {
 
 	$("#contact_us_form").submit(function(e) {
 		e.preventDefault();
+
 		var form_params = $(this).serialize();
-		$.post("http://sobo.empeeric.com/contact_us", form_params, function() {
-			alert("Thanks");
-		});
+
+        $.post('/contact_us', form_params, function (text) {
+            alert(text);
+        });
 	});
 });
 

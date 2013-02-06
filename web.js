@@ -2,7 +2,6 @@ var express = require('express'),
 	path = require('path'),
     contact_us = require('./contact_us');
 
-
 var app = express();
 
 app.get('/static/*', function(request, response) {
@@ -52,7 +51,7 @@ app.get('/', function(request, response){
 app.post('/contact_us', contact_us.handle_request);
 
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 app.listen(port, function(){
   console.log("Listening on " + port);
 });

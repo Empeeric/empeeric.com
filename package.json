@@ -1,14 +1,15 @@
 {
-  "name": "empeeric_home",
-  "version": "0.0.2",
+  "name": "empeeric.com",
+  "private": "true",
+  "version": "1.0.2",
   "dependencies": {
-    "ejs": "~0.4.3",
-    "express": "~2.5.0",
-    "async": "~0.1.12",
-    "sendgrid": "*"
+    "ejs": "",
+    "async": "",
+    "express": "",
+    "nodemailer": ""
   },
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
+    "node": ">= 0.8.14",
+    "npm": ">= 1.1.65"
   }
 }

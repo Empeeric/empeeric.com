@@ -1,15 +1,16 @@
 {
-  "name": "empeeric.com",
-  "private": "true",
-  "version": "1.0.2",
-  "dependencies": {
-    "ejs": "",
-    "async": "",
-    "express": "",
-    "nodemailer": ""
-  },
-  "engines": {
-    "node": ">= 0.8.14",
-    "npm": ">= 1.1.65"
-  }
+    "name": "empeeric.com",
+    "private": "true",
+    "version": "1.0.2",
+    "dependencies": {
+        "ejs": "",
+        "async": "",
+        "express": "",
+        "nodemailer": ""
+    },
+    "engines": {
+        "node": ">= 0.8.14",
+        "npm": ">= 1.1.65"
+    },
+    "main": "app.js"
 }

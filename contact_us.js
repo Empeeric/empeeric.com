@@ -34,15 +34,12 @@ module.exports.handle_request = function (request, response) {
         text: text
     }
 
-    smtpTransport.sendMail(mailOptions, function(error, response){
+    smtpTransport.sendMail(mailOptions, function(error, send_res){
         if (error) {
             console.log(error.stack || error);
+            response.end(500, 'Sorry, there was an error sending the message');
+            return;
         }
-        response.contentType('text/plain');
-        response.write(success
-            ? 'The message has been sent. Thank you!'
-            : 'Sorry, there was an error sending the message'
-        );
-        response.end();
+        response.end('The message has been sent. Thank you!');
     });
 };

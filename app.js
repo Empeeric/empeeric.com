@@ -4,10 +4,12 @@ var express = require('express'),
 
 
 var app = express();
-app.use('/', [
-    express.bodyParser(),
-    express.errorHandler()
-]);
+app.use(express.bodyParser());
+app.use(express.errorHandler());
+app.use(function powered_by_empeeric(req, res, next){
+    res.setHeader('X-Powered-By', 'Empeeric');
+    next();
+});
 
 app.get('/static/*', function(request, response) {
     response.sendfile('static/' + request.params[0]);
@@ -56,7 +58,7 @@ app.get('/', function(request, response){
 app.post('/contact_us', contact_us.handle_request);
 
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 app.listen(port, function(){
   console.log("Listening on " + port);
 });

@@ -4,6 +4,10 @@ var express = require('express'),
 
 
 var app = express();
+app.use('/', [
+    express.bodyParser(),
+    express.errorHandler(),
+]);
 
 app.get('/static/*', function(request, response) {
     response.sendfile('static/' + request.params[0]);

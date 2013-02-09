@@ -6,7 +6,7 @@ var express = require('express'),
 var app = express();
 app.use('/', [
     express.bodyParser(),
-    express.errorHandler(),
+    express.errorHandler()
 ]);
 
 app.get('/static/*', function(request, response) {

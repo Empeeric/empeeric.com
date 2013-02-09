@@ -3,7 +3,7 @@ var express = require('express'),
     contact_us = require('./contact_us');
 
 
-var app = require('./blog/looseleaf').init(path.join(__dirname, 'blog'), '/blog');
+var app = express();
 
 app.get('/static/*', function(request, response) {
     response.sendfile('static/' + request.params[0]);

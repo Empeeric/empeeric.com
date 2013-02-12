@@ -3,6 +3,12 @@ var express = require('express'),
     contact_us = require('./contact_us');
 
 var app = express();
+app.use(express.bodyParser());
+app.use(express.errorHandler());
+app.use(function powered_by_empeeric(req, res, next){
+    res.setHeader('X-Powered-By', 'Empeeric');
+    next();
+});
 
 app.get('/static/*', function(request, response) {
     response.sendfile('static/' + request.params[0]);

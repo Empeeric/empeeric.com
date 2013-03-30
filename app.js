@@ -1,6 +1,7 @@
 var express = require('express'),
 	path = require('path'),
-    contact_us = require('./contact_us');
+    contact_us = require('./contact_us'),
+    https = require('https');
 
 var app = express();
 app.use(express.bodyParser());
@@ -55,6 +56,16 @@ app.get('/', function(request, response){
 });
 
 app.post('/contact_us', contact_us.handle_request);
+
+
+app.get('/snippet/cors/:id', function (req, orig_res) {
+    orig_res.header('Access-Control-Allow-Origin', '*');
+    orig_res.header('Access-Control-Allow-Methods', 'GET');
+    orig_res.header('Access-Control-Allow-Headers', 'Content-Type');
+    https.get('https://gist.github.com/refack/' + req.params.id + '/raw', function(https_res) {
+        https_res.pipe(orig_res);
+    });
+});
 
 
 var port = process.env.PORT || 80;

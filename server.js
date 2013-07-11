@@ -11,7 +11,7 @@ var app = express();
 app.use(nodestrum.domain_wrapper_middleware);
 app.use(express.bodyParser());
 app.use(express.errorHandler());
-app.use('/static', express.static('./static'));
+app.use('/static/', express.static('./static'));
 
 app.use(function powered_by_empeeric(req, res, next){
     res.setHeader('X-Powered-By', 'Empeeric');

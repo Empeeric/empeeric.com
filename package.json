@@ -1,16 +1,19 @@
 {
-  "name": "empeeric.com",
-  "private": "true",
-  "version": "1.0.2",
+    "name": "empeeric.com",
+    "private": "true",
+    "version": "1.0.3",
     "dependencies": {
-    "ejs": "",
-    "async": "",
-    "express": "",
-    "nodemailer": ""
+        "ejs": "",
+        "async": "",
+        "express": "",
+        "nodemailer": "",
+        "coffee-script-redux": "",
+        "request": "",
+        "nodestrum": ""
     },
     "engines": {
-    "node": ">= 0.8.14",
-    "npm": ">= 1.1.65"
+        "node": "0.10.x",
+        "npm": "1.2.x"
     },
-    "main": "app.js"
+    "main": "server.js"
 }

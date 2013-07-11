@@ -1,33 +1,21 @@
-var express = require('express'),
-	path = require('path'),
+'use strict';
+var
+    nodestrum = require('nodestrum'),
+    coffee = require('coffee-script-redux/lib/register'),
+    express = require('express'),
     contact_us = require('./contact_us'),
-    https = require('https');
+    https = require('https'),
+    checks = require('./checks');
 
 var app = express();
+app.use(nodestrum.domain_wrapper_middleware);
 app.use(express.bodyParser());
 app.use(express.errorHandler());
+app.use(express.static('./static'));
+
 app.use(function powered_by_empeeric(req, res, next){
     res.setHeader('X-Powered-By', 'Empeeric');
     next();
-});
-
-app.get('/static/*', function(request, response) {
-    response.sendfile('static/' + request.params[0]);
-});
-
-app.get('/he/*', function(request, response) {
-    response.redirect('http://sobo.empeeric.com' + request.url, 301);
-});
-app.get('/widget/*', function(request, response) {
-    response.redirect('http://sobo.empeeric.com' + request.url, 301);
-});
-app.get('/robots.txt', function(request, response){
-    response.contentType('text/plain');
-    response.sendfile('static/robots.txt');
-});
-app.get('/favicon.ico', function(request, response){
-    response.contentType('image/vnd.microsoft.icon');
-    response.sendfile('static/favicon.ico');
 });
 
 app.get('/BrowserSupport.html', function(request, response){
@@ -56,6 +44,9 @@ app.get('/', function(request, response){
 });
 
 app.post('/contact_us', contact_us.handle_request);
+
+
+app.get('/check/mongolab/:key', checks.mongolab);
 
 
 app.get('/snippet/cors/:id', function (req, orig_res) {

@@ -38,6 +38,11 @@ app.get('/ejs_test', function(request, response){
     response.sendfile('templates/ejs_test.html');
 });
 
+app.get('/heroku', function(request, response){
+    response.contentType('text/html');
+    response.sendfile('templates/heroku.html');
+});
+
 app.get('/', function(request, response){
     response.contentType('text/html');
     response.sendfile('templates/home.html');

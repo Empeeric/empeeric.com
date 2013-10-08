@@ -362,8 +362,9 @@
       }
     },
     "nodestrum": {
-      "version": "0.1.4",
-      "from": "nodestrum@0.1.4"
+      "version": "0.6.1",
+      "from": "https://gist.github.com/refack/6256990/raw",
+      "resolved": "https://gist.github.com/refack/6256990/raw"
     }
   }
 }

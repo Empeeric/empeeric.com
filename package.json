@@ -17,6 +17,6 @@
     },
     "scripts": {
         "start": "node server"
-    }
+    },
     "main": "server.js"
 }

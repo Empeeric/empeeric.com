@@ -86,7 +86,6 @@ var WRInitTime=(new Date()).getTime();
 			<div id="cus_wrapper">
 				<div id="slide-buttons">
 					<img src="/static/images/our_clients_left.png" id="our_clients" alt="Our Clients" />
-
 					<a href="#" id="cust_prev" class="slide-btn white"> &lt; </a>
 					<a href="#" id="cust_next" class="slide-btn white"> &gt; </a>
 				</div>
@@ -101,7 +100,7 @@ var WRInitTime=(new Date()).getTime();
                             </tr>
                         </table>
                     </div>
-                    <div class="slide-item">
+                    <div class="slide-item" hidden>
                         <table>
                             <tr>
                                 <td><a href="http://www.mouseui.com" target="_blank"><img src="/static/images/ourclients/mouse.png" class="cus_img" /></a></td>
@@ -111,7 +110,7 @@ var WRInitTime=(new Date()).getTime();
                             </tr>
                         </table>
                     </div>
-                    <div class="slide-item">
+                    <div class="slide-item" hidden>
                         <table>
                             <tr>
                                 <td><a href="http://www.flashnetworks.com" target="_blank"><img src="/static/images/ourclients/flashn.png" class="cus_img" /></a></td>
@@ -121,7 +120,7 @@ var WRInitTime=(new Date()).getTime();
                             </tr>
                         </table>
                     </div>
-					<div class="slide-item">
+					<div class="slide-item" hidden>
 						<table>
 							<tr>
 								<td><a href="http://www.pickadeal.co.il"><img src="/static/images/ourclients/pickadeal.png" class="cus_img" /></a></td>
@@ -136,15 +135,29 @@ var WRInitTime=(new Date()).getTime();
 		</div>
 	</header>
 </article>
-	<!--article-->
-	<div class="bg"></div>
-	<!--Content Section-->
+<!--article-->
+<div class="bg"></div>
+<!--Content Section-->
 </section>
 
 <section id="portfolio" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Portfolio" data-scrolloffset="100" view-controller="ShowsController">
 	<article>
 		<header>
 			<div id="slide-container">
+                <div class="slide-item">
+                    <a href="http://www.ronenakerman.com/" target="_blank" >
+                        <img src="/static/images/screenshots/ronenakerman.png" class="shadowed" style="border-radius:3px"/>
+                    </a>
+                    <div class="text-block">
+                        <a target="_blank" href="http://www.ronenakerman.com/">
+                            Ronen Akerman Photographer - רונן אקרמן צלם
+                        </a>
+                        <h2>
+                            A portfolio website for one on Israel's top photographer (and our founder's brother). Clean simple and comunicatibe. HTML5, mobile compatible, and search engine optimized (SEO).
+                        </h2>
+                    </div>
+                </div>
+
                 <div class="slide-item">
                     <a href="http://www.uru.org.il/" target="_blank" >
                         <img src="/static/images/screenshots/uru.png" class="shadowed" />
@@ -332,8 +345,7 @@ var WRInitTime=(new Date()).getTime();
 	<div class="bg"></div>
 </section>
 
-<section id="why_us" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-		 data-nav="Why us?" data-scrolloffset="100" view-controller="ShowsController">
+<section id="why_us" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Why us?" data-scrolloffset="100" view-controller="ShowsController">
 	<div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
 		<article>
 			<header>
@@ -399,8 +411,7 @@ var WRInitTime=(new Date()).getTime();
 	<!--Content Section-->
 </section>
 
-<section id="comming_events" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600"
-		data-nav="Up & Comming Events" data-scrolloffset="-100" view-controller="ShowsController">
+<section id="comming_events" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Up & Comming Events" data-scrolloffset="-100" view-controller="ShowsController">
 	<article>
 		<header class="shows">
 			<div id="events">
@@ -440,9 +451,7 @@ var WRInitTime=(new Date()).getTime();
 	<!--Content Section-->
 </section>
 
-<section name="contactus" id="contactus" style="min-height: 100px;" class="story" data-controller="SectionShows"
-		 data-align="left" mainnav-color="#fff600" data-nav="Contact Us" data-scrolloffset="100"
-		 view-controller="ShowsController">
+<section name="contactus" id="contactus" style="min-height: 100px;" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Contact Us" data-scrolloffset="100" view-controller="ShowsController">
 	<article>
 		<header class="white">
 			<div id="cotact_us_form" style="font-family: tahoma;  letter-spacing: 1px">
@@ -506,12 +515,9 @@ var WRInitTime=(new Date()).getTime();
 	<!--article-->
 	<!--Content Section-->
 </section>
-<section name="contactus" id="footer" style="min-height: 40px;" class="story" data-controller="SectionShows"
-		 data-align="left" mainnav-color="#fff600" data-scrolloffset="40"
-		 view-controller="ShowsController">
 
-<a href="http://madeintlv.org">Made in TLV</a>
-
+<section name="contactus" id="footer" style="min-height: 40px;" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-scrolloffset="40" view-controller="ShowsController">
+    <a href="http://madeintlv.org">Made in TLV</a>
 </section>
 
 <img id="city_view" src="static/images/citybg.png" />

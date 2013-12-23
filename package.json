@@ -1,7 +1,7 @@
 {
     "name": "empeeric.com",
     "private": "true",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "dependencies": {
         "ejs": "",
         "async": "",
@@ -15,5 +15,8 @@
         "node": "0.10.x",
         "npm": "1.2.x"
     },
+    "scripts": {
+        "start": "node server"
+    }
     "main": "server.js"
 }

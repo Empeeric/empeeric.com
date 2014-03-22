@@ -152,6 +152,30 @@
       "version": "1.0.0",
       "from": "errorhandler@"
     },
+    "etagify": {
+      "version": "0.0.2",
+      "from": "etagify@",
+      "dependencies": {
+        "connect": {
+          "version": "1.9.2",
+          "from": "connect@1.x",
+          "dependencies": {
+            "qs": {
+              "version": "0.6.6",
+              "from": "qs@>= 0.4.0"
+            },
+            "mime": {
+              "version": "1.2.11",
+              "from": "mime@>= 0.0.1"
+            },
+            "formidable": {
+              "version": "1.0.14",
+              "from": "formidable@1.0.x"
+            }
+          }
+        }
+      }
+    },
     "express": {
       "version": "4.0.0-rc3",
       "from": "express@4.0.0-rc3",

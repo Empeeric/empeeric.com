@@ -3,15 +3,19 @@ var
     nodestrum = require('nodestrum'),
     coffee = require('coffee-script-redux/lib/register'),
     express = require('express'),
-    contact_us = require('./contact_us'),
+    contactUs = require('./contact_us'),
     https = require('https'),
     checks = require('./checks');
 
 var app = express();
+//noinspection JSHint
 app.use(nodestrum.domain_wrapper_middleware);
 app.use(express.bodyParser());
 app.use(express.errorHandler());
+
 app.use('/static', express.static('static'));
+
+app.use('/ccs3', express.static('css3'));
 
 app.use(function powered_by_empeeric(req, res, next){
     res.setHeader('X-Powered-By', 'Empeeric');
@@ -48,7 +52,7 @@ app.get('/', function(request, response){
     response.sendfile('templates/home.html');
 });
 
-app.post('/contact_us', contact_us.handle_request);
+app.post('/contact_us', contactUs.handle_request);
 
 
 app.get('/check/mongolab/:key', checks.mongolab);

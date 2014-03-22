@@ -1,0 +1,2505 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS Selectors Level 3 - A Quick Reference</title>
+    <meta name="description" content="A quick filterable reference for CSS Selectors Level 3 built using isotope.js">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Josh Vogt"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+    <link href="js/prettify.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/prettify.js"></script>
+
+    <script type='text/javascript'>
+        var bablic = bablic||{};
+        bablic['Site'] = '4f8edc8566994b0100000010';
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-15378843-1', 'empeeric.com');
+        ga('send', 'pageview');
+    </script>
+
+</head>
+<body onload="prettyPrint()">
+<header>
+    <h1>CSS Selectors</h1>
+</header>
+<div id="options" class="clearfix combo-filters">
+    <div class="option-combo sel_type">
+        <nav class="filter option-set floated clearfix ">
+            <a href="#filter-any" data-filter="" data-group="selector" class="selected all parentNav">All</a>
+
+            <a href="#filter-selectors" data-group="selector" data-filter=".selector" class="simp parentNav">Basic and
+                Attribute Selectors</a>
+
+            <a href="#filter-classes" data-group="selector" data-filter=".classes" class="pclass parentNav">Pseudo-Classes</a>
+
+            <a href="#filter-element" data-group="selector" data-filter=".element" class="pelement parentNav">Pseudo-Elements</a>
+
+            <a href="#filter-combinators" data-group="selector" data-filter=".combinator" class="combi parentNav">Combinators</a>
+
+        </nav>
+    </div>
+
+    <div class="option-combo simple_attribute" id="simple_attributes">
+        <nav class="filter option-set floated clearfix ">
+            <a href="#filter" data-filter="" data-group="basic-selectors" class="selected childNav">any</a>
+
+            <a href="#filter" data-group="basic-selectors" data-filter=".universal">universal</a>
+
+            <a href="#filter" data-group="basic-selectors" data-filter=".type">type</a>
+
+            <a href="#filter" data-group="basic-selectors" data-filter=".attribute">attribute</a>
+
+            <a href="#filter" data-group="basic-selectors" data-filter=".class">class</a>
+
+            <a href="#filter" data-group="basic-selectors" data-filter=".id">id</a>
+
+        </nav>
+    </div>
+
+    <div class="option-combo simple_attribute" id="pseudo_class">
+        <nav class="filter option-set floated clearfix ">
+            <a href="#filter-any" data-filter="" data-group="pseudo-classes" class="selected childNav">any</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".str_pc">structural</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".dynamic_pc">dynamic</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".target_pc">target</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".lang_pc">:lang()</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".ui_pc">UI element states</a>
+
+            <a href="#filter" data-group="pseudo-classes" data-filter=".neg_pc">negation</a>
+
+        </nav>
+    </div>
+
+
+</div>
+<!-- #options -->
+
+
+<div id="container" class="clearfix">
+
+
+<!-- Simple and Attribute Selectors -->
+
+<section class="property universal selector">
+    <h1>*</h1>
+
+    <h3>Any Element</h3>
+
+    <p>The following will result in both the <code>&lt;h1&gt;</code> and <code>&lt;p&gt;</code> elements having hideous
+        orange backgrounds rendered in Comic Sans. Time for me to go learn about proper web design!</p>
+		<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;h1&gt;A Title&lt;/h1&gt;
+	&lt;p&gt;Exciting words!&lt;/p&gt;
+
+		</pre>
+        	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	*{
+	font-family:'Comic Sans MS';
+	background:#ff6600;
+	}
+	      </pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/de5hn/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#universal-selector" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+
+
+</section>
+
+<section class="property type selector">
+    <h1>E</h1>
+
+    <h3>Any Element of Type E</h3>
+
+    <p>The following will result in <code>&lt;h1&gt;</code> elements renedering in Comic Sans with an orange background.
+        Lovely!</p>
+
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;h1&gt;A Title&lt;/h1&gt;
+	&lt;p&gt;Exciting words!&lt;/p&gt;
+		</pre>
+
+   <pre class="prettyprint lang-css">
+	/* CSS */
+
+	h1{
+	font-family:Comic-sans;
+	font-size:30px;
+	background:#ff6600;
+	}
+	      </pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/ukLNk/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#type-selectors" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version=" 5.5+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo]</h1>
+
+    <h3>An E element with a "foo" attribute</h3>
+
+    <p>The following will result in the any <code>&lt;div&gt;</code> with a <code>data-smell</code> attribute to have a
+        blue border. All other divs will have a red border.</p>
+
+        	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;div data-smell="branky"&gt;
+	&lt;p&gt;What does this div smell like?&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;div&gt;
+       	&lt;p&gt;div the second&lt;/p&gt;
+	&lt;/div&gt;
+		</pre>
+
+		<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+    	border:1px solid red;
+    	margin-bottom:5px;
+		}
+
+	div[data-smell]{
+    	border:1px solid blue;
+		}
+	      </pre>
+
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/2nz4d/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-representation" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo="bar"]</h1>
+
+    <h3>An E element whose "foo" attribute value is exactly equal to "bar".</h3>
+
+    <p>In the following, any <code>&lt;div&gt;</code> with a <code>data-smell</code> attribute will have a red border
+        except for divs with a <code>data-smell</code> attribute that is equal to <code>"musty"</code>. Those divs will
+        have a blue border. Also, divs are actually odourless.</p>
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;div data-smell="branky"&gt;
+	&lt;p&gt;What does this div smell like?&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;div data-smell="musty"&gt;
+       	&lt;p&gt;What does this div smell like?&lt;/p&gt;
+	&lt;/div&gt;
+
+		</pre>
+
+		<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div[data-smell]{
+    	border:1px solid red;
+    	margin-bottom:5px;
+		}
+
+	div[data-smell="musty"]{
+    	border:1px solid blue;
+		}
+		</pre>
+
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/uXkPW/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-representation" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo~="bar"]</h1>
+
+    <h3>An E element whose "foo" attribute value is a list of whitespace-separated values, one of which is exactly equal
+        to "bar"</h3>
+
+    <p>In the following, both divs have a <code>data-smell</code> attribute of branky and as such are both covered by
+        the first selector. The second <code>&lt;div&gt;</code> also has the <code>data-small</code> attribute of oak so
+        it gets the green border specified in the second selector. </p>
+
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;div data-smell="fishy branky"&gt;
+	&lt;p&gt;What does this div smell like?&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;div data-smell="branky oak"&gt;
+       	&lt;p&gt;What does this div smell like?&lt;/p&gt;
+	&lt;/div&gt;
+
+		</pre>
+
+		<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div[data-smell~="branky"]{
+        border:1px solid red;
+        margin-bottom:4px;
+        }
+
+	div[data-smell~="oak"]{
+        border:1px solid green;
+        }
+		</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/AVEBe/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-representation" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo^="bar"]</h1>
+
+    <h3>An E element whose "foo" attribute value begins exactly with the string "bar"</h3>
+
+    <p>In the following example all links are red except external links which are green because the <code>href</code>
+        attribute starts with the string <code>"http"</code>.</p>
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+      &lt;p&gt;Here's a link to &lt;a href="http://google.com"&gt;Google&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Here's an &lt;a href="/home"&gt;internal link&lt;/a&gt;.&lt;/p&gt;
+
+	</pre>
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a{
+	color:red;
+	}
+
+	a[href^="http"]{
+	color:green;
+	}
+		</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/rZUV2/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-substrings" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo$="bar"]</h1>
+
+    <h3>An E element whose "foo" attribute value ends exactly with the string "bar"</h3>
+
+    <p>In the following example links to pdfs are red while links to png files are green. Heady stuff.</p>
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+      &lt;p&gt;Here's a link to a &lt;a href="/document.pdf"&gt;PDF&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;Here's a link to an &lt;a href="/image.png"&gt;image file&lt;/a&gt;&lt;/p&gt;
+
+	</pre>
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a[href$="pdf"]{
+	color:red;
+	}
+
+	a[href$="png"]{
+	color:green;
+	}
+		</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/ZfVbF/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-substrings" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo*="bar"]</h1>
+
+    <h3>An E element whose "foo" attribute value contains the substring "bar"</h3>
+
+    <p>In the following, all link will be blue unless the link is to a specific domain. In this case, all link to
+        twitter.com will be green.</p>
+        <pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+   &lt;a href=&quot;http://google.com&quot;&gt;External Link&lt;/a&gt;
+   &lt;a href=&quot;/pants&quot;&gt;Internal Link&lt;/a&gt;
+   &lt;a href=&quot;http://twitter.com/dumaurier&quot;&gt;Link to Twitter Feed&lt;/a&gt;
+	</pre>
+		<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a{
+	text-decoration:none;
+	padding:5px;
+	color:blue;
+	}
+
+	a[href*="twitter.com"]{
+	color:green;
+	}
+		</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/Y3QY8/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-substrings" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property attribute selector">
+    <h1>E[foo|="en"]</h1>
+
+    <h3>An E element whose "foo" attribute has a hyphen-separated list of values beginning (from the left) with
+        "en"</h3>
+
+    <p>Represents an element with the <code>hreflang</code> attribute, its value either being exactly "en" or beginning
+        with "en" immediately followed by "-" (U+002D). This is primarily intended to allow language subcode matches
+        (e.g., the hreflang attribute on the a element in HTML) as described in BCP 47 or its successor.</p>
+
+    <p>I'm not altering the text from W3C on this one because I can't think of another example.</p>
+	<pre class="prettyprint lang-html">
+	&lt;!-- HTML --&gt;
+
+	&lt;a href=&quot;#&quot; hreflang=&quot;en-US&quot;&gt;A Link&lt;/a&gt;
+	&lt;a href=&quot;#&quot; hreflang=&quot;fr&quot;&gt;A Link&lt;/a&gt;
+	</pre>
+	<pre class="prettyprint lang-css">
+	/* CSS */
+	a{color:#ff6600
+	}
+
+	a[hreflang|="en"]{
+	color:green;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/GQar4/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#attribute-representation" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+    </footer>
+</section>
+
+<section class="property class selector">
+    <h1>E.warning</h1>
+
+    <h3>An E element whose class is "warning" (the document language specifies how class is determined).</h3>
+
+    <p>In the following, the current page has it's matching <code>&lt;nav&gt;</code> item assigned the class <code>"selected"</code>
+        which will appear red. All other <code>&lt;nav&gt;</code> items will appear green.</p>
+	<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;nav&gt;
+	  &lt;a href=&quot;#&quot; class=&quot;selected&quot;&gt;One&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;Two&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;Three&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;Four&lt;/a&gt;
+	  &lt;/nav&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+	a{
+	color:green;
+	text-decoration:none;
+	}
+
+	a.selected{
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/N5cjM/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#class-html" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version=" 5.5+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property id selector">
+    <h1>E#myid</h1>
+
+    <h3>An E element with ID equal to "myid".</h3>
+
+    <p>An ID-typed attribute of a document language allows authors to assign an identifier to one element instance in
+        the document tree. An ID selector contains a "number sign" immediately followed by the ID value, which must be
+        an CSS identifiers. An ID selector represents an element instance that has an identifier that matches the
+        identifier in the ID selector.</p>
+	<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div id=&quot;first&quot;&gt;
+	  &lt;/div&gt;
+
+	  &lt;div&gt;
+	  &lt;/div&gt;
+
+	  &lt;div&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+	display:block;
+	height:100px;
+	width:100px;
+	margin:10px;
+	background:#ff6600;
+	}
+
+	div#first{
+	background:green;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/mxQrs/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#id-selectors" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version=" 5.5+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+
+<!-- Pseudo-Classes -->
+
+<section class="property classes str_pc">
+    <h1>E:root</h1>
+
+    <h3>An E element, root of the document</h3>
+
+    <p>In the vast majority of cases, <code>:root</code> will be the <code>&lt;html&gt;</code> element. I'd love to see
+        some good uses for the <code>:root</code> pseudo-class. This example will result in the background of the
+        document displaying green. Hooray?</p>
+	  	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	:root{
+	background:green;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/9WDWX/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#root-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+
+<section class="property classes str_pc">
+    <h1>E:nth-child(n)</h1>
+
+    <h3>An E element, the n-th child of its parent</h3>
+
+    <p>In the following the first, third and fifth list items will be red. The <code>:nth-child(2n+1)</code> selector is
+        equivelant to <code>:nth-child(odd).</code></p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;ul&gt;
+	  &lt;li&gt;one&lt;/li&gt;
+	  &lt;li&gt;two&lt;/li&gt;
+	  &lt;li&gt;three&lt;/li&gt;
+	  &lt;li&gt;four&lt;/li&gt;
+	  &lt;li&gt;five&lt;/li&gt;
+	  &lt;/ul&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	li:nth-child(2n+1){
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/Pk65x/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#nth-child-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Partial" data-version=" 10+ (buggy)"><img src="images/Opera_48x48.png"
+                                                                               alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:nth-last-child(n)</h1>
+
+    <h3>An E element, the n-th child of its parent, counting from the last one</h3>
+
+    <p>In the following, regardless of element type the last three children of the <code>&lt;div&gt;</code> will use
+        <code>color:red</code>.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+	div{
+	border:1px solid green;
+	margin:10px;
+	}
+
+	div :nth-last-child(-n+3){
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/J6VSD/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#nth-last-child-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:nth-of-type(n)</h1>
+
+    <h3>An E element, the n-th sibling of its type</h3>
+
+    <p>Because no element is specified directly before the <code>:nth-of-type</code> pseudo-class (i.e. <code>p:nth-of-type(2){color:red}</code>),
+        the second instance of both the <code>&lt;a&gt;</code> and <code>&lt;p&gt;</code> elements will use <code>color:red.</code>
+        To apply to a single element type, you must preceed the psuedo-class with the element.</p>
+	  	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+	div{
+	border:1px solid green;
+	margin:10px;
+	}
+
+	div :nth-of-type(2){
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/MhFkK/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#nth-of-type-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+ (buggy)"><img src="images/Opera_48x48.png" alt="Opera"/>
+            </li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:nth-last-of-type(n)</h1>
+
+    <h3>An E element, the n-th sibling of its type, counting from the last one</h3>
+
+    <p>Similar to <code>:nth-of-type</code> but because the <code>:nth-last-of-type</code> pseudo-class is preceeded
+        with the <code>&lt;p&gt;</code> element only the second from last paragraph will use <code>color:red</code>.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+	border:1px solid green;
+	margin:10px;
+	}
+
+	div p:nth-last-of-type(2){
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/7dXAQ/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#nth-last-of-type-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:first-child</h1>
+
+    <h3>An E element, first child of its parent</h3>
+
+    <p>This pseudo-class is the same as <code>:nth-child(1)</code>. In the following example <code>div
+        p:first-child</code> represents the first paragraph. If it were changed to <code>a:first-child</code> it
+        wouldn't represent anything because the <code>&lt;a&gt;</code> element is not the first child of the <code>&lt;div&gt;</code>
+        element.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;a href=&quot;#&quot;&gt;A link&lt;/a&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+	border:1px solid green;
+	margin:10px;
+	}
+
+	div p:first-child{
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/TzRnG/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#first-child-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:last-child</h1>
+
+    <h3>An E element, last child of its parent</h3>
+
+    <p>Like <code>:first-child</code> except it applies to the last child of an element. In this case,
+        <code>color:red</code> will be applied to the last <code>&lt;p&gt;</code> element that is the child of a <code>
+            &lt;div&gt;</code> element.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;p&gt;Some words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+    div{
+    border:1px solid green;
+    margin:10px;
+    }
+
+
+    div p:last-child{
+    color:red;
+    }
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/sVjZL/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#last-child-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:first-of-type</h1>
+
+    <h3>An E element, first sibling of its type</h3>
+
+    <p>The pseudo-class <code>:first-of-type</code> is the same as <code>:nth-of-type(1)</code>. In the following, the
+        first cell in each row of the table will have and orange background with white text.</p>
+	  	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;table&gt;
+	  &lt;tr&gt;
+	  &lt;td&gt;1&lt;/td&gt;
+	  &lt;td&gt;2&lt;/td&gt;
+	  &lt;td&gt;3&lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;tr&gt;
+	  &lt;td&gt;4&lt;/td&gt;
+	  &lt;td&gt;5&lt;/td&gt;
+	  &lt;td&gt;6&lt;/td&gt;
+	  &lt;/tr&gt;
+	  &lt;/table&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	tr td:first-of-type{
+  	background:#ff6600;
+  	color:white;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/EK3e2/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#first-of-type-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:last-of-type</h1>
+
+    <h3>An E element, last sibling of its type</h3>
+
+    <p>The pseudo-class <code>:last-of-type</code> is the same as <code>:nth-last-of-type(1)</code>. In the following,
+        by using the <code>:last-of-type</code> pseudo-class the last <code>&lt;li&gt;</code> will have a border radius
+        applied to the bottom corners.</p>
+	  	  	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;ul&gt;
+	&lt;li&gt;One&lt;/li&gt;
+	&lt;li&gt;Two&lt;/li&gt;
+	&lt;li&gt;Three&lt;/li&gt;
+	&lt;li&gt;Four&lt;/li&gt;
+	&lt;/ul&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	ul{
+	list-style:none;
+	}
+
+	li{
+	border:1px solid green;
+	width:100px;
+	padding:5px;
+	text-align:center;
+	}
+
+	ul li:last-of-type{
+	border-radius:0 0 10px 10px;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/s47hH/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#last-of-type-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:only-child</h1>
+
+    <h3>An E element, only child of its parent</h3>
+
+    <p>In the following the <code>&lt;div&gt;</code> with the single <code>&lt;p&gt;</code> element will use <code>color:red</code>
+        as it is the only child element of the <code>&lt;div&gt;</code>. The <code>:only-child</code> psuedo-class is
+        the same as <code>:first-child:last-child</code> or <code>:nth-child(1):nth-last-child(1)</code>, but with a
+        lower specificity and less typing.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Here are some words&lt;/p&gt;
+	  &lt;/div&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Here are some more words&lt;/p&gt;
+	  &lt;p&gt;Yet more words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+	border:1px solid green;
+	padding:5px;
+	margin:5px;
+	}
+
+	p:only-child{
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/WS8yE/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#only-child-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:only-of-type</h1>
+
+    <h3>An E element, only sibling of its type</h3>
+
+    <p>Similar to <code>:only-child</code> except it applies to an element whose parent element has no other element
+        children of the same type. In the following, the <code>&lt;p&gt;</code> element in the first <code>
+            &lt;div&gt;</code> will be red as it is the only instance of that element in its parent element. The <code>:only-of-type</code>
+        pseudo-class is the same as <code>:first-of-type:last-of-type</code> or <code>:nth-of-type(1):nth-last-of-type(1)</code>,
+        but with a lower specificity.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Here are some words&lt;/p&gt;
+	  &lt;a href=&quot;#&quot;&gt;This is a link&lt;/a&gt;
+	  &lt;/div&gt;
+
+	  &lt;div&gt;
+	  &lt;p&gt;Here are some more words&lt;/p&gt;
+	  &lt;p&gt;Yet more words&lt;/p&gt;
+	  &lt;/div&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+	border:1px solid green;
+	padding:5px;
+	margin:5px;
+	}
+
+	p:only-of-type{
+	color:red;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/uV8hJ/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#only-of-type-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes str_pc">
+    <h1>E:empty</h1>
+
+    <h3>An E element that has no children (including text nodes)</h3>
+
+    <p>In the following, all empty cells in the table will have an orange background. If you want, you can use generated
+        content to populate the empty elements with text while still using the <code>:empty</code> pseudo-class.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;table&gt;
+	&lt;tr&gt;
+	&lt;td&gt;1&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+	&lt;td&gt;2&lt;/td&gt;
+	&lt;td&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+	&lt;td&gt;4&lt;/td&gt;
+	&lt;td&gt;5&lt;/td&gt;
+	&lt;td&gt;&lt;/td&gt;
+	&lt;td&gt;6&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;/table&gt;
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	tr td:empty{
+  	background:#ff6600;
+	}
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/EDXBR/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#empty-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version=" 4+"><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version=" 2+"><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version=" 10+"><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes dynamic_pc">
+    <h1>E:link</h1>
+
+    <h3>An E element being the source anchor of a hyperlink of which the target is not yet visited (:link) or already
+        visited (:visited)</h3>
+
+    <p>The <code>:link</code> pseudo-class applies to links that haven't been visited (in this case, links are coloured
+        green), the <code>:visited</code> pseudo-class applies to links that have been visited (in this case, visited
+        links are coloured red with no text-decoration), the <code>:hover</code> pseudo-class applies when a user is
+        hovering their cursor over the link (in this case, on hover the link will appear purple) and the
+        <code>:active</code> pseudo-class when the link is being activated by the user(in this case, during the button
+        press on the link it will appear blue).</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;a href=&quot;http://google.com&quot;&gt;This is a link&lt;/a&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a:link{
+	color:green;
+	transition:all .3s ease-in-out;
+	}
+
+	a:visited{
+	color:red;
+	text-decoration:none;
+	}
+
+	a:hover{
+	color:purple;
+	}
+
+	a:active{
+	color:blue
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/kfMpG/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#the-link-pseudo-classes-link-and-visited"
+               class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-ie.png" alt="Internet Explorer"/></li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes dynamic_pc">
+    <h1>E:visited</h1>
+
+    <h3>An E element being the source anchor of a hyperlink of which the target is not yet visited (:link) or already
+        visited (:visited)</h3>
+
+    <p>The <code>:link</code> pseudo-class applies to links that haven't been visited (in this case, links are coloured
+        green), the <code>:visited</code> pseudo-class applies to links that have been visited (in this case, visited
+        links are coloured red with no text-decoration), the <code>:hover</code> pseudo-class applies when a user is
+        hovering their cursor over the link (in this case, on hover the link will appear purple) and the
+        <code>:active</code> pseudo-class when the link is being activated by the user(in this case, during the button
+        press on the link it will appear blue).</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;a href=&quot;http://google.com&quot;&gt;This is a link&lt;/a&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a:link{
+	color:green;
+	transition:all .3s ease-in-out;
+	}
+
+	a:visited{
+	color:red;
+	text-decoration:none;
+	}
+
+	a:hover{
+	color:purple;
+	}
+
+	a:active{
+	color:blue
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/kfMpG/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#the-link-pseudo-classes-link-and-visited"
+               class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-ie.png" alt="Internet Explorer"/></li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes dynamic_pc">
+    <h1>E:active</h1>
+
+    <h3>An E element during certain user actions</h3>
+
+    <p>The <code>:link</code> pseudo-class applies to links that haven't been visited (in this case, links are coloured
+        green), the <code>:visited</code> pseudo-class applies to links that have been visited (in this case, visited
+        links are coloured red with no text-decoration), the <code>:hover</code> pseudo-class applies when a user is
+        hovering their cursor over the link (in this case, on hover the link will appear purple) and the
+        <code>:active</code> pseudo-class when the link is being activated by the user(in this case, during the button
+        press on the link it will appear blue).</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;a href=&quot;http://google.com&quot;&gt;This is a link&lt;/a&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a:link{
+	color:green;
+	transition:all .3s ease-in-out;
+	}
+
+	a:visited{
+	color:red;
+	text-decoration:none;
+	}
+
+	a:hover{
+	color:purple;
+	}
+
+	a:active{
+	color:blue
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/kfMpG/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#the-user-action-pseudo-classes-hover-act"
+               class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-ie.png" alt="Internet Explorer"/></li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes dynamic_pc">
+    <h1>E:hover</h1>
+
+    <h3>An E element during certain user actions</h3>
+
+    <p>The <code>:link</code> pseudo-class applies to links that haven't been visited (in this case, links are coloured
+        green), the <code>:visited</code> pseudo-class applies to links that have been visited (in this case, visited
+        links are coloured red with no text-decoration), the <code>:hover</code> pseudo-class applies when a user is
+        hovering their cursor over the link (in this case, on hover the link will appear purple) and the
+        <code>:active</code> pseudo-class when the link is being activated by the user(in this case, during the button
+        press on the link it will appear blue).</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;a href=&quot;http://google.com&quot;&gt;This is a link&lt;/a&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a:link{
+	color:green;
+	transition:all .3s ease-in-out;
+	}
+
+	a:visited{
+	color:red;
+	text-decoration:none;
+	}
+
+	a:hover{
+	color:purple;
+	}
+
+	a:active{
+	color:blue
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/kfMpG/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#the-user-action-pseudo-classes-hover-act"
+               class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-ie.png" alt="Internet Explorer"/></li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes dynamic_pc">
+    <h1>E:focus</h1>
+
+    <h3>An E element during certain user actions</h3>
+
+    <p>You can use the <code>:focus</code> pseudo-class to invoke a state change instead of using the :target
+        pseudo-class with a fragment identifier by giving the element a <code>tabindex</code>. Use
+        <code>tabindex="-1"</code> if you want the element removed from the tab order. In the following, when clicked
+        the image's opacity will transition from .4 to 1.0 and the image's dimensions will double.</p>
+	  	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+      &lt;img src=&quot;http://lorempixum.com/300/300&quot; alt=&quot;&quot; tabindex=&quot;-1&quot; /&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	img{
+	opacity:.4;
+	height:150px;
+	width:150px;
+	cursor:pointer;
+	transition:all 1s linear;
+	}
+
+	img:focus{
+	opacity:1;
+	height:300px;
+	width:300px;
+	outline:none;
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/r5BQd/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#the-user-action-pseudo-classes-hover-act"
+               class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 8+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes target_pc">
+    <h1>E:target</h1>
+
+    <h3>An E element being the target of the referring URI</h3>
+
+    <p>A link with a fragment identifier can link to another element on the page (or to a specific element on another
+        page). </p>
+	   <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;p&gt;There's some exciting content hiding on this page!&lt;/p&gt;
+
+	  &lt;a href=#content&gt;Click for excitement&lt;/a&gt;
+
+	  &lt;p id=&quot;content&quot;&gt;EXCITE!&lt;/p&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	#content{
+	width:100px;
+	background:black;
+	}
+
+	#content:target{
+	color:white;
+	}
+
+	</pre>
+
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/mkhYm/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#target-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes lang_pc">
+    <h1>E:lang(fr)</h1>
+
+    <h3>An element of type E in language "fr" (the document language specifies how language is determined)</h3>
+
+    <p>The <code>:lang()</code> pseudo-class can be used to demarcate CSS styles that apply to a specific language. In
+        the following it is used to specify that type of quotation marks used for French language text using the <code>
+            &lt;q&gt;</code> element. The <code>lang</code> attribute specifies the base language of an element's
+        attribute values and text content.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;q lang=&quot;en&quot;&gt;This is a quote in English&lt;/q&gt;
+
+	&lt;br&gt;
+
+	&lt;q lang=&quot;fr&quot;&gt;C'est une citation en Fran&ccedil;ais&lt;/q&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	q:lang(fr){
+	quotes:"&laquo;""&raquo;";
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/T6XhK/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#lang-pseudo" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 8+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes ui_pc">
+    <h1>E:enabled</h1>
+
+    <h3>A user interface element E which is enabled or disabled</h3>
+
+    <p>The <code>:enabled</code> and <code>:disabled</code> pseudo-classes can be used to style elements in their
+        respective states. These pseudo-classes can be used in style form elements in either state. You can add a gentle
+        sprinkling of JavaScript to add and remove the disabled attribute as necessary in your forms.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;input type=&quot;text&quot; placeholder=&quot;username&quot;&gt;
+
+	  &lt;input type=&quot;text&quot; placeholder=&quot;password&quot;&gt;
+
+	  &lt;button disabled type=&quot;submit&quot;&gt;SUBMIT&lt;/button&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	:disabled{
+	background:red;
+	color:white;
+	border:none;
+	}
+
+	:enabled{
+	background:green;
+	border:none;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/cdpnD/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#enableddisabled" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes ui_pc">
+    <h1>E:disabled</h1>
+
+    <h3>A user interface element E which is enabled or disabled</h3>
+
+    <p>The <code>:enabled</code> and <code>:disabled</code> pseudo-classes can be used to style elements in their
+        respective states. These pseudo-classes can be used in style form elements in either state. You can add a gentle
+        sprinkling of JavaScript to add and remove the disabled attribute as necessary in your forms.</p>
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;input type=&quot;text&quot; placeholder=&quot;username&quot;&gt;
+
+	  &lt;input type=&quot;text&quot; placeholder=&quot;password&quot;&gt;
+
+	  &lt;button disabled type=&quot;submit&quot;&gt;SUBMIT&lt;/button&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	:disabled{
+	background:red;
+	color:white;
+	border:none;
+	}
+
+	:enabled{
+	background:green;
+	border:none;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/cdpnD/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#enableddisabled" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes ui_pc">
+    <h1>E:checked</h1>
+
+    <h3>A user interface element E which is checked (for instance a radio-button or checkbox)</h3>
+
+    <p>In the following, the <code>:checked</code> pseudo-class in used in conjunction with the adjacent sibling
+        combinator to change the text in the <code>&lt;span&gt;</code> element when the checkbox is in the checked
+        state.</p>
+
+	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	  &lt;input type=&quot;checkbox&quot; name=&quot;waffle&quot;&gt; &lt;span&gt;WAFFLE&lt;/span&gt;
+	  &lt;input type=&quot;checkbox&quot; name=&quot;waffle&quot;&gt; &lt;span&gt;SADNESS&lt;/span&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+      input:checked + span{
+      color:green;
+      }
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/Lmrx5/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#checked" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property classes neg_pc">
+    <h1>E:not(s)</h1>
+
+    <h3>An E element that does not match simple selector s</h3>
+
+    <p>One of the uses of the negation pseudo-class is as an alternative to a grouping of comma-separated selectors
+        (like <code>.class, class-two, .class-three{color:red;)</code>. The negation pseudo-class also has a higher
+        specificity than a comma-separated list of selectors. In the following, the first, second and fourth <code>&lt;div&gt;</code>
+        will have a blue border. The negation pseudo-class does not work with combinators and pseudo-elements.</p>
+	  	  <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;div class=&quot;one&quot;&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;two&quot;&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;three&quot;&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&quot;four&quot;&gt;
+	&lt;/div&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	div{
+    height:100px;
+    width:100px;
+    margin:10px;
+    background:green;
+	}
+
+	div:not(.three){
+    border:2px solid blue;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/DFL5E/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#negation" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 9+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+
+<!-- Pseudo-Elements -->
+
+<section class="property element">
+    <h1>E::first-line</h1>
+
+    <h3>The first formatted line of an E element</h3>
+
+    <p>The <code>::first-line</code> pseudo-element describes the contents of the first formatted line of an element.
+        The :: notation was introduced in CSS3 to differentiate between pseudo-classes and pseudo-elements. Browser
+        support is different between the two notations. Internet Explorer does not support the new :: notation but has
+        supported the <code>:first-line</code> notation since version 5.5.</p>
+		<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;p&gt;For a long time I used to go to bed early.
+	Sometimes, when I had put out my candle, my eyes would
+	close so quickly that I had not even time to say
+	&quot;I'm going to sleep.&quot; &lt;/p&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	p::first-line{
+	font-size:18px;
+	font-weight:bold;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/W57DH/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#first-line" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Partial" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="No" data-version=" CSS2.1 syntax supported since 5.5"><img src="images/64-ie.png"
+                                                                                                alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property element">
+    <h1>E::first-letter</h1>
+
+    <h3>The first formatted letter of an E element</h3>
+
+    <p>The <code>::first-letter</code> pseudo-element represents the first letter of an element, if it is not preceded
+        by any other content (such as images or inline tables) on its line. The :: notation was introduced in CSS3 to
+        differentiate between pseudo-classes and pseudo-elements. Browser support is different between the two
+        notations. Internet Explorer does not support the new :: notation but has supported the
+        <code>:first-letter</code> notation since version 5.5.</p>
+		<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;p&gt;For a long time I used to go to bed early.
+	Sometimes, when I had put out my candle, my eyes would
+	close so quickly that I had not even time to say
+	&quot;I'm going to sleep.&quot; &lt;/p&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	p::first-letter{
+	font-size:32px;
+	font-weight:bold;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/pqMtA/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#first-letter" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Partial" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="No" data-version=" CSS2.1 syntax supported since 5.5"><img src="images/64-ie.png"
+                                                                                                alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property element">
+    <h1>E::before</h1>
+
+    <h3>generated content before an E element</h3>
+
+    <p>In the following, the <code>::before</code> pseudo-element is used to display the <code>href</code> attribute
+        when the user hover's over the <code>&lt;a&gt;</code> element. Internet Explorer does not support the <code>::before</code>
+        pseudo-element but does support the old <code>:before</code> syntax. Most other modern browsers support both the
+        old : notation and the new notation.</p>
+		<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;p&gt;This is a link to &lt;a href=&quot;http://google.com&quot;&gt;Google&lt;/a&gt;.&lt;/p&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a{
+	position:relative;
+	display:inline-block;
+	margin-top:30px;
+	text-decoration:none;
+	}
+
+	a:hover::before{
+	display:block;
+	position:absolute;
+	content: attr(href);
+	top:-30px;
+	left:30px;
+	background:green;
+	color:white;
+	padding:5px;
+	border-radius:3px;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/TBZ47/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#gen-content" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Partial" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="No" data-version=" CSS2.1 syntax supported since 8"><img src="images/64-ie.png"
+                                                                                              alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property element">
+    <h1>E::after</h1>
+
+    <h3>Generated content after an E element</h3>
+
+    <p>The <code>::before</code> and <code>::after</code> pseudo-elements can be used to describe generated content
+        before or after an element's content. They are explained in CSS 2.1 [CSS21]. In the following, the
+        <code>::after</code> pseudo-element is used to display the value of the <code>data-filetype</code> attribute
+        describing the file's extension.Internet Explorer does not support the <code>::after</code> pseudo-element but
+        does support the old <code>:after</code> syntax. Most other modern browsers support both the old : notation and
+        the new notation.</p>
+<pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;p&gt;To download an exciting file &lt;a href=/files/excite.pdf
+	data-filetype=&quot;PDF&quot;&gt;click here!&lt;/a&gt;&lt;/p&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	a::after{
+	content:" (" attr(data-filetype) ")";
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/7845b/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#gen-content" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Partial" data-version=" 3.5+"><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="No" data-version=" CSS2.1 syntax supported since 8"><img src="images/64-ie.png"
+                                                                                              alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<!-- Combinators -->
+
+
+<section class="property combinator">
+    <h1>E F</h1>
+
+    <h3>An F element descendant of an E element</h3>
+
+    <p>A descendant combinator is whitespace that separates two sequences of simple selectors. A selector of the form "A
+        B" represents an element B that is an arbitrary descendant of some ancestor element A. In the following, all
+        <code>&lt;p&gt;</code> elements will appear orange as they are all descendants of the <code>&lt;div&gt;</code>
+        element with the class "first".</p>
+        <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;div class=&quot;first&quot;&gt;
+	&lt;p&gt;There are three sentences in this div.&lt;p&gt;
+	&lt;p&gt;One of them is not true.&lt;/p&gt;
+	&lt;p&gt;There isn't a fourth sentence in this div.&lt;/p&gt;
+	&lt;div class=&quot;second&quot;&gt;
+	&lt;p&gt;This is the fourth sentence.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	.first{
+	border:1px solid green;
+	}
+
+	.second{
+	border:1px solid red;
+	margin:2px;
+	}
+
+	.first p{
+	color:#ff6600;
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/q9RCL/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#descendant-combinators" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-ie.png" alt="Internet Explorer"/></li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property combinator">
+    <h1>E > F</h1>
+
+    <h3>An F element child of an E element</h3>
+
+    <p>A child combinator describes a childhood relationship between two elements. A child combinator is made of the
+        "greater-than sign" (U+003E, >) character and separates two sequences of simple selectors. In the following, all
+        <code>&lt;p&gt;</code> elements that are a child of the <code>&lt;div&gt;</code> element with the class "first"
+        will appear orange. The fourth sentence is not a child of the first <code>&lt;div&gt;</code> and as such will
+        not appear orange.</p>
+        <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;div class=&quot;first&quot;&gt;
+	&lt;p&gt;There are three sentences in this div.&lt;p&gt;
+	&lt;p&gt;One of them is not true.&lt;/p&gt;
+	&lt;p&gt;There isn't a fourth sentence in this div.&lt;/p&gt;
+	&lt;div class=&quot;second&quot;&gt;
+	&lt;p&gt;This is the fourth sentence.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	.first{
+	border:1px solid green;
+	}
+
+	.second{
+	border:1px solid red;
+	margin:2px;
+	}
+
+	.first > p{
+	color:#ff6600;
+	}
+
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/fH7Vu/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#child-combinators" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property combinator">
+    <h1>E + F</h1>
+
+    <h3>An F element immediately preceded by an E element</h3>
+
+    <p>The adjacent sibling combinator is made of the "plus sign" character that separates two sequences of simple
+        selectors. The elements represented by the two sequences share the same parent in the document tree and the
+        element represented by the first sequence immediately precedes the element represented by the second one. In the
+        following, the second and third sentences will be green as they both share the same parent element and have a
+        <code>&lt;p&gt;</code> element that immediately precedes them. The first sentence does not have another <code>
+            &lt;p&gt;</code> element that precedes it and the fourth sentence has no direct siblings.</p>
+        <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;div class=&quot;first&quot;&gt;
+	&lt;p&gt;There are three sentences in this div.&lt;p&gt;
+	&lt;p&gt;One of them is not true.&lt;/p&gt;
+	&lt;p&gt;There isn't a fourth sentence in this div.&lt;/p&gt;
+	&lt;div class=&quot;second&quot;&gt;
+	&lt;p&gt;This is the fourth sentence.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	p + p{
+	color:green;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/R2QqT/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#adjacent-sibling-combinators" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+<section class="property combinator">
+    <h1>E ~ F</h1>
+
+    <h3>An F element preceded by an E element</h3>
+
+    <p>The general sibling combinator is made of the "tilde" character that separates two sequences of simple selectors.
+        The elements represented by the two sequences share the same parent in the document tree and the element
+        represented by the first sequence precedes (not necessarily immediately) the element represented by the second
+        one. In the following, all but the first sentence will be green as they are all <code>&lt;p&gt;</code> elements
+        that have another <code>&lt;p&gt;</code> element that precede them within the same parent element.</p>
+               <pre class="prettyprint lang-html">
+	  &lt;!-- HTML --&gt;
+
+	&lt;div class=&quot;first&quot;&gt;
+	&lt;p&gt;There are three sentences in this div.&lt;p&gt;
+	&lt;p&gt;One of them is not true.&lt;/p&gt;
+	&lt;p&gt;There isn't a fourth sentence in this div.&lt;/p&gt;
+	&lt;h2&gt;A Heading&lt;/h2&gt;
+	&lt;p&gt;This is the fourth sentence.&lt;/p&gt;
+	&lt;/div&gt;
+
+	</pre>
+
+	<pre class="prettyprint lang-css">
+	/* CSS */
+
+	.first p ~ p{
+	color:green;
+	}
+
+	</pre>
+    <footer class="propFooter clearfix">
+        <div class="links">
+            <a href="http://jsfiddle.net/joshvogt/nBWP2/" class="fiddle external-link">
+                View on jsFiddle.net
+            </a>
+            <a href="http://www.w3.org/TR/selectors/#general-sibling-combinators" class="w3c external-link">
+                More info at W3C.org
+            </a>
+        </div>
+
+        <ul class="browser-support">
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-chrome.png" alt="Chrome"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-safari.png" alt="Safari"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/64-firefox.png" alt="Firefox"/></li>
+            <li data-browserSupport="Full" data-version="  "><img src="images/Opera_48x48.png" alt="Opera"/></li>
+            <li data-browserSupport="Partial" data-version=" 7+"><img src="images/64-ie.png" alt="Internet Explorer"/>
+            </li>
+        </ul>
+
+    </footer>
+</section>
+
+
+</div>
+<!-- #container -->
+<footer class="site-footer">
+    <p>Some content copyright &copy; 2009 <a
+            href="http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231">W3C</a></p>
+
+    <p>Browser compatibility help from <a href="http://www.quirksmode.org/">QuirksMode</a>, <a
+            href="https://developer.mozilla.org/en/CSS/CSS_Reference">MDN</a> and <a
+            href="http://msdn.microsoft.com/en-us/library/cc351024(v=vs.85).aspx">MSDN</a></p>
+
+    <p>Browser support tooltips inspired by <a href="http://twitter.com/necolas">@necolas'</a> <a
+            href="http://nicolasgallagher.com/pure-css-speech-bubbles/">Pure CSS speech bubbles</a></p>
+
+    <p>Layout and filtering courtesy of <a href="http://twitter.com/#!/desandro">@desandro's</a> <a
+            href="http://isotope.metafizzy.co/">Isotope</a> plugin </p>
+
+    <p>Everything else &copy; 2011 <a href="http://vogtjosh.com">Josh Vogt</a>. All mistakes are my own.</p>
+</footer>
+
+
+<script src="js/jquery-1.5.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.isotope.js" type="text/javascript"></script>
+<script>
+    var $container = $('#container'),
+            filters = {};
+
+    // filter buttons
+    $('.filter a').click(function () {
+        var $this = $(this),
+                isoFilters = [],
+                prop, selector;
+        // store filter value in object
+        // i.e. filters.color = 'red'
+        filters[ $this.data('group') ] = $this.data('filter');
+
+        for (prop in filters) {
+            isoFilters.push(filters[ prop ])
+        }
+        selector = isoFilters.join('');
+        $container.isotope({ filter: selector });
+
+        return false;
+    });
+
+    // change size of clicked element
+    $container.find('.property').live('click', function () {
+        $(this).toggleClass('large');
+        $container.isotope('reLayout');
+    });
+
+
+    // switches selected class on buttons
+    $('#options').find('.option-set a').click(function () {
+        var $this = $(this);
+
+        // don't proceed if already selected
+        if (!$this.hasClass('selected')) {
+            $this.parents('.option-set').find('.selected').removeClass('selected');
+            $this.addClass('selected');
+        }
+
+    });
+
+    $container.isotope({
+        // options...
+        resizable: true, // disable normal resizing
+        // set columnWidth to a percentage of container width
+        masonry: { columnWidth: $container.width() / 2 }
+    });
+
+    // update columnWidth on window resize
+    $(window).smartresize(function () {
+        $container.isotope({
+            // update columnWidth to a percentage of container width
+            masonry: { columnWidth: $container.width() / 2}
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $('#simple_attributes').hide();
+
+    $(".simp").click(function () {
+        $("#simple_attributes").show("fast");
+    });
+
+    $(".all,.pclass,.pelement,.combi").click(function () {
+        $("#simple_attributes").hide("fast");
+    });
+
+
+    $('#pseudo_class').hide();
+
+    $(".pclass").click(function () {
+        $("#pseudo_class").show("fast");
+    });
+
+    $(".all,.simp,.pelement,.combi").click(function () {
+        $("#pseudo_class").hide("fast");
+    });
+
+    $(".parentNav").click(function () {
+        $(".childNav").trigger('click');
+
+    });
+
+</script>
+
+</body>
+</html>

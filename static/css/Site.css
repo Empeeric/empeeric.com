@@ -88,3 +88,4 @@ a.nivo-prevNav {
 .popup {
 	padding: 5px; border-radius: 5px; border: 1px solid rgb(243, 243, 243); display: none; position: absolute; z-index: 999999; box-shadow: 3px 3px 3px #aaa; background-color: rgb(255, 255, 255); -moz-border-radius: 5px; -moz-box-shadow: 3px 3px 3px #aaa; -webkit-box-shadow: 3px 3px 3px #aaa;
 }
+

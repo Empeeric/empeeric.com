@@ -125,12 +125,7 @@ display:block;
 }
 
 nav#main a {
-color:#000;
-line-height:30px;
 overflow:hidden;
-font-family:Morpheus-Medium;
-font-size:30px;
-display:inline;
 opacity:.8;
 }
 

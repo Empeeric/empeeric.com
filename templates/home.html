@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Empeeric &#8212; Alchemists if Excellent Software</title>
-	<meta name="description" content="Empeeric is  a software workshop, here to make projects happen. Specializing in large scale core-business applications and working with start-ups." />
-	<meta name="keywords" content="Software, Development, Web Application, Software Projects" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="copyright" content="Empeeric 2011" />
+    <title>Empeeric &#8212; Alchemists if Excellent Software</title>
+    <meta name="description"
+          content="Empeeric is  a software workshop, here to make projects happen. Specializing in large scale core-business applications and working with start-ups."/>
+    <meta name="keywords" content="Software, Development, Web Application, Software Projects"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="copyright" content="Empeeric 2011"/>
 
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
-	<script type="text/javascript" src="/static/js/com.default.js?r=2"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cycle.min.js"></script>
+    <script type="text/javascript" src="/static/js/com.default.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="/static/css/base.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="/static/css/home.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="/static/css/base.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/home.css" media="all"/>
     <script type='text/javascript'>
-        var bablic = bablic||{};
+        var bablic = bablic || {};
         bablic['Site'] = '4f8edc8566994b0100000010';
     </script>
-    
+
     <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
         ga('create', 'UA-15378843-1', 'empeeric.com');
         ga('send', 'pageview');
@@ -32,678 +42,758 @@
 <body data-controller="SiteScroll">
 <!-- ClickTale Top part -->
 <script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
+    var WRInitTime = (new Date()).getTime();
 </script>
 <!-- ClickTale end of Top part -->
 
 <div id="wrapper">
 
 <!-- Nav -->
-<nav id="main" data-controller="MainNav"></nav>
-<div id="seemore"><div><img src="/static/images/Seemore.png" id="seemore_img" /></div></div>
+<nav id="main" data-controller="MainNav" data-no-move>
+    <article>
+        <ul>
+            <li><a href="/css3">CSS Selectors CheatSheet</a></li>
+        </ul>
+    </article>
+    <ul data-no-move id="MainNavList"></ul>
+</nav>
 
-<section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController" >
-<article>
-	<header>
-		<div id="sky" data-bablic-bidi="false">
-			<div class="animated-clouds" id="cloud1"></div>
-			<div class="animated-clouds" id="cloud2"></div>
-			<div class="animated-clouds" id="cloud3"></div>
-			<div class="animated-clouds" id="cloud4"></div>
-			<div class="animated-clouds" id="cloud5"></div>
-		</div>
-		<img id="peeri_clouds_and_fun" src="/static/images/anan.png" />
+<div id="seemore">
+    <div><img src="/static/images/Seemore.png" id="seemore_img"/></div>
+</div>
 
-		<div id="main_wrapper">
-			<a id="hire_link" href="/static/pdf/hiring.pdf">
-				<img src="/static/images/wearehiring.png" />
-			</a>
-			<img id="alchemists_tag" src="/static/images/alchemistsof.png" alt="Alchemists if excellent software" title="Alchemists of Excellent Software" />
+<section id="home" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Home" data-scrolloffset="100" view-controller="ShowsController">
+    <article>
+        <header>
+            <div id="sky" data-bablic-bidi="false">
+                <div class="animated-clouds" id="cloud1"></div>
+                <div class="animated-clouds" id="cloud2"></div>
+                <div class="animated-clouds" id="cloud3"></div>
+                <div class="animated-clouds" id="cloud4"></div>
+                <div class="animated-clouds" id="cloud5"></div>
+            </div>
+            <img id="peeri_clouds_and_fun" src="/static/images/anan.png"/>
 
-			<p id="top_hp" class="white">
-				EMPEERIC is a software workshop here to make your projects happen. <br />
-				Our motto: "Do it once and do it well".
-			</p>
-			<div id="home-text" class="deep_blue">
-				<p id="middle_hp">
-					For the last 10 year we have been specializing in web applications and web technologies.
-					We are a one stop shop, from concept development and the design, through implementing the best
-					technical solution, deployment, and assistance with getting it to the clients.
-					We love innovative ideas and will go to great lengths to make them happen. We also have a special
-					place in our heart for entrepreneurs and start-ups.
-				</p>
-				<p id="footer_hp">
-					EMPEERIC are pioneers in our way of thinking and use of cutting edge technologies like Python,
-					Goggle App Engine, Node.JS, NOSQL, HTML5/CSS3, GitHub, and more.
-				</p>
-			</div>
+            <div id="main_wrapper">
+                <a id="hire_link" href="/static/pdf/hiring.pdf">
+                    <img src="/static/images/wearehiring.png"/>
+                </a>
+                <img id="alchemists_tag" src="/static/images/alchemistsof.png" alt="Alchemists if excellent software"
+                     title="Alchemists of Excellent Software"/>
 
-			<a href="#contactus" id="">
-                <img src="/static/images/contact_us_right.png" id="contact_img" />
-				<img src="/static/images/logo.png" id="empeeric_logo" />
-			</a>
+                <p id="top_hp" class="white">
+                    EMPEERIC is a software workshop here to make your projects happen. <br/>
+                    Our motto: "Do it once and do it well".
+                </p>
 
-			<div id="cus_wrapper">
-				<div id="slide-buttons">
-					<img src="/static/images/our_clients_left.png" id="our_clients" alt="Our Clients" />
-					<a href="#" id="cust_prev" class="slide-btn white"> &lt; </a>
-					<a href="#" id="cust_next" class="slide-btn white"> &gt; </a>
-				</div>
-				<div id="customer-container">
-                    <div class="slide-item">
-                        <table>
-                            <tr>
-                                <td><a href="http://www.youtube.com/2013ynet" target="_blank"><img src="/static/images/ourclients/Youtube.png" class="cus_img" /></a></td>
-                                <td><a href="http://google.co.il" target="_blank"><img src="/static/images/ourclients/google.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.praxis-reframing.com" target="_blank"><img src="/static/images/ourclients/praxis.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.bablic.com" target="_blank"><img src="/static/images/ourclients/bablic.png" class="cus_img" /></a></td>
-                            </tr>
-                        </table>
+                <div id="home-text" class="deep_blue">
+                    <p id="middle_hp">
+                        For the last 10 year we have been specializing in web applications and web technologies.
+                        We are a one stop shop, from concept development and the design, through implementing the best
+                        technical solution, deployment, and assistance with getting it to the clients.
+                        We love innovative ideas and will go to great lengths to make them happen. We also have a
+                        special
+                        place in our heart for entrepreneurs and start-ups.
+                    </p>
+
+                    <p id="footer_hp">
+                        EMPEERIC are pioneers in our way of thinking and use of cutting edge technologies like Python,
+                        Goggle App Engine, Node.JS, NOSQL, HTML5/CSS3, GitHub, and more.
+                    </p>
+                </div>
+
+                <a href="#contactus" id="">
+                    <img src="/static/images/contact_us_right.png" id="contact_img"/>
+                    <img src="/static/images/logo.png" id="empeeric_logo"/>
+                </a>
+
+                <div id="cus_wrapper">
+                    <div id="slide-buttons">
+                        <img src="/static/images/our_clients_left.png" id="our_clients" alt="Our Clients"/>
+                        <a href="#" id="cust_prev" class="slide-btn white"> &lt; </a>
+                        <a href="#" id="cust_next" class="slide-btn white"> &gt; </a>
                     </div>
-                    <div class="slide-item" hidden>
-                        <table>
-                            <tr>
-                                <td><a href="http://www.mouseui.com" target="_blank"><img src="/static/images/ourclients/mouse.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.uru.org.il/" target="_blank"><img src="/static/images/ourclients/URU.png" class="cus_img" /></a></td>
-                                <td><img src="/static/images/ourclients/texasreels.png" class="cus_img" /></td>
-                                <td><a href="http://vimeo.com/channels/slycrynetnews" target="_blank"><img src="/static/images/ourclients/Slycr.png" class="cus_img" /></a></td>
-                            </tr>
-                        </table>
+                    <div id="customer-container">
+                        <div class="slide-item">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <a href="http://www.youtube.com/2013ynet" target="_blank">
+                                            <img src="/static/images/ourclients/Youtube.png" class="cus_img"/>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="http://google.co.il" target="_blank">
+                                            <img src="/static/images/ourclients/google.png" class="cus_img"/>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="http://www.praxis-reframing.com" target="_blank">
+                                            <img src="/static/images/ourclients/praxis.png" class="cus_img"/>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="http://www.bablic.com" target="_blank">
+                                            <img src="/static/images/ourclients/bablic.png" class="cus_img"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="slide-item" hidden>
+                            <table>
+                                <tr>
+                                    <td><a href="http://www.mouseui.com" target="_blank"><img src="/static/images/ourclients/mouse.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.uru.org.il/" target="_blank"><img src="/static/images/ourclients/URU.png" class="cus_img"/></a></td>
+                                    <td><img src="/static/images/ourclients/texasreels.png" class="cus_img"/></td>
+                                    <td><a href="http://vimeo.com/channels/slycrynetnews" target="_blank"><img src="/static/images/ourclients/Slycr.png" class="cus_img"/></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="slide-item" hidden>
+                            <table>
+                                <tr>
+                                    <td><a href="http://www.flashnetworks.com" target="_blank"><img src="/static/images/ourclients/flashn.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.ilcc.co.il" target="_blank"><img src="/static/images/ourclients/ilcc.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.lcud.tau.ac.il" target="_blank"><img src="/static/images/ourclients/lcud.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.letsbench.com" target="_blank"><img src="/static/images/ourclients/letsbeanch.png" class="cus_img"/></a></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="slide-item" hidden>
+                            <table>
+                                <tr>
+                                    <td><a href="http://www.pickadeal.co.il"><img src="/static/images/ourclients/pickadeal.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.gay-ville.com"><img src="/static/images/ourclients/gayville.png" class="cus_img"/></a></td>
+                                    <td><a href="http://www.junkme.co.il"><img src="/static/images/ourclients/junkme.png" class="cus_img"/></a></td>
+                                    <td><img src="/static/images/ourclients/veecycle.png" class="cus_img"/></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class="slide-item" hidden>
-                        <table>
-                            <tr>
-                                <td><a href="http://www.flashnetworks.com" target="_blank"><img src="/static/images/ourclients/flashn.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.ilcc.co.il" target="_blank"><img src="/static/images/ourclients/ilcc.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.lcud.tau.ac.il" target="_blank"><img src="/static/images/ourclients/lcud.png" class="cus_img" /></a></td>
-                                <td><a href="http://www.letsbench.com" target="_blank"><img src="/static/images/ourclients/letsbeanch.png" class="cus_img" /></a></td>
-                            </tr>
-                        </table>
-                    </div>
-					<div class="slide-item" hidden>
-						<table>
-							<tr>
-								<td><a href="http://www.pickadeal.co.il"><img src="/static/images/ourclients/pickadeal.png" class="cus_img" /></a></td>
-								<td><a href="http://www.gay-ville.com"><img src="/static/images/ourclients/gayville.png" class="cus_img" /></a></td>
-								<td><a href="http://www.junkme.co.il"><img src="/static/images/ourclients/junkme.png" class="cus_img" /></a></td>
-								<td><img src="/static/images/ourclients/veecycle.png" class="cus_img" /></td>
-							</tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-</article>
-<!--article-->
-<div class="bg"></div>
-<!--Content Section-->
+                </div>
+            </div>
+        </header>
+    </article>
+    <!--article-->
+    <div class="bg"></div>
+    <!--Content Section-->
 </section>
 
 <section id="portfolio" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Portfolio" data-scrolloffset="100" view-controller="ShowsController">
-	<article>
-		<header>
-			<div id="slide-container">
-                <div class="slide-item">
-                    <a href="http://www.ronenakerman.com/" target="_blank" >
-                        <img src="/static/images/screenshots/ronenakerman.png" class="shadowed" style="border-radius:3px"/>
-                    </a>
-                    <div class="text-block">
-                        <a target="_blank" href="http://www.ronenakerman.com/">
-                            Ronen Akerman Photographer - רונן אקרמן צלם
-                        </a>
-                        <h2>
-                            A portfolio website for one on Israel's top photographer (and our founder's brother). Clean simple and comunicatibe. HTML5, mobile compatible, and search engine optimized (SEO).
-                        </h2>
-                    </div>
-                </div>
+<article>
+<header>
+<div id="slide-container">
+<div class="slide-item">
+    <a href="http://www.ronenakerman.com/" target="_blank">
+        <img src="/static/images/screenshots/ronenakerman.png" class="shadowed" style="border-radius:3px"/>
+    </a>
 
-                <div class="slide-item">
-                    <a href="http://www.uru.org.il/" target="_blank" >
-                        <img src="/static/images/screenshots/uru.png" class="shadowed" />
-                    </a>
-                    <div class="text-block">
-                        <a target="_blank" href="http://www.uru.org.il/">
-                            URU.org.il - עורו
-                        </a>
-                        <h2>
-                            A social-movement and user generated content site,
-                            in the spirit of open.gov. A modern, information-aged tool for
-                            decentrelized, grassroots policy-making.
-                        </h2>
-                    </div>
-                </div>
+    <div class="text-block">
+        <a target="_blank" href="http://www.ronenakerman.com/">
+            Ronen Akerman Photographer - רונן אקרמן צלם
+        </a>
 
-                <div class="slide-item">
-                    <img src="/static/images/screenshots/praxis_reframer.png" class="shadowed" />
-                    <div class="text-block">
-                        Praxis
-                        <h2>
-                            Praxis is devoted to assist individuals, groups and various types of organizations in the process of reframing in order to maintain relevant mindsets and strategies.
-                        </h2>
-                    </div>
-                </div>
+        <h2>
+            A portfolio website for one on Israel's top photographer (and our founder's brother). Clean
+            simple and comunicatibe. HTML5, mobile compatible, and search engine optimized (SEO).
+        </h2>
+    </div>
+</div>
 
-                <div class="slide-item">
-                    <img src="/static/images/screenshots/bablic.png" class="shadowed" />
-                    <div class="text-block">
-                        Bablic
-                        <h2>
-                            Bablic makes localizing your website a simple and quick task. No additional programming, no new templates, no hassles of any kind. Yes, you can have your website in any language you want tomorrow without having to call back your web designer.
-                        </h2>
-                    </div>
-                </div>
+<div class="slide-item">
+    <a href="http://www.uru.org.il/" target="_blank">
+        <img src="/static/images/screenshots/uru.png" class="shadowed"/>
+    </a>
 
-                <div class="slide-item">
-                    <img src="/static/images/screenshots/texasreels1.png" class="shadowed" />
-                    <div class="text-block">
-                        Touchspin
-                        <h2>
-                            A cutting-edge iPad application for pocker-style slot-machine gaming experience.
-                        </h2>
-                    </div>
-                </div>
+    <div class="text-block">
+        <a target="_blank" href="http://www.uru.org.il/">
+            URU.org.il - עורו
+        </a>
 
-                <div class="slide-item">
-                    <a target="_blank" href="https://apps.facebook.com/fanaticsgame/">
-                        <img src="/static/images/screenshots/Spilon1.png" class="shadowed" />
-                    </a>
-                    <div class="text-block">
-                        <a target="_blank" href="https://apps.facebook.com/fanaticsgame/">
-                            Fantaics
-                        </a>
-                        <h2>
-                            A smashing social football-themed game in Facebook.
-                        </h2>
-                    </div>
-                </div>
+        <h2>
+            A social-movement and user generated content site,
+            in the spirit of open.gov. A modern, information-aged tool for
+            decentrelized, grassroots policy-making.
+        </h2>
+    </div>
+</div>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.ilcc.co.il">
-						<img src="/static/images/screenshots/ilss.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.ilcc.co.il">
-							<span class="site_link"></span>
-						</a>
-						<h2>A web site packed with features oriented around the Israeli Climbing
-							Clubs (ILCC) needs to make their members climbing experience better, safer and more
-							enjoyable.</h2>
-					</div>
-				</div>
+<div class="slide-item">
+    <img src="/static/images/screenshots/praxis_reframer.png" class="shadowed"/>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.letsbench.com/">
-						<img src="/static/images/screenshots/Letsbeanch.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.letsbench.com/">
-							<span style="background-position: 0 -60px" class="site_link"></span>
-						</a>
-						<h2>Let's bench! Gives users the ability to visually customize their Bencher.
-							An advanced frontend application with a sophisticated UI driven by an innovative backend.
-							Adopted also for use on smartphones with touchscreens.</h2>
-					</div>
-				</div>
+    <div class="text-block">
+        Praxis
+        <h2>
+            Praxis is devoted to assist individuals, groups and various types of organizations in the
+            process of reframing in order to maintain relevant mindsets and strategies.
+        </h2>
+    </div>
+</div>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://dirometer.empeeric.com/">
-						<img src="/static/images/screenshots/dirometer.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://dirometer.empeeric.com">
-							<span style="background-position: 0 -208px" class="site_link"></span>
-						</a>
-						<h2>Want to know more on the appartment you are looking for?
-							Add your rating and be a part of the crowd knowledge
-							Website and Application, that collect and Analyst the information.</h2>
-					</div>
-				</div>
+<div class="slide-item">
+    <img src="/static/images/screenshots/bablic.png" class="shadowed"/>
 
-				<div class="slide-item">
-					<a target="_blank" href="">
-						<img src="/static/images/screenshots/VC.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="">
-							<span style="background-position: 0 -152px" class="site_link"></span>
-						</a>
-						<h2>VCycle is a state of the art social commerce website, allowing
-							users to conduct buiesness with their neighbours.</h2>
-					</div>
-				</div>
+    <div class="text-block">
+        Bablic
+        <h2>
+            Bablic makes localizing your website a simple and quick task. No additional programming, no new
+            templates, no hassles of any kind. Yes, you can have your website in any language you want
+            tomorrow without having to call back your web designer.
+        </h2>
+    </div>
+</div>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.junkme.co.il">
-						<img src="/static/images/screenshots/JunkMe.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.junkme.co.il">
-							<span style="background-position: 0 -182px" class="site_link"></span>
-						</a>
-						<h2>JunkMe is a site deteceted at fighting spam . It allows user to report
-							junk mails that they had received, and provides the users with the compensation they are
-							eligible to under Israeli law.</h2>
-					</div>
-				</div>
+<div class="slide-item">
+    <img src="/static/images/screenshots/texasreels1.png" class="shadowed"/>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.flashnetworks.com/">
-						<img src="/static/images/screenshots/IPhon1.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.flashnetworks.com/">
-							<span style="background-position:0 -90px" class="site_link"></span>
-						</a>
-						<h2>Modern, slick and youthful iPhone app design with a simple and powerful UI.</h2>
-					</div>
-				</div>
+    <div class="text-block">
+        Touchspin
+        <h2>
+            A cutting-edge iPad application for pocker-style slot-machine gaming experience.
+        </h2>
+    </div>
+</div>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.flashnetworks.com/">
-						<img src="/static/images/screenshots/IPhon2.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.flashnetworks.com/">
-							<span style=" background-position:0 -90px;" class="site_link"></span>
-						</a>
-						<h2>Modern, slick and youthful iPhone app design with a simple and powerful UI.</h2>
-					</div>
-				</div>
+<div class="slide-item">
+    <a target="_blank" href="https://apps.facebook.com/fanaticsgame/">
+        <img src="/static/images/screenshots/Spilon1.png" class="shadowed"/>
+    </a>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.lcud.tau.ac.il/">
-						<img style="width:600px" src="/static/images/screenshots/LCUD.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.lcud.tau.ac.il/">
-							<span style="background-position:0 -120px;" class="site_link"></span>
-						</a>
-						<h2>A creative design for the Laboratory for Contemporary Urban Design (LCUD) of the Tel -Aviv
-							University </h2>
-					</div>
-				</div>
+    <div class="text-block">
+        <a target="_blank" href="https://apps.facebook.com/fanaticsgame/">
+            Fantaics
+        </a>
 
-				<div class="slide-item">
-					<a target="_blank" href="http://www.pickadeal.co.il/">
-						<img src="/static/images/screenshots/Pickadeal.png" />
-					</a>
-					<div class="text-block">
-						<a target="_blank" href="http://www.pickadeal.co.il/">
-							<span style=" background-position:0 -32px;" class="site_link"></span>
-						</a>
-						<h2>Pick-a-deal is a group deal aggregator. Empeeric rebuilt the site with advanced features,
-							upgraded performance and security. </h2>
-					</div>
-				</div>
-			</div>
-			<hr />
-			<a id="slide-left" class="slide-btn white" rel="left-arrow" href="#">&lt; Previous</a>
-			<a id="slide-right" class="slide-btn white" rel="right-arrow" href="#"> Next &gt;</a>
-		</header>
-	</article>
-	<div class="bg"></div>
+        <h2>
+            A smashing social football-themed game in Facebook.
+        </h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.ilcc.co.il">
+        <img src="/static/images/screenshots/ilss.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.ilcc.co.il">
+            <span class="site_link"></span>
+        </a>
+
+        <h2>A web site packed with features oriented around the Israeli Climbing
+            Clubs (ILCC) needs to make their members climbing experience better, safer and more
+            enjoyable.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.letsbench.com/">
+        <img src="/static/images/screenshots/Letsbeanch.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.letsbench.com/">
+            <span style="background-position: 0 -60px" class="site_link"></span>
+        </a>
+
+        <h2>Let's bench! Gives users the ability to visually customize their Bencher.
+            An advanced frontend application with a sophisticated UI driven by an innovative backend.
+            Adopted also for use on smartphones with touchscreens.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://dirometer.empeeric.com/">
+        <img src="/static/images/screenshots/dirometer.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://dirometer.empeeric.com">
+            <span style="background-position: 0 -208px" class="site_link"></span>
+        </a>
+
+        <h2>Want to know more on the appartment you are looking for?
+            Add your rating and be a part of the crowd knowledge
+            Website and Application, that collect and Analyst the information.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="">
+        <img src="/static/images/screenshots/VC.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="">
+            <span style="background-position: 0 -152px" class="site_link"></span>
+        </a>
+
+        <h2>VCycle is a state of the art social commerce website, allowing
+            users to conduct buiesness with their neighbours.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.junkme.co.il">
+        <img src="/static/images/screenshots/JunkMe.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.junkme.co.il">
+            <span style="background-position: 0 -182px" class="site_link"></span>
+        </a>
+
+        <h2>JunkMe is a site deteceted at fighting spam . It allows user to report
+            junk mails that they had received, and provides the users with the compensation they are
+            eligible to under Israeli law.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.flashnetworks.com/">
+        <img src="/static/images/screenshots/IPhon1.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.flashnetworks.com/">
+            <span style="background-position:0 -90px" class="site_link"></span>
+        </a>
+
+        <h2>Modern, slick and youthful iPhone app design with a simple and powerful UI.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.flashnetworks.com/">
+        <img src="/static/images/screenshots/IPhon2.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.flashnetworks.com/">
+            <span style=" background-position:0 -90px;" class="site_link"></span>
+        </a>
+
+        <h2>Modern, slick and youthful iPhone app design with a simple and powerful UI.</h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.lcud.tau.ac.il/">
+        <img style="width:600px" src="/static/images/screenshots/LCUD.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.lcud.tau.ac.il/">
+            <span style="background-position:0 -120px;" class="site_link"></span>
+        </a>
+
+        <h2>A creative design for the Laboratory for Contemporary Urban Design (LCUD) of the Tel -Aviv
+            University </h2>
+    </div>
+</div>
+
+<div class="slide-item">
+    <a target="_blank" href="http://www.pickadeal.co.il/">
+        <img src="/static/images/screenshots/Pickadeal.png"/>
+    </a>
+
+    <div class="text-block">
+        <a target="_blank" href="http://www.pickadeal.co.il/">
+            <span style=" background-position:0 -32px;" class="site_link"></span>
+        </a>
+
+        <h2>Pick-a-deal is a group deal aggregator. Empeeric rebuilt the site with advanced features,
+            upgraded performance and security. </h2>
+    </div>
+</div>
+</div>
+<hr/>
+<a id="slide-left" class="slide-btn white" rel="left-arrow" href="#">&lt; Previous</a>
+<a id="slide-right" class="slide-btn white" rel="right-arrow" href="#"> Next &gt;</a>
+</header>
+</article>
+<div class="bg"></div>
 </section>
 
 <section id="why_us" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Why us?" data-scrolloffset="100" view-controller="ShowsController">
-	<div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
-		<article>
-			<header>
-				<h2 class="white">Why us?</h2>
-				<p class="bold_white">
-					Make your software project a onetime investment. Remember, lingering on a project can be a financial
-					disaster. Do it once, and do it well.
-					Avoid fixing those money and time-wasting issues that appear after delivery.
-					How do you do that? Use a professional and superior project manager working with an excellent
-					developer team.
-					Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
-					save you those unplanned after-delivery expenses.
-				</p>
-				<div id="heros">
-					<div id="heros_cycle">
-						<img src="/static/images/theenmpeerics.png" />
-						<img src="/static/images/savetheday.png" />
-					</div>
-					<a href="#" class="more"><img src="/static/images/more.png" /></a>
-				</div>
-				</header>
-		</article>
-	</div>
-	<!--< div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
-		<article>
-			<header>
-				<h2 class="white">Why us?</h2>
+    <div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
+        <article>
+            <header>
+                <h2 class="white">Why us?</h2>
 
-				<p class="bold_white">
-					Make your software project a onetime investment. Remember, lingering on a project can be a financial
-					disaster. Do it once, and do it well.
-					Avoid fixing those money and time-wasting issues that appear after delivery.
-					How do you do that? Use a professional and superior project manager working with an excellent
-					developer team.
-					Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
-					save you those unplanned after-delivery expenses.
-				</p>
+                <p class="bold_white">
+                    Make your software project a onetime investment. Remember, lingering on a project can be a financial
+                    disaster. Do it once, and do it well.
+                    Avoid fixing those money and time-wasting issues that appear after delivery.
+                    How do you do that? Use a professional and superior project manager working with an excellent
+                    developer team.
+                    Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
+                    save you those unplanned after-delivery expenses.
+                </p>
 
-				<h2 class="white" id="expert_cloud">The Expert Cloud</h2>
+                <div id="heros">
+                    <div id="heros_cycle">
+                        <img src="/static/images/theenmpeerics.png"/>
+                        <img src="/static/images/savetheday.png"/>
+                    </div>
+                    <a href="#" class="more"><img src="/static/images/more.png"/></a>
+                </div>
+            </header>
+        </article>
+    </div>
+    <!--< div style="background: url('/static/images/whyus_clouds.png') no-repeat 147px 2px transparent;">
+        <article>
+            <header>
+                <h2 class="white">Why us?</h2>
 
-				<p class="white">
-					As a success guarantee for your project, we have our in-house development experts.
-					Each one with his own field of expertise and a vast experience developing with and consulting the
-					largest companies in their specific domain.
-					They’ve been around the world, from the US and the UK through Costa Rica and Spain, consulting and
-					aiding the development of complex and challenging software for the largest of high-tech companies.
-					When your project calls for a special expertise, that’s where our cloud will come in.
-					Empeeric maintains a close working relation with the best experts.
-					We know and trust them. Among other methods of acquiring new experts,Empeeric also hosts a variety
-					of professional and technical conventions and events (Our regulars include Alpha-Geeks,PyWeb -IL and
-					Defcon). Our Experts will not just consult but actually be active developers of your project,
-					ensuring the best results. A dedicated team will eliminate any unexpected time and budget-stretching
-					problems. If we can’t allocate the right expert to work on your project, we won’t take it.
-					As every experienced professional knows, an initially cheap or “budget” project will have hidden
-					costs, ending-up costing more.
-					Invest in your software, once.
-				</p>
-			</header>
-		</article>
-	</ div>
-	&lt;!&ndash;article&ndash;&gt;
+                <p class="bold_white">
+                    Make your software project a onetime investment. Remember, lingering on a project can be a financial
+                    disaster. Do it once, and do it well.
+                    Avoid fixing those money and time-wasting issues that appear after delivery.
+                    How do you do that? Use a professional and superior project manager working with an excellent
+                    developer team.
+                    Our Highly Experienced Project Managers with our core of developers and unique Expert Cloud will
+                    save you those unplanned after-delivery expenses.
+                </p>
+
+                <h2 class="white" id="expert_cloud">The Expert Cloud</h2>
+
+                <p class="white">
+                    As a success guarantee for your project, we have our in-house development experts.
+                    Each one with his own field of expertise and a vast experience developing with and consulting the
+                    largest companies in their specific domain.
+                    They’ve been around the world, from the US and the UK through Costa Rica and Spain, consulting and
+                    aiding the development of complex and challenging software for the largest of high-tech companies.
+                    When your project calls for a special expertise, that’s where our cloud will come in.
+                    Empeeric maintains a close working relation with the best experts.
+                    We know and trust them. Among other methods of acquiring new experts,Empeeric also hosts a variety
+                    of professional and technical conventions and events (Our regulars include Alpha-Geeks,PyWeb -IL and
+                    Defcon). Our Experts will not just consult but actually be active developers of your project,
+                    ensuring the best results. A dedicated team will eliminate any unexpected time and budget-stretching
+                    problems. If we can’t allocate the right expert to work on your project, we won’t take it.
+                    As every experienced professional knows, an initially cheap or “budget” project will have hidden
+                    costs, ending-up costing more.
+                    Invest in your software, once.
+                </p>
+            </header>
+        </article>
+    </ div>
+    &lt;!&ndash;article&ndash;&gt;
 	<div class="bg"></div>-->
-	<!--Content Section-->
+    <!--Content Section-->
 </section>
 
 <section id="comming_events" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Up & Comming Events" data-scrolloffset="-100" view-controller="ShowsController">
-	<article>
-		<header class="shows">
-			<div id="events">
-				<h2>Events</h2>
-				<p>
-					Since it first started, Empeeric rooted deep in the Israeli and global development community.
-					Through contributing and assisting open-source
-					projects, as the jQuery library or our own browser extensions or hosting a wide variety of
-					groups and events in our offices and on our great roof overlookin Tel-Aviv.
-					We keep in touch with the best of the best in all aspects that have to do with application and
-					startup development, which not only helps us give back to the community but
-					strengthens our expert cloud...
-				</p>
-				<div id="event_pics">
-					<img src="/static/images/event1.png" />
-					<img src="/static/images/event2.png" />
-					<img src="/static/images/event3.png" />
-					<img src="/static/images/event4.png" />
-				</div>
-				<div class="details">
-					<a target="_blank" href="http://alphageeksil.wordpress.com/">Alpha Geeks</a>:
-					<p>A group which strives to bring talks about the newest technology advances in a open non-formal
-						envoirment</p>
-					<a target="_blank" href="http://dc9723.org/Main_Page">DefCon (DC9723)</a>:
-					<p> The Israeli DefCon group is a group designed to serve as a place for discussion for the growing
-						community of people involved in information security in Israel.</p>
-					<a target="_blank" href="http://groups.google.com/group/pyweb-il/about">PyWeb-IL</a>:
-					<p>PyWeb Israel focuses on Python and Django development with interesting talks about other aspects
-						of web design and architecture.</p>
-				</div>
-				<div class="clearer"></div>
-			</div>
-		</header>
-	</article>
-	<!--article-->
-	<div class="bg"></div>
-	<!--Content Section-->
+    <article>
+        <header class="shows">
+            <div id="events">
+                <h2>Events</h2>
+
+                <p>
+                    Since it first started, Empeeric rooted deep in the Israeli and global development community.
+                    Through contributing and assisting open-source
+                    projects, as the jQuery library or our own browser extensions or hosting a wide variety of
+                    groups and events in our offices and on our great roof overlookin Tel-Aviv.
+                    We keep in touch with the best of the best in all aspects that have to do with application and
+                    startup development, which not only helps us give back to the community but
+                    strengthens our expert cloud...
+                </p>
+
+                <div id="event_pics">
+                    <img src="/static/images/event1.png"/>
+                    <img src="/static/images/event2.png"/>
+                    <img src="/static/images/event3.png"/>
+                    <img src="/static/images/event4.png"/>
+                </div>
+                <div class="details">
+                    <a target="_blank" href="http://alphageeksil.wordpress.com/">Alpha Geeks</a>:
+                    <p>A group which strives to bring talks about the newest technology advances in a open non-formal
+                       envoirment</p>
+                    <a target="_blank" href="http://dc9723.org/Main_Page">DefCon (DC9723)</a>:
+                    <p> The Israeli DefCon group is a group designed to serve as a place for discussion for the growing
+                        community of people involved in information security in Israel.</p>
+                    <a target="_blank" href="http://groups.google.com/group/pyweb-il/about">PyWeb-IL</a>:
+                    <p>PyWeb Israel focuses on Python and Django development with interesting talks about other aspects
+                       of web design and architecture.</p>
+                </div>
+                <div class="clearer"></div>
+            </div>
+        </header>
+    </article>
+    <!--article-->
+    <div class="bg"></div>
+    <!--Content Section-->
 </section>
 
 <section name="contactus" id="contactus" style="min-height: 100px;" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-nav="Contact Us" data-scrolloffset="100" view-controller="ShowsController">
-	<article>
-		<header class="white">
-			<div id="cotact_us_form" style="font-family: tahoma;  letter-spacing: 1px">
-				<form id="contact_us_form" action="http://sobo.empeeric.com/contact_us" method="POST">
-					<table>
-						<tr>
-							<td class="text_top">
-								Subject:
-							</td>
-							<td>
-								<input type="text" name="message_subject" class="round" required />
-							</td>
-						</tr>
-						<tr>
-							<td class="text_top">
-								Message:
-							</td>
-							<td>
-								<textarea rows="4" cols="30" name="message_content" class="round" required ></textarea>
-							</td>
-						</tr>
-						<tr>
-							<td class="text_top">
-								Name:
-							</td>
-							<td>
-								<input type="text" name="senders_name" class="round" required />
-							</td>
-						</tr>
-						<tr>
-							<td class="text_top" >
-								Email:
-							</td>
-							<td>
-								<input type="email" name="senders_email" class="round" />
-							</td>
-						</tr>
-					</table>
-					<button type="submit" id="submit_contact">SEND</button>
-				</form>
-			</div>
-			<div id="contactus_details" style="font-family: tahoma; letter-spacing: 1px">
-				<div style="padding: 0 70px 0 0;">
-					Empeeric Ltd.<br/>
-					10 HaArba’a St.<br/>
-					Tel Aviv 64739<br/>
-					Israel Email: <a target="_blank" href="mailto:info@empeeric.com">info@empeeric.com</a><br/>
-					Phone:  +972-3-6245080<br/><br/>
-					Visit Empeeric on
-					<a target="_blank" class="contact_social_icons" id="empeeric_fb" href="http://www.facebook.com/pages/Empeeric/118595041499083"></a>
-					<a target="_blank" class="contact_social_icons" id="empeeric_tw" href="http://twitter.com/empeeric"></a>
-					<a target="_blank" class="contact_social_icons" id="empeeric_ln" href="http://www.linkedin.com/companies/241460"></a>
-				</div>
-				<div style="border-top: 2px groove #7984a1; padding-top: 5px; margin-top: 15px;">
-					<a target="_blank" href="mailto:jobs@empeeric.com">jobs@empeeric.com</a> <br/> We are looking for
-					frontend and python developers. Send in your CV.
-				</div>
-			</div>
-		</header>
-	</article>
-	<!--article-->
-	<!--Content Section-->
+    <article>
+        <header class="white">
+            <div id="cotact_us_form" style="font-family: tahoma;  letter-spacing: 1px">
+                <form id="contact_us_form" action="http://sobo.empeeric.com/contact_us" method="POST">
+                    <table>
+                        <tr>
+                            <td class="text_top">
+                                Subject:
+                            </td>
+                            <td>
+                                <input type="text" name="message_subject" class="round" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_top">
+                                Message:
+                            </td>
+                            <td>
+                                <textarea rows="4" cols="30" name="message_content" class="round" required></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_top">
+                                Name:
+                            </td>
+                            <td>
+                                <input type="text" name="senders_name" class="round" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text_top">
+                                Email:
+                            </td>
+                            <td>
+                                <input type="email" name="senders_email" class="round"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit" id="submit_contact">SEND</button>
+                </form>
+            </div>
+            <div id="contactus_details" style="font-family: tahoma; letter-spacing: 1px">
+                <div style="padding: 0 70px 0 0;">
+                    Empeeric Ltd.<br/>
+                    10 HaArba’a St.<br/>
+                    Tel Aviv 64739<br/>
+                    Israel Email: <a target="_blank" href="mailto:info@empeeric.com">info@empeeric.com</a><br/>
+                    Phone: +972-3-6245080<br/><br/>
+                    Visit Empeeric on
+                    <a target="_blank" class="contact_social_icons" id="empeeric_fb" href="http://www.facebook.com/pages/Empeeric/118595041499083"></a>
+                    <a target="_blank" class="contact_social_icons" id="empeeric_tw" href="http://twitter.com/empeeric"></a>
+                    <a target="_blank" class="contact_social_icons" id="empeeric_ln" href="http://www.linkedin.com/companies/241460"></a>
+                </div>
+                <div style="border-top: 2px groove #7984a1; padding-top: 5px; margin-top: 15px;">
+                    <a target="_blank" href="mailto:jobs@empeeric.com">jobs@empeeric.com</a> <br/> We are looking for
+                                                                                                   frontend and python developers. Send in your CV.
+                </div>
+            </div>
+        </header>
+    </article>
+    <!--article-->
+    <!--Content Section-->
 </section>
 
 <section name="contactus" id="footer" style="min-height: 40px;" class="story" data-controller="SectionShows" data-align="left" mainnav-color="#fff600" data-scrolloffset="40" view-controller="ShowsController">
     <a href="http://madeintlv.org">Made in TLV</a>
 </section>
 
-<img id="city_view" src="static/images/citybg.png" />
+<img id="city_view" src="static/images/citybg.png"/>
 
-</div> <!--/wrapper-->
+</div>
+<!--/wrapper-->
 
 
 <script type="text/javascript">
-document.domain = document.domain;
+    document.domain = document.domain;
 
-	var seemoreLoaded = true;
-	var barWhite=false;
-	function scroll_func() {
-		var inView = window.pageYOffset < 300;
-		var inWhite= window.pageYOffset >1600;
-		if (inView && !seemoreLoaded) {
-			$('#seemore_img').fadeIn(350);
-			seemoreLoaded = true;
-		} else if (!inView && seemoreLoaded) {
-			seemoreLoaded = false;
-			$('#seemore_img').fadeOut(350);
-		}
-		else if (inWhite && !barWhite){
-			$("nav#main li a").animate({ color: "#fff !important" }, 50);
-			barWhite=true;
-		}
-		else if (!inWhite && barWhite) {
-			$("nav#main li a").animate({ color: "#025287 !important" }, 50);
-			barWhite=false;
-		}
-	}
-	$(window).bind('scroll', scroll_func);
-
-
-	function cloudsMove(cloud_id, low_speed, high_speed) {
-		var cloud_selector = "#" + cloud_id;
-		if (!cloudsMove.clouds_moved) {
-			cloudsMove.clouds_moved = [];
-		}
-		if (!cloudsMove.clouds_moved[cloud_id]) {
-			$(cloud_selector)
-					.css("left", $(cloud_selector).offset().left)
-		}
-		$(cloud_selector)
-				.animate(
-				{
-					left: $("#sky").width()
-				},
-				cloudsMove.clouds_moved[cloud_id] ? low_speed : high_speed,
-				"linear",
-				function() {
-					$(this)
-							.css("left", -parseInt($(this).css("width")))
-					cloudsMove.clouds_moved[cloud_id] = true;
-					cloudsMove(cloud_id, low_speed, high_speed);
-				}
-		)
-	}
-var show1=false;
-function swapHeroTitle(){
-		if (show1){
-			$("#hero_title1").fadeIn(350);
-			$("#hero_title2").fadeOut(350);
-		}else{
-			$("#hero_title2").fadeIn(350);
-			$("#hero_title1").fadeOut(350);
-		}
-		if (show1) show1=false;
-		else show1=true;
-}
-
-$(function() {
-	$('#slide-container').cycle({
-		autostop: 1,
-		timeout: 0,
-		speed: 2000,
-		fx:     'scrollHorz',
-		easing: 'easeOutBack',
-		next: 'a[rel=right-arrow]',
-		prev: 'a[rel=left-arrow]',
-		nowrap: false // whether to loop through the items or not
-	});
-	$('#customer-container').cycle({
-			autostop: 1,
-			timeout: 0,
-			speed: 900,
-			next: '#cust_next',
-			prev: '#cust_prev',
-			nowrap: false // whether to loop through the items or not
-		});
-	$('#heros_cycle').cycle({
-		fx:	 'fadeZoom',
-		speedIn:1400,
-		speedOut:  600,
-		timeout: 0,
-		easeIn: "easeInOutCirc",
-		next:   '#heros .more'
-	});
-	$('#heros_nav').cycle({
-		fx:	 'fade',
-		speed:  100,
-		timeout: 0,
-		next:   '#seemore',
-		prev:   '#back',
-		onPrevNextEvent:swapHeroTitle
-	});
-	$('#event_pics').cycle({
-		fx:	 'fade',
-		speed:  1000
-	});
-	setTimeout(function(){cloudsMove("cloud1", 140000, 170000);},5000);
-	cloudsMove("cloud2", 120000, 140000);
-	setTimeout(function(){cloudsMove("cloud3", 140000, 120000)},10000);
-	cloudsMove("cloud4", 140000, 100000);
-	cloudsMove("cloud5", 130000, 120000);
-
-	$("#contact_us_form").submit(function(e) {
-		e.preventDefault();
-
-		var form_params = $(this).serialize();
-
-        $.post('/contact_us', form_params, function (text) {
-            alert(text);
-        });
-	});
-});
-
-(function() {
-    var x, y;
-    
-    var items = [].slice.call(document.querySelectorAll('div')).map(function(el) {
-        var rect = el.getBoundingClientRect();
-        el.x = rect.left;
-        el.y = rect.top;
-        el.w = rect.right - rect.left;
-        el.h = rect.bottom - rect.top;
-        el.fX = 100;
-        el.fY = 1000;
-        return el;
-    });
-    
-    
-    document.addEventListener('dragover', function(evt) {
-        x = evt.clientX;
-        y = evt.clientY;
-    }, false);
-    
-    
-    document.addEventListener('mousemove', function(evt) {
-        x = evt.clientX;
-        y = evt.clientY;
-    }, false);
-    
-    
-    (function _loop() {
-        if (x && y) {
-            var winWidth = window.innerWidth;
-            var winHeight = window.innerHeight;
-            var halfWidth = winWidth / 2;
-            var halfHeight = winHeight / 2;
-            
-            var rx = x - winWidth / 2;
-            var ry = winHeight / 2 - y;
-            
-            items.forEach(function(el) {
-                var dx = el.w / el.fX * (rx / -halfWidth);
-                var dy = el.h / el.fY * (ry / halfHeight);
-                el.style['transform'] = 
-                el.style['-webkit-transform'] = 'translate(' + dx + 'px,' + dy + 'px)';
-            });
+    var seemoreLoaded = true;
+    var barWhite = false;
+    function scroll_func() {
+        var inView = window.pageYOffset < 300;
+        var inWhite = window.pageYOffset > 1600;
+        if (inView && !seemoreLoaded) {
+            $('#seemore_img').fadeIn(350);
+            seemoreLoaded = true;
+        } else if (!inView && seemoreLoaded) {
+            seemoreLoaded = false;
+            $('#seemore_img').fadeOut(350);
         }
-        
-        requestAnimationFrame(_loop);
-    })();
-})();
+        else if (inWhite && !barWhite) {
+            $("nav#main li a").animate({ color: "#fff !important" }, 50);
+            barWhite = true;
+        }
+        else if (!inWhite && barWhite) {
+            $("nav#main li a").animate({ color: "#025287 !important" }, 50);
+            barWhite = false;
+        }
+    }
+    $(window).bind('scroll', scroll_func);
+
+
+    function cloudsMove(cloud_id, low_speed, high_speed) {
+        var cloud_selector = "#" + cloud_id;
+        if (!cloudsMove.clouds_moved) {
+            cloudsMove.clouds_moved = [];
+        }
+        if (!cloudsMove.clouds_moved[cloud_id]) {
+            $(cloud_selector)
+                .css("left", $(cloud_selector).offset().left)
+        }
+        $(cloud_selector)
+            .animate(
+            {
+                left: $("#sky").width()
+            },
+            cloudsMove.clouds_moved[cloud_id] ? low_speed : high_speed,
+            "linear",
+            function () {
+                $(this).css("left", -parseInt($(this).css("width")));
+                cloudsMove.clouds_moved[cloud_id] = true;
+                cloudsMove(cloud_id, low_speed, high_speed);
+            }
+        )
+    }
+    var show1 = false;
+    function swapHeroTitle() {
+        if (show1) {
+            $("#hero_title1").fadeIn(350);
+            $("#hero_title2").fadeOut(350);
+        } else {
+            $("#hero_title2").fadeIn(350);
+            $("#hero_title1").fadeOut(350);
+        }
+        show1 = !show1;
+    }
+
+    $(function () {
+        $('#slide-container').cycle({
+            autostop: 1,
+            timeout: 0,
+            speed: 2000,
+            fx: 'scrollHorz',
+            easing: 'easeOutBack',
+            next: 'a[rel=right-arrow]',
+            prev: 'a[rel=left-arrow]',
+            nowrap: false // whether to loop through the items or not
+        });
+        $('#customer-container').cycle({
+            autostop: 1,
+            timeout: 0,
+            speed: 900,
+            next: '#cust_next',
+            prev: '#cust_prev',
+            nowrap: false // whether to loop through the items or not
+        });
+        $('#heros_cycle').cycle({
+            fx: 'fadeZoom',
+            speedIn: 1400,
+            speedOut: 600,
+            timeout: 0,
+            easeIn: "easeInOutCirc",
+            next: '#heros .more'
+        });
+        $('#heros_nav').cycle({
+            fx: 'fade',
+            speed: 100,
+            timeout: 0,
+            next: '#seemore',
+            prev: '#back',
+            onPrevNextEvent: swapHeroTitle
+        });
+        $('#event_pics').cycle({
+            fx: 'fade',
+            speed: 1000
+        });
+        setTimeout(function () {
+            cloudsMove("cloud1", 140000, 170000);
+        }, 5000);
+        cloudsMove("cloud2", 120000, 140000);
+        setTimeout(function () {
+            cloudsMove("cloud3", 140000, 120000)
+        }, 10000);
+        cloudsMove("cloud4", 140000, 100000);
+        cloudsMove("cloud5", 130000, 120000);
+
+        $("#contact_us_form").submit(function (e) {
+            e.preventDefault();
+
+            var form_params = $(this).serialize();
+
+            $.post('/contact_us', form_params, function (text) {
+                alert(text);
+            });
+        });
+    });
+
+    $(function () {
+        var x, y;
+
+        var items = [].slice.call(
+            document.querySelectorAll('#wrapper *')
+        ).filter(
+            function (el) {
+                if (el.getClientRects().length == 0) return false;
+                var ret = !(el.dataset['noMove'] === '');
+                if (!ret)
+                    console.log(el.dataset);
+                return ret;
+            }
+        ).map(
+            function (el) {
+                var rect = el.getBoundingClientRect();
+                el.x = rect.left;
+                el.y = rect.top;
+                el.w = rect.right - rect.left;
+                el.h = rect.bottom - rect.top;
+                el.fX = 100;
+                el.fY = 1000;
+                return el;
+            }
+        );
+
+
+        document.addEventListener('dragover', function (evt) {
+            x = evt.clientX;
+            y = evt.clientY;
+        }, false);
+
+
+        document.addEventListener('mousemove', function (evt) {
+            x = evt.clientX;
+            y = evt.clientY;
+        }, false);
+
+
+        (function _loop() {
+            if (x && y) {
+                var winWidth = window.innerWidth;
+                var winHeight = window.innerHeight;
+                var halfWidth = winWidth / 2;
+                var halfHeight = winHeight / 2;
+
+                var rx = x - winWidth / 2;
+                var ry = winHeight / 2 - y;
+
+                items.forEach(function (el) {
+                    var dx = el.w / el.fX * (rx / -halfWidth);
+                    var dy = el.h / el.fY * (ry / halfHeight);
+                    el.style['transform'] =
+                        el.style['-webkit-transform'] = 'translate(' + dx + 'px,' + dy + 'px)';
+                });
+            }
+
+            requestAnimationFrame(_loop);
+        })();
+    });
 
 </script>
 
 <!-- ClickTale Bottom part -->
 <div id="ClickTaleDiv" style="display: none;"></div>
 <script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRc9.js'%20type='text/javascript'%3E%3C/script%3E"));
+    if (document.location.protocol != 'https:')
+        document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRc9.js'%20type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(5467,1,"www09");
+    if (window.ClickTale) ClickTale(5467, 1, "www09");
 </script>
 <!-- ClickTale end of Bottom part -->
 

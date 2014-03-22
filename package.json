@@ -1,22 +1,22 @@
 {
-    "name": "empeeric.com",
-    "private": "true",
-    "version": "1.0.4",
-    "dependencies": {
-        "ejs": "",
-        "async": "",
-        "express": "",
-        "nodemailer": "",
-        "coffee-script-redux": "",
-        "request": "",
-        "nodestrum": ""
-    },
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.2.x"
-    },
-    "scripts": {
-        "start": "node server"
-    },
-    "main": "server.js"
+  "name": "empeeric.com",
+  "private": "true",
+  "version": "1.0.4",
+  "dependencies": {
+    "ejs": "",
+    "async": "",
+    "express": "",
+    "nodemailer": "",
+    "coffee-script-redux": "",
+    "request": "",
+    "nodestrum": "",
+    "nodealytics": ""
+  },
+  "engines": {
+    "node": "0.11.x"
+  },
+  "scripts": {
+    "start": "node --harmony server"
+  },
+  "main": "server.js"
 }

@@ -15,7 +15,7 @@ app.use(express.errorHandler());
 
 app.use('/static', express.static('static'));
 
-app.use('/ccs3', express.static('css3'));
+app.use('/css3', express.static('css3'));
 
 app.use(function powered_by_empeeric(req, res, next){
     res.setHeader('X-Powered-By', 'Empeeric');

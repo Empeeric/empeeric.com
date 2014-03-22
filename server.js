@@ -9,51 +9,68 @@ var
     bodyParser = require('body-parser'),
     logger = require('morgan'),
     errorHandler = require('error-handler'),
+    etagify = require('etagify'),
     errorRender = require('errorhandler');
 
 var app = express();
 app.use(errorRender());
-app.use(function (req, res, next) {errorHandler(req, res); next();});
+app.use(etagify());
 app.use(logger('dev'));
-
-app.use('/static', express.static('static'));
-
-app.use('/css3', express.static('css3'));
-
-app.use(function powered_by_empeeric(req, res, next){
-    res.setHeader('X-Powered-By', 'Empeeric');
+app.use('/static', express.static('static', {maxAge: Infinity}));
+app.use('/css3', express.static('css3', {maxAge: Infinity}));
+app.use(function (req, res, next) {
+    errorHandler(req, res);
     next();
 });
+app.use(
+    function powered_by_empeeric(req, res, next) {
+        res.setHeader('X-Powered-By', 'Empeeric');
+        next();
+    }
+);
 
-app.get('/BrowserSupport.html', function(request, response){
+
+app.get('/BrowserSupport.html', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/BrowserSupport.html');
 });
 
-app.get('/j14countdown.html', function(request, response){
+
+app.get('/j14countdown.html', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/j14countdown.html');
 });
 
-app.get('/platereader', function(request, response){
+
+app.get('/platereader', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/plate.html');
 });
 
-app.get('/ejs_test', function(request, response){
+
+app.get('/ejs_test', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/ejs_test.html');
 });
 
-app.get('/heroku', function(request, response){
+
+app.get('/heroku', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/heroku.html');
 });
 
-app.get('/', function(request, response){
+
+app.get('/', function (request, response) {
+    response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/home.html');
 });
+
 
 app.post('/contact_us', bodyParser(), contactUs.handle_request);
 
@@ -65,13 +82,13 @@ app.get('/snippet/cors/:id', function (req, orig_res) {
     orig_res.header('Access-Control-Allow-Origin', '*');
     orig_res.header('Access-Control-Allow-Methods', 'GET');
     orig_res.header('Access-Control-Allow-Headers', 'Content-Type');
-    https.get('https://gist.github.com/refack/' + req.params.id + '/raw', function(https_res) {
+    https.get('https://gist.github.com/refack/' + req.params.id + '/raw', function (https_res) {
         https_res.pipe(orig_res);
     });
 });
 
 
 var port = process.env.PORT || 80;
-app.listen(port, function(){
+app.listen(port, function () {
     console.log("Server listening on %s", this._connectionKey);
 });

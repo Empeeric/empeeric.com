@@ -855,10 +855,11 @@
 <!-- ClickTale Bottom part -->
 <div id="ClickTaleDiv" style="display: none;"></div>
 <script type="text/javascript">
-    if (document.location.protocol != 'https:') document.write(unescape("%3Cscript%20src='" + 'http://cdn.clicktale.net/www/' + "WRe10.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-    if (typeof window.ClickTale == 'function')  ClickTale(5451, 1, "www09");
+    $(window).load(function () {
+        $.getScript('http://cdn.clicktale.net/www/WRe10.js').done(function () {
+            window.ClickTale(5451, 1, "www09");
+        });
+    });
 </script>
 <!-- ClickTale end of Bottom part -->
 

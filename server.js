@@ -16,8 +16,7 @@ var app = express();
 app.use(errorRender());
 app.use(etagify());
 app.use(logger('dev'));
-app.use('/static', express.static('static', {maxAge: Infinity}));
-app.use('/css3', express.static('css3', {maxAge: Infinity}));
+app.use(express.static('assets', {maxAge: Infinity}));
 app.use(function (req, res, next) {
     errorHandler(req, res);
     next();
@@ -28,20 +27,6 @@ app.use(
         next();
     }
 );
-
-
-app.get('/BrowserSupport.html', function (request, response) {
-    response.etagify();
-    response.contentType('text/html');
-    response.sendfile('templates/BrowserSupport.html');
-});
-
-
-app.get('/j14countdown.html', function (request, response) {
-    response.etagify();
-    response.contentType('text/html');
-    response.sendfile('templates/j14countdown.html');
-});
 
 
 app.get('/platereader', function (request, response) {
@@ -62,13 +47,6 @@ app.get('/heroku', function (request, response) {
     response.etagify();
     response.contentType('text/html');
     response.sendfile('templates/heroku.html');
-});
-
-
-app.get('/', function (request, response) {
-    response.etagify();
-    response.contentType('text/html');
-    response.sendfile('templates/home.html');
 });
 
 

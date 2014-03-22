@@ -1,17 +1,20 @@
 'use strict';
+require('nodestrum');
+require('coffee-script-redux/lib/register');
 var
-    nodestrum = require('nodestrum'),
-    coffee = require('coffee-script-redux/lib/register'),
     express = require('express'),
     contactUs = require('./contact_us'),
     https = require('https'),
-    checks = require('./checks');
+    checks = require('./checks'),
+    bodyParser = require('body-parser'),
+    logger = require('morgan'),
+    errorHandler = require('error-handler'),
+    errorRender = require('errorhandler');
 
 var app = express();
-//noinspection JSHint
-app.use(nodestrum.domain_wrapper_middleware);
-app.use(express.bodyParser());
-app.use(express.errorHandler());
+app.use(errorRender());
+app.use(function (req, res, next) {errorHandler(req, res); next();});
+app.use(logger('dev'));
 
 app.use('/static', express.static('static'));
 
@@ -52,7 +55,7 @@ app.get('/', function(request, response){
     response.sendfile('templates/home.html');
 });
 
-app.post('/contact_us', contactUs.handle_request);
+app.post('/contact_us', bodyParser(), contactUs.handle_request);
 
 
 app.get('/check/mongolab/:key', checks.mongolab);
@@ -70,5 +73,5 @@ app.get('/snippet/cors/:id', function (req, orig_res) {
 
 var port = process.env.PORT || 80;
 app.listen(port, function(){
-  console.log("Listening on " + port);
+    console.log("Server listening on %s", this._connectionKey);
 });

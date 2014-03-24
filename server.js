@@ -1,6 +1,5 @@
 'use strict';
 require('nodestrum');
-require('coffee-script-redux/lib/register');
 var
     express = require('express'),
     contactUs = require('./contact_us'),
@@ -10,7 +9,8 @@ var
     logger = require('morgan'),
     errorHandler = require('error-handler'),
     etagify = require('etagify'),
-    errorRender = require('errorhandler');
+    errorRender = require('errorhandler'),
+    kzradio = require('./kzradio');
 
 var app = express();
 app.use(errorRender());
@@ -65,6 +65,12 @@ app.get('/snippet/cors/:id', function (req, orig_res) {
     });
 });
 
+
+app.get('/api/kzradio/current', function (req, res) {
+    kzradio.current(function (show) {
+        res.send(show);
+    });
+});
 
 var port = process.env.PORT || 80;
 app.listen(port, function () {

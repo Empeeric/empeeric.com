@@ -5,6 +5,7 @@
   "dependencies": {
     "async": "",
     "body-parser": "",
+    "cheerio": "",
     "coffee-script-redux": "",
     "ejs": "",
     "error-handler": "",

@@ -12,6 +12,9 @@
     "errorhandler": "",
     "etagify": "",
     "express": "4.x.x",
+    "lodash": "",
+    "lodash-contrib": "",
+    "moment": "^2.5.1",
     "morgan": "",
     "nodealytics": "",
     "nodemailer": "",
@@ -22,7 +25,14 @@
     "node": "0.11.x"
   },
   "scripts": {
-    "start": "node --harmony server"
+    "start": "node --harmony server",
+    "test": "node ./node_modules/mocha/bin/_mocha",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -x generated/**"
   },
-  "main": "server.js"
+  "devDependencies": {
+    "istanbul": "",
+    "proxyquire": "",
+    "chai": "",
+    "mocha": ""
+  }
 }

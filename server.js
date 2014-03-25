@@ -68,7 +68,7 @@ app.get('/snippet/cors/:id', function (req, orig_res) {
 
 app.get('/api/kzradio/current', function (req, res) {
     kzradio.current(function (show) {
-        res.send(show);
+        res.json(show);
     });
 });
 

@@ -386,6 +386,20 @@
         }
       }
     },
+    "lodash": {
+      "version": "2.4.1",
+      "from": "lodash@"
+    },
+    "lodash-contrib": {
+      "version": "241.4.3",
+      "from": "lodash-contrib@",
+      "resolved": "http://registry.npmjs.org/lodash-contrib/-/lodash-contrib-241.4.3.tgz"
+    },
+    "moment": {
+      "version": "2.5.1",
+      "from": "moment@",
+      "resolved": "http://registry.npmjs.org/moment/-/moment-2.5.1.tgz"
+    },
     "morgan": {
       "version": "1.0.0",
       "from": "morgan@",

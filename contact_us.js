@@ -10,6 +10,9 @@ var smtpTransport = nodemailer.createTransport("SMTP",{
 
 
 module.exports.handle_request = function (request, response) {
+    console.log("======== Contact Us Params ========");
+    console.log(request.body);
+    console.log("========= End Contact Us ==========");
     var subject = request.body.message_subject || '',
         text = request.body.message_content || '',
         from_name = request.body.senders_name || '',

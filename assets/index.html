@@ -783,7 +783,7 @@
 
             var form_params = $(this).serialize();
 
-            $.post($(this).attr('action', form_params).done(function (text) {
+            $.post($(this).attr('action'), form_params).done(function (text) {
                 alert(text);
             }).fail(function (_, text, e) {
                 consoole.log(e);

@@ -50,7 +50,7 @@ app.get('/heroku', function (request, response) {
 });
 
 
-app.post('/contact_us', bodyParser(), contactUs.handle_request);
+app.post('/su_tcontac', bodyParser(), contactUs.handle_request);
 
 
 app.get('/check/mongolab/:key', checks.mongolab);

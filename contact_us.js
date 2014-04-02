@@ -37,9 +37,9 @@ module.exports.handle_request = function (request, response) {
         text: text
     }
 
-    smtpTransport.sendMail(mailOptions, function(error, send_res){
+    smtpTransport.sendMail(mailOptions, function(error, send_res) {
         if (error) {
-            console.log(error.stack || error);
+            console.log(error);
             response.end(500, 'Sorry, there was an error sending the message');
             return;
         }

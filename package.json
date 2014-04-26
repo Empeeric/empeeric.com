@@ -14,7 +14,7 @@
     "express": "4.x.x",
     "lodash": "",
     "lodash-contrib": "",
-    "moment": "^2.5.1",
+    "moment": "",
     "morgan": "",
     "nodealytics": "",
     "nodemailer": "",

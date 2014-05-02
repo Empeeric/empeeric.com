@@ -14,7 +14,7 @@
     "express": "4.x.x",
     "lodash": "",
     "lodash-contrib": "",
-    "memory-cache": "0.0.5",
+    "memory-cache": "",
     "moment": "",
     "morgan": "",
     "nodealytics": "",

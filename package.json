@@ -14,12 +14,14 @@
     "express": "4.x.x",
     "lodash": "",
     "lodash-contrib": "",
+    "memory-cache": "0.0.5",
     "moment": "",
     "morgan": "",
     "nodealytics": "",
     "nodemailer": "",
     "nodestrum": "",
-    "request": ""
+    "request": "",
+    "universal-analytics": ""
   },
   "engines": {
     "node": "0.11.x"

@@ -1,7 +1,6 @@
 'use strict';
 require('asynctrace');
 var opinion = require('opinion'),
-    co = require('co'),
     request = require('request'),
     ua = require('universal-analytics'),
     LRU = require("lru-cache"),

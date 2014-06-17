@@ -64,9 +64,7 @@ void function () {
           time: time
         });
       });
-      return cb(current);
+      return cb(null, current);
     });
   };
 }.call(this);
-
-//# sourceMappingURL=kzradio.map

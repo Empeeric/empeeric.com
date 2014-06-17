@@ -25,5 +25,3 @@ void function () {
     });
   };
 }.call(this);
-
-//# sourceMappingURL=checks.map

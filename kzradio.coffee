@@ -10,7 +10,6 @@ WEIRD_CHAR_REGEX = new RegExp('\s*[' + WEIRD_CHAR + '\\-]\s*');
 
 
 
-
 module.exports.current = (cb) ->
   request KZRADIO_BASE_URL, (error, response, body) ->
     throw error if error
@@ -48,4 +47,4 @@ module.exports.current = (cb) ->
         track: track
         label: label
         time: time
-    cb(current)
+    cb(null, current)

@@ -1,16 +1,17 @@
 'use strict';
 require('asynctrace');
+var Path = require('path');
+global.MONGOOSE_DRIVER_PATH = Path.dirname(require.resolve('grist/driver'));
+process.env.MONGOOSE_TEST_URI = 'grist://' + __dirname + "/data";
+
 var opinion = require('opinion'),
     request = require('request'),
     ua = require('universal-analytics'),
     LRU = require("lru-cache"),
     cache = LRU({ max: 500, maxAge: 1000 * 60 * 60 }),
     contactUs = require('./contact_us'),
-    checks = require('./checks'),
     kzradio = require('./kzradio');
 
-
-delete opinion.DEFAULT_MIDDLEWARE_STACK.compress;
 
 var app = opinion({
     middlewareOrder: opinion.DEFAULT_MIDDLEWARE_STACK,
@@ -28,25 +29,7 @@ app.use(function* powered_by_empeeric(next) {
 });
 
 
-app.get('/platereader', function* () {
-    yield this.render('plate');
-});
-
-
-app.get('/ejs_test', function* () {
-    yield this.render('ejs_test');
-});
-
-
-app.get('/heroku', function* () {
-    yield this.render('heroku');
-});
-
-
 app.post('/su_tcontac', contactUs.handle_request);
-
-
-app.get('/check/mongolab/:key', checks.mongolab);
 
 
 app.get('/snippet/cors/:id', function* () {
@@ -72,9 +55,11 @@ app.get('/api/formage/checkVer', function* () {
     this.set('Access-Control-Allow-Headers', 'Content-Type');
     var tracker = ua('UA-15378843-1');
     var clientVer = this.query.version;
-    tracker.event("formage", "ping", clientVer).send(function (err) {
-        if (err) console.log(err);
-    });
+    try {
+        yield tracker.event("formage", "ping", clientVer).send;
+    } catch (err) {
+        console.log(err);
+    }
     this.body = yield getLatest();
 });
 

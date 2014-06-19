@@ -1,0 +1,146 @@
+html{
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    background: #18546a;
+    font-family: "Roboto";
+}
+.body {
+    background: #18546a;
+    height: 100%;
+}
+
+.body .header {
+    height: 100px;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+.controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+.controls .btn {
+    border-radius: 0;
+    border: 1px solid white;
+    margin-right: -4px;
+    color: white;
+    background: transparent;
+    font-size: 18px;
+    width: 157px;
+}
+.controls .btn:hover {
+    background: white;
+    color: #18546a;
+}
+.controls .btn.visit {
+    margin-left: 15px;
+    background: white;
+    color: #18546a;
+    width: 100px;
+}
+.controls .btn.visit:hover {
+    background: transparent;
+    color: white;
+}
+.description {
+    color: white;
+}
+.description h4 {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+}
+.description h3 {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.row.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+}
+.row.content {
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    left: 0;
+    top: 100px;
+}
+.row.footer a {
+    display: inline-block;
+}
+.row.footer a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.gallery {
+    overflow: hidden;
+    height: 85%;
+    width: 100%;
+    position: relative;
+}
+.gallery .item {
+    position: absolute;
+    height: inherit;
+    width: 100%;
+}
+
+.gallery .item .img-container {
+    height: 75%;
+    overflow-x: scroll;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.gallery .item.active {
+    
+}
+
+.gallery .item img {
+    height: 100%;
+    width: auto;
+    border-bottom: 1px solid #18546a;
+}
+
+::-webkit-scrollbar {
+    height: 20px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: none;
+    background: white;
+    border-radius: 0;
+    padding: 5px;
+    border-top: 1px solid white;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: #082935;
+    box-shadow: 1px 1px 0px white inset;
+}
+
+::-webkit-scrollbar-button {
+    background-color: white;
+    width: 20px;
+}
+::-webkit-scrollbar-button:start  {
+    background-image: url("../images/caret_left.png");
+    background-position: -1px 1px;
+}
+
+::-webkit-scrollbar-button:end {
+    background-image: url("../images/caret_right.png");
+    background-position:  1px 1px;
+
+}

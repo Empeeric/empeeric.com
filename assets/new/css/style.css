@@ -55,6 +55,7 @@ body {
     font-weight: normal;
     font-size: 18px;
     line-height: 25px;
+    margin-top: 15px;
 }
 .description h3 {
     font-weight: bold;
@@ -92,6 +93,12 @@ body {
     position: absolute;
     height: inherit;
     width: 100%;
+    left: -100%;
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -ms-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+    transition: 1s ease-out;
 }
 
 .gallery .item .img-container {
@@ -103,7 +110,12 @@ body {
 }
 
 .gallery .item.active {
-    
+    left: 0;
+    -webkit-transition: 1s ease-out;
+    -moz-transition: 1s ease-out;
+    -ms-transition: 1s ease-out;
+    -o-transition: 1s ease-out;
+    transition: 1s ease-out;
 }
 
 .gallery .item img {

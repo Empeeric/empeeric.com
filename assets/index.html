@@ -21,6 +21,7 @@
         bablic['Site'] = '4f8edc8566994b0100000010';
     </script>
 
+    <!-- GA -->
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -34,9 +35,12 @@
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-15378843-1', 'empeeric.com');
+        ga('create', 'UA-15378843-1', 'auto');
+        ga('set', '&uid', Date.now());
         ga('send', 'pageview');
     </script>
+    <!-- end GA -->
+
 
     <!-- start Mixpanel -->
     <script type="text/javascript">(function (e, b) {
@@ -661,7 +665,7 @@
     <a href="http://madeintlv.org">Made in TLV</a>
 </section>
 
-<img id="city_view" src="static/images/citybg.png" data-no-move />
+<img id="city_view" src="static/images/citybg.png" data-no-move/>
 
 </div>
 <!--/wrapper-->

@@ -62,7 +62,8 @@ app.get('/api/formage/checkVer', function* () {
     this.set('Access-Control-Allow-Origin', '*');
     this.set('Access-Control-Allow-Methods', 'GET');
     this.set('Access-Control-Allow-Headers', 'Content-Type');
-    var tracker = ua('UA-15378843-1');
+    var tracker = ua('UA-15378843-1', {headers: this.req.headers, debug:true});
+    tracker.debug(true);
     var clientVer = this.query.version;
     var ref = this.get('referrer') || 'DIRECT';
     var evt = tracker.event("formage", "ping", ref, clientVer);

@@ -1,14 +1,21 @@
 'use strict';
 require('asynctrace');
-var Path = require('path');
-global.MONGOOSE_DRIVER_PATH = Path.dirname(require.resolve('grist/driver'));
-process.env.MONGOOSE_TEST_URI = 'grist://' + __dirname + "/data";
+//var Path = require('path');
+//global.MONGOOSE_DRIVER_PATH = Path.dirname(require.resolve('grist/driver'));
+//var formage = require('formage');
+//var mongoose = require('mongoose');
+//mongoose.connect('grist://' + __dirname + "/data");
+//var models = {
+//    pages: mongoose.model('pages', require('./models/pages')),
+//    navigation: mongoose.model('navigation', require('./models/navigation')),
+//};
+
 
 var opinion = require('opinion'),
     request = require('request'),
     ua = require('universal-analytics'),
     LRU = require("lru-cache"),
-    cache = LRU({ max: 500, maxAge: 1000 * 60 * 60 }),
+    cache = LRU({ max: 10, maxAge: 1000 * 60 * 60 }),
     contactUs = require('./contact_us'),
     kzradio = require('./kzradio');
 
@@ -28,6 +35,8 @@ app.use(function* powered_by_empeeric(next) {
     yield next;
 });
 
+
+//formage.init(app, models);
 
 app.post('/su_tcontac', contactUs.handle_request);
 
@@ -55,12 +64,15 @@ app.get('/api/formage/checkVer', function* () {
     this.set('Access-Control-Allow-Headers', 'Content-Type');
     var tracker = ua('UA-15378843-1');
     var clientVer = this.query.version;
+    var ref = this.get('referrer') || 'DIRECT';
+    var evt = tracker.event("formage", "ping", ref, clientVer);
     try {
-        yield tracker.event("formage", "ping", clientVer).send;
+        yield evt.send.bind(evt);
     } catch (err) {
-        console.log(err);
+        console.log(err.stack);
     }
-    this.body = yield getLatest();
+    var branch = clientVer[0] === '3' ? 'beta' : 'latest';
+    this.body = yield getFormageVer(branch);
 });
 
 
@@ -73,13 +85,13 @@ app.listen(port, function () {
 
 
 // ============== utils ===================
-function* getLatest() {
-    var CACHE_KEY = 'formage-latest';
+function* getFormageVer(branch) {
+    var CACHE_KEY = 'formage-' + branch;
     var latest = cache.get(CACHE_KEY);
     var d = Promise.defer();
     if (latest) {
         d.resolve(latest);
-    } else request('http://registry.npmjs.org/formage/latest', function (_, __, body) {
+    } else request('http://registry.npmjs.org/formage/' + branch, function (_, __, body) {
         var ver = JSON.parse(body);
         var latest = ver.version;
         cache.set(CACHE_KEY, latest, 3600);

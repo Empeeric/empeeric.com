@@ -1,5 +1,5 @@
 'use strict';
-require('asynctrace');
+//require('asynctrace');
 //var Path = require('path');
 //global.MONGOOSE_DRIVER_PATH = Path.dirname(require.resolve('grist/driver'));
 //var formage = require('formage');

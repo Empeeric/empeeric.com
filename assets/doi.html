@@ -10,8 +10,8 @@
 var doi = location.search.substring(1) || location.hash.substring(1);
 setTimeout(function () {
     document.getElementById("Photo1").contentWindow.location.href = "http://dx.doi.org/" + doi;
-    document.getElementById("Photo2").contentWindow.location.href = "http://dx.doi.org.sci-hub.org/" + doi;
-    document.getElementById("Photo3").contentWindow.location.href = "http://gen.lib.rus.ec/search.php?open=0&view=simple&phrase=1&column=def&req=" + doi;
+    document.getElementById("Photo2").contentWindow.location.href = "http://sci-hub.io/" + doi;
+//    document.getElementById("Photo3").contentWindow.location.href = "http://gen.lib.rus.ec/search.php?open=0&view=simple&phrase=1&column=def&req=" + doi;
 }, 250);
 </script>
 
@@ -46,6 +46,7 @@ body {
 #Photo3
 {
   flex: 1 100%;
+  display: none;
 }
 </style>
 

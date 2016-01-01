@@ -23,7 +23,7 @@
     "universal-analytics": ""
   },
   "engines": {
-    "node": "0.11.x"
+    "node": "0.11.15"
   },
   "scripts": {
     "start": "node --harmony server",

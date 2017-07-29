@@ -1,6 +1,5 @@
 'use strict';
-global._ = require('lodash');
-require('lodash-contrib');
+global._ = require('lodash-contrib');
 global.chai = require('chai');
 global.expect = require('chai').expect;
 require('nodestrum');

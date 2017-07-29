@@ -1,26 +1,27 @@
 {
   "name": "empeeric.com",
-  "private": "true",
-  "version": "2.0.3",
+  "private": true,
+  "version": "2.0.4",
   "dependencies": {
-    "async": "",
-    "body-parser": "",
-    "cheerio": "",
-    "coffee-script": "",
-    "ejs": "",
-    "formage": "",
-    "grist": "",
-    "lodash-contrib": "",
-    "lru-cache": "",
-    "mongoose": "unstable",
-    "moment": "",
-    "nodealytics": "",
-    "nodemailer": "",
-    "nodestrum": "",
-    "opinion": "",
-    "request": "",
-    "serve-static": "latest",
-    "universal-analytics": ""
+    "async": "1.5.0",
+    "body-parser": "1.14.2",
+    "cheerio": "0.19.0",
+    "coffee-script": "1.10.0",
+    "ejs": "2.3.4",
+    "express": "3.21.2",
+    "formage": "2.7.34",
+    "grist": "1.3.0",
+    "lodash-contrib": "31001.1.0",
+    "lru-cache": "4.0.0",
+    "moment": "2.10.6",
+    "mongoose": "3.9.7",
+    "nodealytics": "0.0.6",
+    "nodemailer": "1.11.0",
+    "nodestrum": "0.10.1",
+    "opinion": "1.0.36",
+    "request": "2.67.0",
+    "serve-static": "1.10.2",
+    "universal-analytics": "0.3.10"
   },
   "engines": {
     "node": "0.11.14"
@@ -31,10 +32,10 @@
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -x generated/**"
   },
   "devDependencies": {
-    "istanbul": "",
-    "proxyquire": "",
-    "chai": "",
-    "mocha": ""
+    "chai": "3.5.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0",
+    "proxyquire": "1.7.10"
   },
   "jshintConfig": {
     "esnext": true,

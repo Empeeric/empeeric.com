@@ -19,7 +19,7 @@
     "nodemailer": "1.11.0",
     "nodestrum": "0.10.1",
     "opinion": "1.0.36",
-    "request": "2.67.0",
+    "request": "2.88.2",
     "serve-static": "1.10.2",
     "universal-analytics": "0.3.10"
   },

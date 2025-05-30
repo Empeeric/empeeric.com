@@ -1,3 +1,4 @@
 tools
 .idea
 node_modules
+/pnpm-workspace.yaml
